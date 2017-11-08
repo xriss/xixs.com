@@ -1,14 +1,9 @@
 cd `dirname $0`
 
-source settings
-
-echo
-echo "building and then publishing all changes to github"
-echo
-
-./build
-
-git add ..
+git add .
 git commit -m"publish bump"
 git pull
 git push
+
+ssh slice "sudo -u wet -H /bin/bash /devcake/wwwgenes/ngx/static/xixs.com/cron.lock"
+
