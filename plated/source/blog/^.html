@@ -13,17 +13,18 @@ Welcome to blog!
 
 #^link_older_page
 
-<a href="{_it}">older posts</a> or
+<div style="text-align:left"><a href="{_it}">older posts</a></div>
 
 
 #^link_newer_page
 
-<a href="{_it}">newer posts</a>
+<div style="text-align:right"><a href="{_it}">newer posts</a></div>
 
 
 #^_blog_page_body
 
 <div> {_blog_page_older:link_older_page} {_blog_page_newer:link_newer_page} </div>
+<div style="height:20px"></div>
 {_list:blog_list}
 <div style="height:20px"></div>
 <div> {_blog_page_older:link_older_page} {_blog_page_newer:link_newer_page} </div>
@@ -36,22 +37,24 @@ Welcome to blog!
 
 #^link_older_post
 
-<a href="{_it}">older post</a> or
+<div style="text-align:left;float:left;"><a href="{_it}">older post</a></div>
 
 
 #^link_newer_post
 
-<a href="{_it}">newer post</a>
+<div style="text-align:right;float:right;"><a href="{_it}">newer post</a></div>
 
 
 #^_blog_post_body_one
 
 <div> {_blog_post_older:link_older_post} {_blog_post_newer:link_newer_post} </div>
+<div style="height:40px"></div>
 <a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title}</a>
 <div style="height:20px"></div>
 {_blog_post_body}
 <div style="height:20px"></div>
 <div> {_blog_post_older:link_older_post} {_blog_post_newer:link_newer_post} </div>
+<div style="height:20px"></div>
 <div>
 <script src="https://utteranc.es/client.js"
         repo="xriss/xixs.com"
@@ -64,5 +67,5 @@ Welcome to blog!
 
 #^_blog_post_body_many
 
-<a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title} </a>
+<div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>
 
