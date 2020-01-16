@@ -28,7 +28,7 @@ interface with limited control over the format of data we can send
 across. So bandwidth combined with the lack of display configuration 
 options is a real problem.
 
-The LCD has a 320x240 display buffer with 666 bits of RGB color 
+The LCD has a 320x240 display buffer with 666 bits of RGB color output 
 resolution, this buffer is used to drive the LCD hardware at 60-30fps. 
 We can send data into this buffer across the serial interface as 444, 
 565 or 888 bits of RGB. Since we are mostly bound by the speed of 
