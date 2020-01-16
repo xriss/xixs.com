@@ -7,7 +7,7 @@ Welcome to blog!
 #^_blog_json
 
 {
-	posts_per_page:5,
+	posts_per_page:100,
 }
 
 
@@ -23,6 +23,7 @@ Welcome to blog!
 
 #^_blog_page_body
 
+<div> {_blog_page_older:link_older_page} {_blog_page_newer:link_newer_page} </div>
 {_list:blog_list}
 <div style="height:20px"></div>
 <div> {_blog_page_older:link_older_page} {_blog_page_newer:link_newer_page} </div>
@@ -45,7 +46,8 @@ Welcome to blog!
 
 #^_blog_post_body_one
 
-<a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash}</a>
+<div> {_blog_post_older:link_older_post} {_blog_post_newer:link_newer_post} </div>
+<a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title}</a>
 <div style="height:20px"></div>
 {_blog_post_body}
 <div style="height:20px"></div>
@@ -62,8 +64,5 @@ Welcome to blog!
 
 #^_blog_post_body_many
 
-<a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash}</a>
-<div style="height:20px"></div>
-{_blog_post_body}
-<div style="height:20px"></div>
+<a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title} </a>
 
