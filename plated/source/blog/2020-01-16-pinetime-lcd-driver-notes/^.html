@@ -68,7 +68,7 @@ flips.
 
 The actual display code ended up rather simple, we do not have enough 
 RAM for fullscreen buffers on the CPU so we use a 
-(shadertoy)[http://shadertoy.com/] style system with a hook function 
+[shadertoy](http://shadertoy.com/) style system with a hook function 
 called for each x,y pixel returning a 24bit color value, 0xrrggbb or -1 
 for transparent. We even try and interleave the calls to this function 
 with the serial data transfer so we are using the time we would be 
