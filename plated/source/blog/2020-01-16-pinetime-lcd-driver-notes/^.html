@@ -15,6 +15,14 @@
 {title}
 -------
 
+This is a (bad) video of interlaced update, so half the display updated 
+each frame, just to give an idea of the speed.
+
+<video width="100%" autoplay loop muted>
+<source src="{_dirname}/timecake-interlace.mp4" type="video/mp4" />
+</video>
+
+
 You can find the driver code here, 
 https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c What 
 follows are some notes on why it does things the way it does.
@@ -50,7 +58,7 @@ on its end of the serial interface so by only displaying half of it at
 once (160x240) we can update the other half of memory without changes 
 being visible until we flip the screen using the scroll registers. I 
 did not consider this worthwhile as it would still only be able to 
-manage around 6fps, but it would be easy enough to add.
+manage around 4fps, but it would be easy enough to add.
 
 So at best we can manage a few frames per second, lets say 4fps, for a 
 full screen update. Obviously we can double that with interleaved 
