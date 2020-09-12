@@ -1,0 +1,48 @@
+
+#^_blog_post_json
+
+{
+	
+	"title":"3DPrint D4 Numeric",
+	"tags":["3dprint"],
+	
+	"sketchfab":"20dd32d97b3942c3a18544c809224fb0",
+}
+
+#^title trim=ends
+{_blog_post_json.title}
+
+#^_blog_post_body form=markdown
+
+{title}
+-------
+
+<div class="model-container" ><div class="model-view">
+    <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/{_blog_post_json.sketchfab}/embed?autospin=0.2&amp;autostart=1&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=1&amp;ui_stop=1&amp;ui_watermark=1&amp;ui_watermark_link=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div><div class="model-download">
+<a href="{_dirname}/wetgenes/wetgenes_3dprint_d4_numeric.stl">Download STL file</a>
+<a href="{_dirname}/wetgenes/wetgenes_3dprint_d4_numeric.blend">Download BLEND file</a>
+</div></div>
+
+Dice seem like a good thing to 3D print, small/fast and 
+they have an actual use. So this was one of the first things I tried to 
+model.
+
+The indent of the letters may seem a little deep (some of the numbers 
+almost intercept) but it really is necessary for legibility. 
+
+The blend file is setup to use text objects to cut the letters into the main 
+object. Which means you could adjust the font/size/etc if you 
+know how to operate blender.
+
+I have an Ender 3 Pro loaded with PLA and I use Slic3r and a layer 
+height of 0.25mm which seems a good compromise between speed and 
+quality for a 0.4mm nozzle.
+
+From various test prints I discovered that you can actually get away 
+with a 0% infill but a 100% infill seems best as it gives the die a 
+little bit of heft and helps to keep the weight balanced. 
+
+I recommend not bothering with support materials or a raft just be 
+extra careful with bed calibration as it is easy to squash the bottom 
+layer into the print bed rendering the numbers illegible.
