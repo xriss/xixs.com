@@ -9,7 +9,7 @@
 
 #^bodywrap trim=ends
 
-<div style="margin:50px auto;width:960px">{body}</div>
+{crumb_wrap}<div class="main">{body}</div>
 
 #^------------------------------
 #^head trim=ends
@@ -28,3 +28,21 @@ Title is missing.
 #^body trim=ends
 
 Body is missing.
+
+
+#^------------------------------
+
+handle crumbs
+
+#^crumb_wrap trim=ends
+
+<div class="crumb-wrap">{crumb_trap}</div>
+
+#^crumb_slash trim=ends
+
+<span class="crumb-slash">/</span>
+
+#^crumb_trap trim=ends same=append
+
+<a class="crumb" href="{_root}">XIXs</a>
+

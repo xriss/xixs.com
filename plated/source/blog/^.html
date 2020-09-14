@@ -37,24 +37,19 @@ Welcome to blog!
 
 #^link_older_post
 
-<div style="text-align:left;float:left;"><a href="{_it}">older post</a></div>
+<a class="old-link" href="{_it}">older post</a>
 
 
 #^link_newer_post
 
-<div style="text-align:right;float:right;"><a href="{_it}">newer post</a></div>
+<a class="new-link" href="{_it}">newer post</a>
 
 
 #^_blog_post_body_one
 
-<div> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
-<div style="height:40px"></div>
-<a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title}</a>
-<div style="height:20px"></div>
+<div class="oldnew-links"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
 {_blog_post_body}
-<div style="height:20px"></div>
-<div> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
-<div style="height:20px"></div>
+<div class="oldnew-links"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
 <div>
 <script src="https://utteranc.es/client.js"
         repo="xriss/xixs.com"
@@ -70,5 +65,9 @@ Welcome to blog!
 <!--
 <div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>
 -->
-<div class="blogpost-icon-div" ><a href="{_dirname}"><img class="blogpost-icon" src="{_dirname}/icon.jpg"/><div><div>{_blog_post_json.datedash}</div><div>{_blog_post_json.title}</div></div></a></div>
+<a class="bloglink" href="{_dirname}"><div class="bloglink-date">{_blog_post_json.datedash}</div><img class="bloglink-icon" src="{_dirname}/icon.jpg"/><div class="bloglink-title">{_blog_post_json.title}</div></a>
+
+#^crumb_trap trim=ends same=append
+
+{crumb_slash}<a class="crumb" href="{_root}blog">Blog</a>{crumb_slash}<a href="{_dirname}">{_blog_post_json.datedash||}</a>
 
