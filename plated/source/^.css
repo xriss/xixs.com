@@ -48,6 +48,11 @@ p {
 	margin-bottom:1em;
 }
 
+em {
+	font-style:italic;
+}
+
+strong,
 a {
 	font-weight:bold;
 }
@@ -68,6 +73,7 @@ a:hover {
 	height:50px;
 	padding-bottom:10px;
 	position:relative;
+	font-size:16px;
 }
 
 .old-link {
@@ -147,6 +153,40 @@ a:hover {
 
 .blog_list_wrap {
 	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+table tr {
+	background-color: #fff;
+	border-top:1px solid #888;
+}
+
+table tr:nth-child(odd) td,
+table td:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table tr:nth-child(odd) td:nth-child(2n) {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table td, table th {
+    padding: 15px 10px;
+    border: 1px solid #888;
+    border-radius:6px;
 }
 
 .crumb-wrap {
