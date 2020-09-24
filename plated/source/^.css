@@ -17,6 +17,15 @@
 	-ms-text-size-adjust:none;
 }
 
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-size-adjust:0.4;
+	font-weight:normal;
+	font-style:normal;
+}
+
 body {
 	font-size:20px;
 	background:#eee;
@@ -24,7 +33,10 @@ body {
 	font-size:20px;
 	line-height:1.5;
 	color:#444;
-	width:100%;
+}
+
+html {
+	height:100%;
 }
 
 h1,h2,h3,h4,h5 {
@@ -82,7 +94,6 @@ a:hover {
 	position:absolute;
 	background:#444;
 	color:#eee;
-	border:4px 8px;
 	padding:4px 8px;
 	border-radius: 8px;
 }
@@ -93,7 +104,6 @@ a:hover {
 	position:absolute;
 	background:#444;
 	color:#eee;
-	border:4px 8px;
 	padding:4px 8px;
 	border-radius: 8px;
 }
@@ -201,4 +211,68 @@ table td, table th {
 }
 
 .crumb {
+}
+
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-view iframe {
+	height:480px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
 }
