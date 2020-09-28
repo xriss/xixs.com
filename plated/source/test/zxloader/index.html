@@ -1,0 +1,155 @@
+<html>
+<head>
+<style>
+
+body {
+	margin: 0;
+}
+
+
+@keyframes zx-slide {
+	0%		{background-position: 0 0; }
+	100%	{background-position: 0 -100px; }
+}
+#zx-border{
+	width:  100%;
+	height: 100%;
+	position: relative;
+	background-size: 400px 400px;
+	background-color: #00c7c9;
+	animation: zx-slide 0.25s infinite linear;
+}
+#zx-screen{
+	background-color: #cacaca;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	right: 10%;
+	bottom: 10%;
+	background-image: url("screen.jpg");
+	background-size: cover;
+}
+#zx-cover{
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient( rgba(0,0,0,0) 0% 0% , #cacaca 0% 100% );
+	background-size: 100%;
+}
+
+</style>
+<head>
+<body>
+<div id="zx-border"><div id="zx-screen"><div id="zx-cover"></div></div></div>
+<script>
+
+var zxprogress=function(percent)
+{
+	var bd=document.getElementById("zx-border")
+	var sc=document.getElementById("zx-screen")
+	var cv=document.getElementById("zx-cover")
+
+	var reveal=function(pct)
+	{
+		return " linear-gradient( rgba(0,0,0,0) 0% "+pct+"% , #cacaca "+pct+"% 100% )"
+	}
+
+	var gradient=function(c1,c2,count,rnd)
+	{
+		var p=100/count
+		var i=0
+		var j=0
+		var aa=[]
+		
+		for(i=0;i<=count;i++)
+		{
+			aa[i]=p;
+		}
+
+		for(i=0;i<=count;i++)
+		{
+			var f=Math.random()*rnd
+			aa[i]-=p*f
+			for(j=0;j<=count;j++)
+			{
+				if(j!=i)
+				{
+					aa[j]+=p*f/(count-1)
+				}
+			}
+		}
+
+
+		var s="linear-gradient( "
+		var a=0
+		for(var i=0;i<count;i++)
+		{
+			var c=c2
+			if((i%2)==0) { c=c1 }
+			var b=a+aa[i]
+			s+=" "+c+" "+a+"% "+b+"% "
+			if(i==count-1) { s+=" ) " }
+			else { s+=" , " }
+			a=b
+		}
+		return s
+	}
+	
+	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
+	var scritch=gradient("#fffc36","#002bfb",40,0.9)
+
+	cv.style.backgroundImage=reveal(0)
+	
+//	console.log( reveal(percent) )
+
+	if(percent<=0)
+	{
+		bd.style.backgroundImage="";
+	}
+	else
+	if(percent<100)
+	{
+		if(percent<4)
+		{
+			bd.style.backgroundImage="";
+		}
+		else
+		if(percent<8)
+		{
+			bd.style.backgroundImage=wheeeee;
+		}
+		else
+		{
+			bd.style.backgroundImage=scritch;
+			sc.style.filter=" grayscale(100%) contrast(200%) "
+			var r=100*(percent-8)/92
+			cv.style.backgroundImage=reveal(r)
+		}
+	}
+	else
+	{
+		bd.style.backgroundImage="";
+		sc.style.filter=""
+		cv.style.backgroundImage=reveal(100)
+	}
+}
+
+var start=function()
+{
+	var count=0
+	var cb ; cb=function()
+	{
+		setTimeout(cb,1000/25)
+		count++
+		var percent=100*( (count-25)/250) ;
+		if(percent<0){percent=0;}
+		if(percent>100){percent=100;}
+		zxprogress(percent)
+	}
+	cb()
+}
+start()
+
+</script>
+</body>
+</html>
+

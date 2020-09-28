@@ -1,4 +1,5 @@
-git pull
-git push
-git pull git@bitbucket.org:xixs/xixs.com.git
-git push git@bitbucket.org:xixs/xixs.com.git
+cd `dirname $0`
+
+plated/build
+rsync -avh ./docs/ /server/public/xixs.com/ --delete --human-readable
+
