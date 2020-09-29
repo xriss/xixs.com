@@ -28,6 +28,8 @@ body {
 	bottom: 10%;
 	background: url("https://source.unsplash.com/random") no-repeat center center fixed;
 	background-size: cover;
+	background-color: white;
+	background-blend-mode: luminosity;
 }
 #zx-cover{
 	position: absolute;
@@ -120,6 +122,8 @@ var zxprogress=function(percent)
 	}
 	else
 	{
+		sc.style.filter="none"
+		sc.style.backgroundBlendMode="normal"
 		bd.style.backgroundImage="";
 		bd.style.backgroundColor="#cacaca";
 		cv.style.top="100%"
