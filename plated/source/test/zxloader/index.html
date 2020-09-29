@@ -15,25 +15,27 @@ body {
 	width:  100%;
 	height: 100%;
 	position: relative;
-	background-size: 400px 400px;
+	background-size: 8px 400px;
 	background-color: #00c7c9;
 	animation: zx-slide 0.25s infinite linear;
 }
 #zx-screen{
 	background-color: #cacaca;
 	position: absolute;
-	top: 10%;
 	left: 10%;
 	right: 10%;
+	top: 10%;
 	bottom: 10%;
 	background-image: url("screen.jpg");
 	background-size: cover;
 }
 #zx-cover{
-	width: 100%;
-	height: 100%;
-	background-image: linear-gradient( rgba(0,0,0,0) 0% 0% , #cacaca 0% 100% );
-	background-size: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #cacaca;
 }
 
 </style>
@@ -47,11 +49,6 @@ var zxprogress=function(percent)
 	var bd=document.getElementById("zx-border")
 	var sc=document.getElementById("zx-screen")
 	var cv=document.getElementById("zx-cover")
-
-	var reveal=function(pct)
-	{
-		return " linear-gradient( rgba(0,0,0,0) 0% "+pct+"% , #cacaca "+pct+"% 100% )"
-	}
 
 	var gradient=function(c1,c2,count,rnd)
 	{
@@ -97,9 +94,7 @@ var zxprogress=function(percent)
 	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
 	var scritch=gradient("#fffc36","#002bfb",40,0.9)
 
-	cv.style.backgroundImage=reveal(0)
-	
-//	console.log( reveal(percent) )
+	cv.style.top="0"
 
 	if(percent<=0)
 	{
@@ -121,15 +116,14 @@ var zxprogress=function(percent)
 		{
 			bd.style.backgroundImage=scritch;
 			sc.style.filter=" grayscale(100%) contrast(200%) "
-			var r=100*(percent-8)/92
-			cv.style.backgroundImage=reveal(r)
+			cv.style.top=(100*(percent-8)/92)+"%"
 		}
 	}
 	else
 	{
 		bd.style.backgroundImage="";
 		sc.style.filter=""
-		cv.style.backgroundImage=reveal(100)
+		cv.style.top="100%"
 	}
 }
 
