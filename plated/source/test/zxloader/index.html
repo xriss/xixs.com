@@ -115,14 +115,13 @@ var zxprogress=function(percent)
 		else
 		{
 			bd.style.backgroundImage=scritch;
-			sc.style.filter=" grayscale(100%) contrast(200%) "
 			cv.style.top=(100*(percent-8)/92)+"%"
 		}
 	}
 	else
 	{
 		bd.style.backgroundImage="";
-		sc.style.filter=""
+		bd.style.backgroundColor="#cacaca";
 		cv.style.top="100%"
 	}
 }
