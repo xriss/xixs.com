@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+body {
+	margin: 0;
+}
+
+
+@keyframes zx-slide {
+	0%		{background-position: 0 0; }
+	100%	{background-position: 0 -400px; }
+}
+#zx-border{
+	width:  100%;
+	height: 100%;
+	position: relative;
+	background-size: 8px 400px;
+	background-color: #00c7c9;
+	animation: zx-slide 1s infinite linear;
+}
+#zx-screen{
+	background-color: #cacaca;
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	top: 10%;
+	bottom: 10%;
+	background: url("https://source.unsplash.com/random") no-repeat center center fixed;
+	background-size: cover;
+	background-color: white;
+	background-blend-mode: luminosity;
+}
+#zx-cover{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #cacaca;
+}
+
+</style>
+<head>
+<body>
+<div id="zx-border"><div id="zx-screen"><div id="zx-cover"></div></div></div>
+<script>
+
+var zxprogress=function(percent)
+{
+	var bd=document.getElementById("zx-border")
+	var sc=document.getElementById("zx-screen")
+	var cv=document.getElementById("zx-cover")
+
+	var gradient=function(c1,c2,count,rnd)
+	{
+		var p=100/count
+		var i=0
+		var j=0
+		var aa=[]
+		
+		for(i=0;i<=count;i++)
+		{
+			aa[i]=p;
+		}
+
+		for(i=0;i<=count;i++)
+		{
+			var f=Math.random()*rnd
+			aa[i]-=p*f
+			for(j=0;j<=count;j++)
+			{
+				if(j!=i)
+				{
+					aa[j]+=p*f/(count-1)
+				}
+			}
+		}
+
+
+		var s="linear-gradient( "
+		var a=0
+		for(var i=0;i<count;i++)
+		{
+			var c=c2
+			if((i%2)==0) { c=c1 }
+			var b=a+aa[i]
+			s+=" "+c+" "+a+"% "+b+"% "
+			if(i==count-1) { s+=" ) " }
+			else { s+=" , " }
+			a=b
+		}
+		return s
+	}
+	
+	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
+	var scritch=gradient("#fffc36","#002bfb",40,0.9)
+
+	cv.style.top="0"
+
+	if(percent<=0)
+	{
+		bd.style.backgroundImage="";
+	}
+	else
+	if(percent<100)
+	{
+		if(percent<4)
+		{
+			bd.style.backgroundImage="";
+		}
+		else
+		if(percent<8)
+		{
+			bd.style.backgroundImage=wheeeee;
+		}
+		else
+		{
+			bd.style.backgroundImage=scritch;
+			cv.style.top=(100*(percent-8)/92)+"%"
+		}
+	}
+	else
+	{
+		sc.style.filter="none"
+		sc.style.backgroundBlendMode="normal"
+		bd.style.backgroundImage="";
+		bd.style.backgroundColor="#cacaca";
+		cv.style.top="100%"
+	}
+}
+
+var start=function()
+{
+	var count=0
+	var cb ; cb=function()
+	{
+		setTimeout(cb,1000/25)
+		count++
+		var percent=100*( (count-25)/250) ;
+		if(percent<0){percent=0;}
+		if(percent>100){percent=100;}
+		zxprogress(percent)
+	}
+	cb()
+}
+start()
+
+</script>
+</body>
+</html>
+

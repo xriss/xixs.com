@@ -23,7 +23,6 @@ each frame, just to give an idea of the speed.
 <source src="{_dirname}/timecake-interlace.mp4" type="video/mp4" />
 </video>
 
-
 You can find the driver code here, 
 https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c What 
 follows are some notes on why it does things the way it does.
@@ -79,7 +78,6 @@ pixel will be.
 This allows us to craft simple functions that take an XY location and 
 return an RGB color, these do not require any ram buffers as the data 
 is sent immediately to the LCD.
-
 
 Finally an important note about hardware : One thing I did discover is 
 that using NRF_SPI0 to send data to the LCD means that we can not use 

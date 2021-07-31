@@ -1,4 +1,10 @@
 
+#^headjs same=append
+
+head.js("http://cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+
 #^title trim=ends
 
 Welcome to blog!
@@ -48,9 +54,9 @@ Welcome to blog!
 #^_blog_post_body_one
 
 <div class="oldnew-links"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
-{_blog_post_body}
+<div class="blogpost">{_blog_post_body}</div>
 <div class="oldnew-links"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
-<div>
+<div class="utter_wrap">
 <script src="https://utteranc.es/client.js"
         repo="xriss/xixs.com"
         issue-term="pathname"

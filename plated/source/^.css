@@ -21,7 +21,6 @@ body, html {
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	width:100%;
-	font-size-adjust:0.4;
 	font-weight:normal;
 	font-style:normal;
 }
@@ -121,6 +120,7 @@ a:hover {
 .model-view {
 	display: inline-block;
 	width:75%;
+	height:480px;
 }
 
 .model-download {
@@ -213,6 +213,14 @@ table td, table th {
 .crumb {
 }
 
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
 
 /*	PHONES & STUFF
 	============================================= */
@@ -234,7 +242,7 @@ body {
 	padding:30px 50px;
 }
 
-h2 {
+h1, h2 {
 	font-size:4rem;
 }
 
@@ -245,6 +253,8 @@ li {
 .old-link,
 .new-link {
 	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
 }
 
 .bloglink {
@@ -258,10 +268,6 @@ li {
 .bloglink-date {
 	width:initial;
 	padding-right:20px;
-}
-
-.model-view iframe {
-	height:480px;
 }
 
 .model-download {
