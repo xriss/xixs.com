@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Agincards</title>
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+	height: 100px;
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+table tr {
+	background-color: #fff;
+	border-top:1px solid #888;
+}
+
+table tr:nth-child(odd) td,
+table td:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table tr:nth-child(odd) td:nth-child(2n) {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table td, table th {
+    padding: 15px 10px;
+    border: 1px solid #888;
+    border-radius:6px;
+}
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../agincards">Agincards</a></div><div class="main"><h1 id="agincards">Agincards</h1>
+<p>Agincards is a reference to <em>Agincourt</em>, a french town not unlike 
+Carcassonne, and is intended to indicate that this game is related to 
+Carcassonne but playable with a pack of cards.</p>
+<p><strong>Required:</strong>  </p>
+<ol>
+<li>One standard pack of 52 cards </li>
+<li>Five similar coins to use as tokens<ul>
+<li><em>For more than one player, each player needs five tokens and they 
+should be distinguishable.</em></li>
+</ul>
+</li>
+<li>A piece of paper to write running total scores on</li>
+<li>A writing implement</li>
+<li>A reasonable area to place cards on</li>
+</ol>
+<p>The game can spread itself out so please give yourself a lot of space.</p>
+<p>Agincards is designed to not need any strange parts and most people 
+should be able to round up these modest materials.</p>
+<p>The following are the <strong>basic game rules for single play</strong>.</p>
+<p>Multiple players take turns and keep track of separate scores. The game 
+play remains exactly the same as single play but you may want to use 
+more than one pack of cards for games with many players.</p>
+<h2 id="setup">SETUP</h2>
+<p>Shuffle the pack of cards.</p>
+<img src="../agincards/agin_01.svg"/>
+
+<p>Deal five cards to your hand and also take your initial five tokens.</p>
+<p>Place the rest of the pack face down, this is the draw pile.</p>
+<p>Draw one card from this pile and place it in the middle of the table, 
+this is the seed card of the map.</p>
+<p>Set your initial score to 0, this is a running total.</p>
+<p><strong>As you score in the game, this number will go up so keep track of it as 
+you would in a game like scrabble.</strong></p>
+<h2 id="turns">TURNS</h2>
+<p>Play one card from your hand onto the map, or pass if you wish.</p>
+<p>If you now have less than five cards in your hand, take one card from 
+the draw pile into your hand and begin to plot your next move.</p>
+<p><strong>Please note</strong> that you must play a card <em>first</em> and then draw a card, 
+not the other way around.</p>
+<p>When there are no more cards in the draw pile, play what is left from 
+your hand without drawing any new cards.</p>
+<p>The game is over when no player wishes to play any more cards.</p>
+<p>Usually this is because they have run out of cards but play may end at 
+any time if a consensus to stop is reached.</p>
+<h2 id="map">MAP</h2>
+<p>The map is where cards and tokens are placed.</p>
+<p>Whenever you play a card by placing it on the map, you also have the 
+option of placing a single token on top of it.</p>
+<p>This is the <em>only</em> time you may play a token.<br>And you may only play one token at a time.</p>
+<p><strong>Thus, only one token can occupy a card at any time and only during 
+your turn and placement can you play it.</strong></p>
+<p>This will instantly score you points and probably more whilst it 
+remains on the map.</p>
+<p>You only have a limited number of tokens so it may be some time before 
+you can remove that token from the map.</p>
+<h2 id="placement">PLACEMENT</h2>
+<p>Each card represents a <strong>number</strong> and a <strong>color</strong>, red or black. The 
+suits are ignored.</p>
+<p>Aces are 1<br>Jacks are 11<br>Queens are 12<br>Kings are 13<br>All other numbers are their face values</p>
+<p>You can only place a card next to another card already on the map, 
+either to the left/right or top/bottom.</p>
+<p>You may not place any card next to another card of the same value.<br>All touching cards must be different.</p>
+<p>When two cards are placed horizontally or vertically to each other, 
+they begin to form a <strong>run</strong>.</p>
+<p>Any two different cards can be placed next to each other but to have 
+three or more, you must observe the direction of the run.</p>
+<h2 id="runs">RUNS</h2>
+<p>A run is a numerical series of cards that goes higher in one direction 
+and lower in the other.</p>
+<img src="../agincards/agin_02.svg"/>
+
+<p>For example, if 4 and 6 are placed next to each other, only cards 
+less than 4 can continue the run past the 4 and only cards more than 6 
+can continue the run past the 6.</p>
+<p>You can never break this placement rule, all runs of cards must 
+<strong>ascend in one direction</strong> and <strong>descend in the opposite</strong>.</p>
+<h2 id="dead-space">DEAD SPACE</h2>
+<p>When you place an Ace or a King, you end the run in one direction as no 
+card can be higher than a King or lower than an Ace.</p>
+<p>This causes a dead space to exist as no card can possibly be placed 
+in either direction.</p>
+<p>Another way to create a dead space is when two runs intersect and no 
+card can be placed that would satisfy the conditions of both runs.</p>
+<img src="../agincards/agin_03.svg"/>
+
+<p>For example, less than 6 but more than 8.</p>
+<p>These dead spaces are important as they can help you reclaim previously 
+placed tokens.</p>
+<h2 id="score-runs">SCORE RUNS</h2>
+<p>Two conditions make a score run.</p>
+<ol>
+<li>A run goes up/down or left/right from a placed token</li>
+<li>Cards are of the same color as the card the token is placed on</li>
+</ol>
+<h2 id="score-points">SCORE POINTS</h2>
+<p>You can score points by placing a token on an existing run <strong>or</strong> when 
+you place a card to an existing run that has tokens on it.</p>
+<p><strong>Placing a card to an existing run:</strong></p>
+<img src="../agincards/agin_05.svg"/>
+
+<p>For example, the player with the <strong>yellow</strong> token has scored 1 after 
+they placed the 5 card next to the 4.</p>
+<img src="../agincards/agin_06.svg"/>
+
+<p>If that same player had another token on the card next to it, they 
+would have scored 2 instead of 1.
+<br/>
+<br/></p>
+<p><strong>Placing a token on an existing run:</strong></p>
+<p>The score is the length of the run; ie. 1 point for a single card, 2 
+points for two cards and so on and is awarded to the owner of the 
+token.</p>
+<img src="../agincards/agin_07.svg"/>
+
+<p>For example, the player with the <strong>blue</strong> token has placed a token on a 
+new card they placed. This has earned them 3 points.</p>
+<p>Multiple tokens from multiple players may score for the same score run.</p>
+<p><strong>Therefore, a score run with no tokens in it is worthless and a score 
+run with more than one of your tokens in it is highly desirable.</strong></p>
+<h2 id="reclaiming-tokens">RECLAIMING TOKENS</h2>
+<p>When a run is exhausted, any tokens placed on it can no longer score 
+any more. This is when you can reclaim those tokens.</p>
+<p>You can reclaim as many or as little tokens as long as you are able to 
+prove that the run has been exhausted.</p>
+<p>For example, the score run in both directions cannot be continued 
+either because a card of the opposite color has been placed ending the 
+score run or a dead space is preventing any further cards from being 
+placed.</p>
+<p>It is up to the player who owns the token to spot and reclaim them when 
+these conditions are met.</p>
+<p>You may not argue that the cards needed to continue scoring are no 
+longer available in what is left of the pack.</p>
+<p>For example, saying that there are no Aces left so you cannot play a 
+card less than 2.</p>
+<p>Only a dead space or a change of color can end a score run.</p>
+<h2 id="end-game">END GAME</h2>
+<p>When the game ends you will have a score and a pretty map of cards.</p>
+<p>In single play, the objective is to score as high as you can (or 
+trying to beat the pack, see below for alt game).</p>
+<p>When playing with two or more people, the highest score wins you the 
+bragging rights of a weaner.</p>
+<h2 id="balance">BALANCE</h2>
+<p>You can adjust the number of tokens each player has to balance the 
+game.</p>
+<p>For example, a strong player gets 4 tokens and a new player could 
+be given 6.</p>
+<h2 id="the-first-game">THE FIRST GAME</h2>
+<p><a href="../agincards/agin2.jpg"><img src="../agincards/agin2.jpg" 
+style="max-width:500px;"/></a></p>
+<p>Played on 19th January 2007. As you can see, it requires space.</p>
+<h2 id="alt-single-player-game">ALT SINGLE PLAYER GAME</h2>
+<p><strong>Single player no score variant</strong></p>
+<p>Because it is preferable to play patience games with a simple win/lose 
+outcome, here is how to do the same with AginCards.</p>
+<p><strong>Don&#39;t keep a score.</strong></p>
+<p>Every card played must score at least 1 point.<br>If you cannot play a card, you lose.<br>If you play all the cards, you win.</p>
+<p>As long as you have tokens, you can always play a card and place a 
+token on it. Otherwise, you must continue scoring runs. </p>
+<p>This means you must place a token on the first card you play (not the 
+initial seed card).</p>
+<p>Most of the strategy comes from planning to reclaim tokens.</p>
+<p>The <strong>difficulty</strong> can be adjusted by changing the number of tokens you 
+have.<br>If you keep losing with 5 tokens, try playing with 6 and so on.</p>
+<p>I suspect it may not be possible to win with only one token, <em>no matter 
+how lucky you are</em>.
+<br/>
+<br/></p>
+</div></body>
+</html>

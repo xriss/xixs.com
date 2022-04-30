@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>WetIce</title>
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+	height: 100px;
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+table tr {
+	background-color: #fff;
+	border-top:1px solid #888;
+}
+
+table tr:nth-child(odd) td,
+table td:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table tr:nth-child(odd) td:nth-child(2n) {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table td, table th {
+    padding: 15px 10px;
+    border: 1px solid #888;
+    border-radius:6px;
+}
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../wetice">WetIce</a></div><div class="main"><h1 id="wetice">WetIce</h1>
+<p>WetIce is a competitive two player match three style puzzle game 
+designed to be playable with only a standard pack of cards.</p>
+<p><strong>Required:</strong> One standard pack of 52 cards and enough playing space to 
+lay them out in an 8 by 6 grid.
+<br/>
+<br/></p>
+<h2 id="setup">SETUP</h2>
+<p>Remove all four Kings and all jokers.<br>You should be left with 48 suit cards.  </p>
+<p>Shuffle and deal the cards in front of you <strong>face 
+up</strong> in a grid:<br>8 cards wide and 6 cards high</p>
+<img src="../wetice/wetice_01.svg"/>
+
+<p>Only the suit matters so ignore the face value of the cards.</p>
+<p><strong>Match 3 or more cards of the same suit in a line.<br>Horizontally and vertically but never diagonally.</strong>
+<br/>
+<br/></p>
+<h2 id="cleanup-phase">CLEANUP PHASE</h2>
+<p>Take turns to remove all matches on the board before you start a game.</p>
+<p>Each player performs one swap of <em>any</em> two cards on the grid. </p>
+<p>After the two cards are swapped, there <strong>must</strong> be less matches on the 
+board than there was before.</p>
+<p>Alternatively a player may pass.</p>
+<p>Once both players agree that all matches have been removed by passing, 
+the game begins.</p>
+<p><strong>The <em>last</em> player to make a swap during this phase is the <em>first</em> 
+player to take a turn when the game begins.</strong>
+<br/>
+<br/></p>
+<h2 id="game">GAME</h2>
+<p>Players take turns.</p>
+<p>Each turn consists of one <strong>SWAP</strong> followed by multiple <strong>MATCH</strong> and 
+<strong>FALL</strong> phases.</p>
+<p>See below for more detailed descriptions of these three phases.
+<br/>
+<br/></p>
+<h2 id="swap">SWAP</h2>
+<p>Swap <em>any</em> two cards.</p>
+<p>This swap <strong>must</strong> create a line of 3 or more cards of the same suit, 
+horizontally or vertically.</p>
+<p>You may pass to skip a turn regardless of whether you can perform a 
+valid swap or not.
+<br/>
+<br/>
+<br/></p>
+<h2 id="match">MATCH</h2>
+<p>Remove any lines of 3 or more cards of the same suit.</p>
+<p><img src="../wetice/wetice_02.svg"/><img src="../wetice/wetice_arrow.svg"/><img src="../wetice/wetice_03.svg"/></p>
+<p>If this is a <strong>new</strong> suit, it goes into your score pile.  </p>
+<p>Otherwise it goes to the player who already has that suit in their 
+score pile.</p>
+<p>If you have <strong>more</strong> than two suits in your score pile, any extra suits 
+must be given to your opponents score pile.</p>
+<p>You can give your opponent <em>any</em> extra suits - it does not have to 
+be the suit that you just removed from the board.</p>
+<p>Ultimately, each player will have 2 suits each.</p>
+<p>Any future cards removed from the board will go to the <strong>score pile of 
+the player with the corresponding suit</strong>, regardless of who removes 
+them.
+<br/>
+<br/></p>
+<h2 id="fall">FALL</h2>
+<p>Apply <strong>gravity</strong>.</p>
+<p>Slide down <em>all</em> cards that are not on the bottom row or held up by a 
+card below them.</p>
+<p><img src="../wetice/wetice_04.svg"/><img src="../wetice/wetice_arrow.svg"/><img src="../wetice/wetice_05.svg"/></p>
+<p>Once all cards have been slid down, go back to <strong>MATCH</strong> phase and 
+remove any new matches.</p>
+<p>You can chain score multiple times from a single <strong>SWAP</strong>.</p>
+<p>This <strong>MATCH</strong> and <strong>FALL</strong> cycle is repeated until there are no more 
+matches to remove or cards to fall.</p>
+<p>If there are <strong>no cards to fall down or match</strong>, your turn is over and 
+it is now your opponents turn.
+<br/>
+<br/></p>
+<h2 id="game-over">GAME OVER</h2>
+<p>When both players pass, usually because no more valid moves can be 
+made, the game is <strong>over</strong>.</p>
+<p>Your score is the number of cards in your score pile.<br>Highest score wins.
+<br/>
+<br/></p>
+<h2 id="mistakes">MISTAKES</h2>
+<p>There are times where both players pass because no moves can be made 
+only to notice later that a match was missed by either player.</p>
+<p>If this is the case, remove and score the match as normal during the 
+<em>next</em> <strong>MATCH</strong> phase of your turn even if it has just been sitting 
+there unnoticed.
+<br/>
+<br/></p>
+<h2 id="alternative-layout">ALTERNATIVE LAYOUT</h2>
+<p>For a slightly harder and more volatile challenge, <strong>rotate the board 
+around</strong> so it is 6 wide and 8 high with the cards on their sides.</p>
+<img src="../wetice/wetice_06.svg"/>
+
+<p>This makes gravity have more of an effect (each column is 8 high) so it 
+is a bit harder to manage chain reactions.
+<br/>
+<br/></p>
+<h2 id="single-player-game">SINGLE PLAYER GAME</h2>
+<p>The single solitaire player game is played the same as the two player 
+game but <strong>you take all of the turns</strong>.</p>
+<p>And instead of two separate score piles, the objective is to remove 
+<em>all</em> cards from the board. The more cards you remove, the better you 
+played.</p>
+<p>If you can remove all the cards on the board, you are the winner.
+<br/>
+<br/></p>
+<h2 id="single-player-new-game-plus">SINGLE PLAYER NEW GAME PLUS</h2>
+<p>For a more challenging game, try the NG+ rules:</p>
+<p><strong>Remove as many cards as possible in groups of 4 or more.</strong></p>
+<p>Keep cards removed in matches of three <strong>separate</strong> to cards removed in 
+matches of four or more.</p>
+<p>You win when you clear the board <strong>and</strong> if your pile of four plus 
+cards contain <strong>more</strong> cards than your pile of three.
+<br/>
+<br/></p>
+</div></body>
+</html>

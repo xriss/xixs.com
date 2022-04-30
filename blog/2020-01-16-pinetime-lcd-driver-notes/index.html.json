@@ -1,0 +1,904 @@
+{
+ "_blog_export": [
+  {
+   "_blog_export": [
+    {
+     "_blog_json": {
+      "dir": "blog/.",
+      "feed": {
+       "title": "Title"
+      },
+      "posts_per_feed": 20,
+      "posts_per_page": 100,
+      "url": "/"
+     },
+     "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+     "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>This is a (bad) video of interlaced update, so half the display updated \neach frame, just to give an idea of the speed.</p>\n<video width=\"100%\" autoplay loop muted>\n<source src=\"{_dirname}/timecake-interlace.mp4\" type=\"video/mp4\" />\n</video>\n\n<p>You can find the driver code here, \n<a href=\"https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c\">https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c</a> What \nfollows are some notes on why it does things the way it does.</p>\n<p>Fortunately we have a reasonable bit of documentation for the PineTime \nLCD driver, <a href=\"https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf\">https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf</a> It is \noverly verbose with only a few pages of useful information and I have \nread it through repeatedly. Unfortunately I could not see any way of \ndoing something clever, we are at the other end of a rather slow serial \ninterface with limited control over the format of data we can send \nacross. So bandwidth combined with the lack of display configuration \noptions is a real problem.</p>\n<p>The LCD has a 320x240 display buffer with 666 bits of RGB color output \nresolution, this buffer is used to drive the LCD hardware at 60-30fps. \nWe can send data into this buffer across the serial interface as 444, \n565 or 888 bits of RGB. Since we are mostly bound by the speed of \ntransfer, I recommend only using the 444 mode. Remember, even if you \nuse the 888 mode then it will be truncated to 666 bits before it is \ndisplayed. This may cause ugly banding unless pre dithered to 666 \ncolor.</p>\n<p>I attempted a 240x120, half resolution / double height pixels mode by \ntweaking the scroll registers every scan line. This seems impossible as \nwe do not have access to the blanking interrupt pin and even if we did \nthe documentation (and my tests) suggests that changes are ignored mid \nframe. Which is a shame as it would allow for faster and double \nbuffered full screen updates.</p>\n<p>There is still a double buffered mode we could use but it involves \nthrowing away 80 display lines of pixels. The LCD has a 320x240 buffer \non its end of the serial interface so by only displaying half of it at \nonce (160x240) we can update the other half of memory without changes \nbeing visible until we flip the screen using the scroll registers. I \ndid not consider this worthwhile as it would still only be able to \nmanage around 4fps, but it would be easy enough to add.</p>\n<p>So at best we can manage a few frames per second, lets say 4fps, for a \nfull screen update. Obviously we can double that with interleaved \nupdates but that&#39;s as good as it gets and we can not even double buffer \nthese full screen updates. They look more like wipes than animation \nflips.</p>\n<p>The actual display code ended up rather simple, we do not have enough \nRAM for fullscreen buffers on the CPU so we use a \n<a href=\"http://shadertoy.com/\">shadertoy</a> style system with a hook function \ncalled for each x,y pixel returning a 24bit color value, 0xrrggbb or -1 \nfor transparent. We even try and interleave the calls to this function \nwith the serial data transfer so we are using the time we would be \nwaiting for data to transmit to the LCD to work out what color the next \npixel will be. </p>\n<p>This allows us to craft simple functions that take an XY location and \nreturn an RGB color, these do not require any ram buffers as the data \nis sent immediately to the LCD.</p>\n<p>Finally an important note about hardware : One thing I did discover is \nthat using NRF_SPI0 to send data to the LCD means that we can not use \nNRF_TWIM0 to talk to the I2C devices since they both use the same \nhardware. Not a problem, it just means we have to use NRF_TWIM1 for the \nI2C devices. This is probably documented somewhere in the NRF52 chip \ndocumentation but I have no idea where and found it out the hard way.</p>\n",
+     "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+     "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+     "_blog_post_json": {
+      "datedash": "2020-01-16",
+      "datetime": [
+       2020,
+       1,
+       16,
+       0,
+       0,
+       0
+      ],
+      "tags": [
+       "pinetime"
+      ],
+      "title": "PineTime LCD Driver Notes",
+      "unixtime": 1579132800
+     },
+     "_blog_post_older": "{_root}blog/2020-01-15-deadpi/",
+     "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes\">2020-01-16 PineTime LCD Driver Notes </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes\"><div class=\"bloglink-date\">2020-01-16</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes/icon.jpg\"/><div class=\"bloglink-title\">PineTime LCD Driver Notes</div></a>\n",
+     "_dirname": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes",
+     "_filename": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+     "_flags": {
+      "_blog_post_body": {
+       "form": "markdown"
+      },
+      "body": {
+       "trim": "ends"
+      },
+      "bodywrap": {
+       "trim": "ends"
+      },
+      "crumb_slash": {
+       "trim": "ends"
+      },
+      "crumb_trap": {
+       "same": "append",
+       "trim": "ends"
+      },
+      "crumb_wrap": {
+       "trim": "ends"
+      },
+      "css": {
+       "same": "append"
+      },
+      "head": {
+       "trim": "ends"
+      },
+      "headjs": {
+       "same": "append"
+      },
+      "html": {
+       "trim": "ends"
+      },
+      "title": {
+       "trim": "ends"
+      }
+     },
+     "_root": "../../",
+     "_site": "{_root}",
+     "_sourcename": "blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+     "blog_list": "\n{_it._body}\n\n",
+     "body": "{_blog_post_body_one}",
+     "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+     "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+     "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+     "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+     "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+     "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+     "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+     "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+     "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+     "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+     "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+     "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+     "title": "{_blog_post_json.title}"
+    },
+    {
+     "_blog_json": {
+      "dir": "blog/.",
+      "feed": {
+       "title": "Title"
+      },
+      "posts_per_feed": 20,
+      "posts_per_page": 100,
+      "url": "/"
+     },
+     "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+     "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>I have successfully killed my first PI. This brings the dead hardware \ntotal of the <a href=\"https://github.com/xriss/timecake\">timecake</a> project to \n2, the other casualty is one of the watches.</p>\n<img src=\"{_dirname}/byebyepi.jpg\" width=\"100%\" />\n\n<p>That poor PIs light will never be lit again and the chip gets rather \nhot when you plug it in.</p>\n<p>I&#39;m not sure what killed the first watch it mostly still works but I \ncan not connect to the SWD pins, one of which seem to be shorted. So \nthey are both probably casualties of poking the wrong wire in the wrong \nplace.</p>\n<p>I had been reasonably careful with disconnecting the PI&#39;s power before \nconnecting the watch so I think the PI was killed by the watches \nbattery (I was testing the battery % and had it fully charged). This \nall goes to prove that I should solder some more reasonable connections \nto the watch before continuing.</p>\n<p>Luckily the project is in a working state, with the rom flashed to the \nwatch working as an actual watch. So I think we are going to take a \nlittle break from this hardware for a while and come back with some \nfresh enthusiasm and maybe buy another spare watch just in case. Like \nmost people I have a box of old PI&#39;s under the bed so that is \nnot a problem.</p>\n",
+     "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+     "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+     "_blog_post_json": {
+      "datedash": "2020-01-15",
+      "datetime": [
+       2020,
+       1,
+       15,
+       0,
+       0,
+       0
+      ],
+      "tags": [
+       "pinetime"
+      ],
+      "title": "DeadPi",
+      "unixtime": 1579046400
+     },
+     "_blog_post_newer": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/",
+     "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-01-15-deadpi\">2020-01-15 DeadPi </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-01-15-deadpi\"><div class=\"bloglink-date\">2020-01-15</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-01-15-deadpi/icon.jpg\"/><div class=\"bloglink-title\">DeadPi</div></a>\n",
+     "_dirname": "{_root}blog/2020-01-15-deadpi",
+     "_filename": "{_root}blog/2020-01-15-deadpi/index.html",
+     "_flags": {
+      "_blog_post_body": {
+       "form": "markdown"
+      },
+      "body": {
+       "trim": "ends"
+      },
+      "bodywrap": {
+       "trim": "ends"
+      },
+      "crumb_slash": {
+       "trim": "ends"
+      },
+      "crumb_trap": {
+       "same": "append",
+       "trim": "ends"
+      },
+      "crumb_wrap": {
+       "trim": "ends"
+      },
+      "css": {
+       "same": "append"
+      },
+      "head": {
+       "trim": "ends"
+      },
+      "headjs": {
+       "same": "append"
+      },
+      "html": {
+       "trim": "ends"
+      },
+      "title": {
+       "trim": "ends"
+      }
+     },
+     "_root": "../../",
+     "_site": "{_root}",
+     "_sourcename": "blog/2020-01-15-deadpi/index.html",
+     "blog_list": "\n{_it._body}\n\n",
+     "body": "{_blog_post_body_one}",
+     "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+     "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+     "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+     "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+     "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+     "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+     "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+     "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+     "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+     "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+     "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+     "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+     "title": "{_blog_post_json.title}"
+    }
+   ],
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "Title"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 100,
+    "url": "/"
+   },
+   "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<div class=\"model-container\" ><div class=\"model-view\"><babylon><model url=\"{_dirname}/{_blog_post_json.filename}.stl\"></babylon></div><div class=\"model-download\">\n<a href=\"{_dirname}/{_blog_post_json.filename}.stl\">Download STL file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.blend\">Download BLEND file</a>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a>\n</div></div>\n\n<p>I have been using a device like this for a few years now, it reduces \nthe ability of the cat to inhale treats. Sure it sounds a bit like the \nghost of Christmas past rattling chains and dragging weights across the \nhard floor but it is still better than the cat screaming at you for \nmore treats five seconds after you just gave them some.</p>\n<p>So this is a 3dprinter recreation of the same sort of device, we have a \nball cavity to fill with treats and a couple of holes to let them out \nslowly with enough vigorous rolling. The simple large screw thread lets \nyou open and lock the ball and works quite well, it has survived cat \nand foot abuse without separating. So you simply open ( using the holes \nas a grip point ) scoop some treats into the half with no holes and \nthen screw it closed again.</p>\n<p>Ideally you want a treat similar in size and shape to a &quot;Dreamies&quot; cat \ntreat, the hole is scientifically designed and tested so that such a \nshaped treat can only fall out when the correct orientation is achieved \nthough aggressive perturbation of the device providing optimal cat \nexercise.</p>\n<img src=\"{_dirname}/photo.jpg\"/>\n\n<p>It should print OK without any supports but the roof of each dome will \nprobably fall slightly and need a bit of clean up. However as this is \njust on the inside it is an acceptable print flaw. I&#39;d recommend 100% \ninfill so it is less likely to be crushed when you inevitably step on \nit.</p>\n<p>PLA filament is reasonably food safe and my cat keeps trying to chew \nthe prints and any discarded stringing filament anyway. Still it is up \nto you what you print it with and you can get safer filament and print \nheads if you want. Mostly you are going to get cat treat dust build up \ninside which happens with the store bought ones anyway and requires the \noccasional clean. This is a dispenser rather than a food bowl that your \ncat will be licking, so I don&#39;t think it is that big of a risk.</p>\n",
+   "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_json": {
+    "datedash": "2020-11-22",
+    "datetime": [
+     2020,
+     11,
+     22,
+     0,
+     0,
+     0
+    ],
+    "filename": "wetgenes-3dprint-catball-feeder",
+    "tags": [
+     "3dprint"
+    ],
+    "title": "3DPrint Catball feeder",
+    "unixtime": 1606003200
+   },
+   "_blog_post_older": "{_root}blog/2020-10-22-3dprint-mr-boneman/",
+   "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-11-22-3dprint-cat-ball-feeder\">2020-11-22 3DPrint Catball feeder </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-11-22-3dprint-cat-ball-feeder\"><div class=\"bloglink-date\">2020-11-22</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-11-22-3dprint-cat-ball-feeder/icon.jpg\"/><div class=\"bloglink-title\">3DPrint Catball feeder</div></a>\n",
+   "_dirname": "{_root}blog/2020-11-22-3dprint-cat-ball-feeder",
+   "_filename": "{_root}blog/2020-11-22-3dprint-cat-ball-feeder/index.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/2020-11-22-3dprint-cat-ball-feeder/index.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+   "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+   "title": "{_blog_post_json.title}"
+  },
+  {
+   "_blog_export": [
+    {
+     "_blog_json": {
+      "dir": "blog/.",
+      "feed": {
+       "title": "Title"
+      },
+      "posts_per_feed": 20,
+      "posts_per_page": 100,
+      "url": "/"
+     },
+     "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+     "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>This is a (bad) video of interlaced update, so half the display updated \neach frame, just to give an idea of the speed.</p>\n<video width=\"100%\" autoplay loop muted>\n<source src=\"{_dirname}/timecake-interlace.mp4\" type=\"video/mp4\" />\n</video>\n\n<p>You can find the driver code here, \n<a href=\"https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c\">https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c</a> What \nfollows are some notes on why it does things the way it does.</p>\n<p>Fortunately we have a reasonable bit of documentation for the PineTime \nLCD driver, <a href=\"https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf\">https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf</a> It is \noverly verbose with only a few pages of useful information and I have \nread it through repeatedly. Unfortunately I could not see any way of \ndoing something clever, we are at the other end of a rather slow serial \ninterface with limited control over the format of data we can send \nacross. So bandwidth combined with the lack of display configuration \noptions is a real problem.</p>\n<p>The LCD has a 320x240 display buffer with 666 bits of RGB color output \nresolution, this buffer is used to drive the LCD hardware at 60-30fps. \nWe can send data into this buffer across the serial interface as 444, \n565 or 888 bits of RGB. Since we are mostly bound by the speed of \ntransfer, I recommend only using the 444 mode. Remember, even if you \nuse the 888 mode then it will be truncated to 666 bits before it is \ndisplayed. This may cause ugly banding unless pre dithered to 666 \ncolor.</p>\n<p>I attempted a 240x120, half resolution / double height pixels mode by \ntweaking the scroll registers every scan line. This seems impossible as \nwe do not have access to the blanking interrupt pin and even if we did \nthe documentation (and my tests) suggests that changes are ignored mid \nframe. Which is a shame as it would allow for faster and double \nbuffered full screen updates.</p>\n<p>There is still a double buffered mode we could use but it involves \nthrowing away 80 display lines of pixels. The LCD has a 320x240 buffer \non its end of the serial interface so by only displaying half of it at \nonce (160x240) we can update the other half of memory without changes \nbeing visible until we flip the screen using the scroll registers. I \ndid not consider this worthwhile as it would still only be able to \nmanage around 4fps, but it would be easy enough to add.</p>\n<p>So at best we can manage a few frames per second, lets say 4fps, for a \nfull screen update. Obviously we can double that with interleaved \nupdates but that&#39;s as good as it gets and we can not even double buffer \nthese full screen updates. They look more like wipes than animation \nflips.</p>\n<p>The actual display code ended up rather simple, we do not have enough \nRAM for fullscreen buffers on the CPU so we use a \n<a href=\"http://shadertoy.com/\">shadertoy</a> style system with a hook function \ncalled for each x,y pixel returning a 24bit color value, 0xrrggbb or -1 \nfor transparent. We even try and interleave the calls to this function \nwith the serial data transfer so we are using the time we would be \nwaiting for data to transmit to the LCD to work out what color the next \npixel will be. </p>\n<p>This allows us to craft simple functions that take an XY location and \nreturn an RGB color, these do not require any ram buffers as the data \nis sent immediately to the LCD.</p>\n<p>Finally an important note about hardware : One thing I did discover is \nthat using NRF_SPI0 to send data to the LCD means that we can not use \nNRF_TWIM0 to talk to the I2C devices since they both use the same \nhardware. Not a problem, it just means we have to use NRF_TWIM1 for the \nI2C devices. This is probably documented somewhere in the NRF52 chip \ndocumentation but I have no idea where and found it out the hard way.</p>\n",
+     "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+     "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+     "_blog_post_json": {
+      "datedash": "2020-01-16",
+      "datetime": [
+       2020,
+       1,
+       16,
+       0,
+       0,
+       0
+      ],
+      "tags": [
+       "pinetime"
+      ],
+      "title": "PineTime LCD Driver Notes",
+      "unixtime": 1579132800
+     },
+     "_blog_post_older": "{_root}blog/2020-01-15-deadpi/",
+     "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes\">2020-01-16 PineTime LCD Driver Notes </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes\"><div class=\"bloglink-date\">2020-01-16</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes/icon.jpg\"/><div class=\"bloglink-title\">PineTime LCD Driver Notes</div></a>\n",
+     "_dirname": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes",
+     "_filename": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+     "_flags": {
+      "_blog_post_body": {
+       "form": "markdown"
+      },
+      "body": {
+       "trim": "ends"
+      },
+      "bodywrap": {
+       "trim": "ends"
+      },
+      "crumb_slash": {
+       "trim": "ends"
+      },
+      "crumb_trap": {
+       "same": "append",
+       "trim": "ends"
+      },
+      "crumb_wrap": {
+       "trim": "ends"
+      },
+      "css": {
+       "same": "append"
+      },
+      "head": {
+       "trim": "ends"
+      },
+      "headjs": {
+       "same": "append"
+      },
+      "html": {
+       "trim": "ends"
+      },
+      "title": {
+       "trim": "ends"
+      }
+     },
+     "_root": "../../",
+     "_site": "{_root}",
+     "_sourcename": "blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+     "blog_list": "\n{_it._body}\n\n",
+     "body": "{_blog_post_body_one}",
+     "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+     "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+     "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+     "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+     "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+     "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+     "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+     "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+     "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+     "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+     "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+     "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+     "title": "{_blog_post_json.title}"
+    },
+    {
+     "_blog_json": {
+      "dir": "blog/.",
+      "feed": {
+       "title": "Title"
+      },
+      "posts_per_feed": 20,
+      "posts_per_page": 100,
+      "url": "/"
+     },
+     "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+     "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>I have successfully killed my first PI. This brings the dead hardware \ntotal of the <a href=\"https://github.com/xriss/timecake\">timecake</a> project to \n2, the other casualty is one of the watches.</p>\n<img src=\"{_dirname}/byebyepi.jpg\" width=\"100%\" />\n\n<p>That poor PIs light will never be lit again and the chip gets rather \nhot when you plug it in.</p>\n<p>I&#39;m not sure what killed the first watch it mostly still works but I \ncan not connect to the SWD pins, one of which seem to be shorted. So \nthey are both probably casualties of poking the wrong wire in the wrong \nplace.</p>\n<p>I had been reasonably careful with disconnecting the PI&#39;s power before \nconnecting the watch so I think the PI was killed by the watches \nbattery (I was testing the battery % and had it fully charged). This \nall goes to prove that I should solder some more reasonable connections \nto the watch before continuing.</p>\n<p>Luckily the project is in a working state, with the rom flashed to the \nwatch working as an actual watch. So I think we are going to take a \nlittle break from this hardware for a while and come back with some \nfresh enthusiasm and maybe buy another spare watch just in case. Like \nmost people I have a box of old PI&#39;s under the bed so that is \nnot a problem.</p>\n",
+     "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+     "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+     "_blog_post_json": {
+      "datedash": "2020-01-15",
+      "datetime": [
+       2020,
+       1,
+       15,
+       0,
+       0,
+       0
+      ],
+      "tags": [
+       "pinetime"
+      ],
+      "title": "DeadPi",
+      "unixtime": 1579046400
+     },
+     "_blog_post_newer": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/",
+     "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-01-15-deadpi\">2020-01-15 DeadPi </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-01-15-deadpi\"><div class=\"bloglink-date\">2020-01-15</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-01-15-deadpi/icon.jpg\"/><div class=\"bloglink-title\">DeadPi</div></a>\n",
+     "_dirname": "{_root}blog/2020-01-15-deadpi",
+     "_filename": "{_root}blog/2020-01-15-deadpi/index.html",
+     "_flags": {
+      "_blog_post_body": {
+       "form": "markdown"
+      },
+      "body": {
+       "trim": "ends"
+      },
+      "bodywrap": {
+       "trim": "ends"
+      },
+      "crumb_slash": {
+       "trim": "ends"
+      },
+      "crumb_trap": {
+       "same": "append",
+       "trim": "ends"
+      },
+      "crumb_wrap": {
+       "trim": "ends"
+      },
+      "css": {
+       "same": "append"
+      },
+      "head": {
+       "trim": "ends"
+      },
+      "headjs": {
+       "same": "append"
+      },
+      "html": {
+       "trim": "ends"
+      },
+      "title": {
+       "trim": "ends"
+      }
+     },
+     "_root": "../../",
+     "_site": "{_root}",
+     "_sourcename": "blog/2020-01-15-deadpi/index.html",
+     "blog_list": "\n{_it._body}\n\n",
+     "body": "{_blog_post_body_one}",
+     "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+     "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+     "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+     "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+     "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+     "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+     "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+     "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+     "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+     "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+     "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+     "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+     "title": "{_blog_post_json.title}"
+    }
+   ],
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "Title"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 100,
+    "url": "/"
+   },
+   "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<div class=\"model-container\" ><div class=\"model-view\"><babylon><model url=\"{_dirname}/{_blog_post_json.filename}.stl\"></babylon></div><div class=\"model-download\">\n<a href=\"{_dirname}/{_blog_post_json.filename}.stl\">Download STL file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.blend\">Download BLEND file</a>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a>\n</div></div>\n\n<p>Mr Bone man is upside down because it eases his passage through the \nbirth canal and into your dimensions.</p>\n<p>This is a test print from my Avatar generator, the mesh had to be \nmessed around with a bit, adding something to hold the hands and feet \nto the torso then bones needed thickening up in places and angles \nreduced in order to get it to print without needing support. Which is \nalso why the STL is upside down, that way it grows upwards like a \nbranching tree and mostly works perfectly until it gets to the feet \nwhich is just OK. It was printed with 2mm of support so the very top of \nthe head sticks to the build plate without being cut flat. The top of \nthe head is still slightly wonky and you need to pull the support hat \noff without breaking the neck but at least it prints.</p>\n<p>In the blender file you see some modifier tricks to get a mesh out that \ndoesn&#39;t crash slic3r using remesh and decimate. Makes the STL file huge \nand blender slow but the output is easier to slice. You can also choose \nbetween lowpoly or smooth by removing the initial subdivide modifier, I \nkinda like the low poly look in 3d prints but other people seem to \nprefer it smooth :)</p>\n<p>This is the <a href=\"{_dirname}/Slic3r_config_bundle.ini\">Slic3r config \nfiles</a> I used with an ender 3 pro. I&#39;ve not really had much luck \nwith support materials beyond using it to stick the first few layers to \nthe bed so that is how it is setup. Should take an hour and half to \nprint and if it goes wrong it will be right at the end when it gets to \nthe feet.</p>\n<img src=\"{_dirname}/photo.jpg\"/>\n\n<p>In other news after ripping a hole in my magnetic bed cover I&#39;ve \nfinally worked out how to use the glass bed. The secret is Pritt Stick, \nslap a bit of that on each time and prints will actually stick to the \nbed rather than start sliding around halfway through a print. Tried \nother suggested tricks but that is the only one that worked for me. Not \nsure needing glue with each print is an upgrade from the magnetic bed \ncover which I found much easier to use but at least it works now.</p>\n",
+   "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_json": {
+    "datedash": "2020-10-22",
+    "datetime": [
+     2020,
+     10,
+     22,
+     0,
+     0,
+     0
+    ],
+    "filename": "wetgenes_3dprint_mr_boneman",
+    "tags": [
+     "3dprint"
+    ],
+    "title": "3DPrint Mr Boneman",
+    "unixtime": 1603324800
+   },
+   "_blog_post_newer": "{_root}blog/2020-11-22-3dprint-cat-ball-feeder/",
+   "_blog_post_older": "{_root}blog/2020-09-12-3dprint-d4-numeric/",
+   "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-10-22-3dprint-mr-boneman\">2020-10-22 3DPrint Mr Boneman </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-10-22-3dprint-mr-boneman\"><div class=\"bloglink-date\">2020-10-22</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-10-22-3dprint-mr-boneman/icon.jpg\"/><div class=\"bloglink-title\">3DPrint Mr Boneman</div></a>\n",
+   "_dirname": "{_root}blog/2020-10-22-3dprint-mr-boneman",
+   "_filename": "{_root}blog/2020-10-22-3dprint-mr-boneman/index.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/2020-10-22-3dprint-mr-boneman/index.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+   "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+   "title": "{_blog_post_json.title}"
+  },
+  {
+   "_blog_export": [
+    {
+     "_blog_json": {
+      "dir": "blog/.",
+      "feed": {
+       "title": "Title"
+      },
+      "posts_per_feed": 20,
+      "posts_per_page": 100,
+      "url": "/"
+     },
+     "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+     "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>This is a (bad) video of interlaced update, so half the display updated \neach frame, just to give an idea of the speed.</p>\n<video width=\"100%\" autoplay loop muted>\n<source src=\"{_dirname}/timecake-interlace.mp4\" type=\"video/mp4\" />\n</video>\n\n<p>You can find the driver code here, \n<a href=\"https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c\">https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c</a> What \nfollows are some notes on why it does things the way it does.</p>\n<p>Fortunately we have a reasonable bit of documentation for the PineTime \nLCD driver, <a href=\"https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf\">https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf</a> It is \noverly verbose with only a few pages of useful information and I have \nread it through repeatedly. Unfortunately I could not see any way of \ndoing something clever, we are at the other end of a rather slow serial \ninterface with limited control over the format of data we can send \nacross. So bandwidth combined with the lack of display configuration \noptions is a real problem.</p>\n<p>The LCD has a 320x240 display buffer with 666 bits of RGB color output \nresolution, this buffer is used to drive the LCD hardware at 60-30fps. \nWe can send data into this buffer across the serial interface as 444, \n565 or 888 bits of RGB. Since we are mostly bound by the speed of \ntransfer, I recommend only using the 444 mode. Remember, even if you \nuse the 888 mode then it will be truncated to 666 bits before it is \ndisplayed. This may cause ugly banding unless pre dithered to 666 \ncolor.</p>\n<p>I attempted a 240x120, half resolution / double height pixels mode by \ntweaking the scroll registers every scan line. This seems impossible as \nwe do not have access to the blanking interrupt pin and even if we did \nthe documentation (and my tests) suggests that changes are ignored mid \nframe. Which is a shame as it would allow for faster and double \nbuffered full screen updates.</p>\n<p>There is still a double buffered mode we could use but it involves \nthrowing away 80 display lines of pixels. The LCD has a 320x240 buffer \non its end of the serial interface so by only displaying half of it at \nonce (160x240) we can update the other half of memory without changes \nbeing visible until we flip the screen using the scroll registers. I \ndid not consider this worthwhile as it would still only be able to \nmanage around 4fps, but it would be easy enough to add.</p>\n<p>So at best we can manage a few frames per second, lets say 4fps, for a \nfull screen update. Obviously we can double that with interleaved \nupdates but that&#39;s as good as it gets and we can not even double buffer \nthese full screen updates. They look more like wipes than animation \nflips.</p>\n<p>The actual display code ended up rather simple, we do not have enough \nRAM for fullscreen buffers on the CPU so we use a \n<a href=\"http://shadertoy.com/\">shadertoy</a> style system with a hook function \ncalled for each x,y pixel returning a 24bit color value, 0xrrggbb or -1 \nfor transparent. We even try and interleave the calls to this function \nwith the serial data transfer so we are using the time we would be \nwaiting for data to transmit to the LCD to work out what color the next \npixel will be. </p>\n<p>This allows us to craft simple functions that take an XY location and \nreturn an RGB color, these do not require any ram buffers as the data \nis sent immediately to the LCD.</p>\n<p>Finally an important note about hardware : One thing I did discover is \nthat using NRF_SPI0 to send data to the LCD means that we can not use \nNRF_TWIM0 to talk to the I2C devices since they both use the same \nhardware. Not a problem, it just means we have to use NRF_TWIM1 for the \nI2C devices. This is probably documented somewhere in the NRF52 chip \ndocumentation but I have no idea where and found it out the hard way.</p>\n",
+     "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+     "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+     "_blog_post_json": {
+      "datedash": "2020-01-16",
+      "datetime": [
+       2020,
+       1,
+       16,
+       0,
+       0,
+       0
+      ],
+      "tags": [
+       "pinetime"
+      ],
+      "title": "PineTime LCD Driver Notes",
+      "unixtime": 1579132800
+     },
+     "_blog_post_older": "{_root}blog/2020-01-15-deadpi/",
+     "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes\">2020-01-16 PineTime LCD Driver Notes </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes\"><div class=\"bloglink-date\">2020-01-16</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-01-16-pinetime-lcd-driver-notes/icon.jpg\"/><div class=\"bloglink-title\">PineTime LCD Driver Notes</div></a>\n",
+     "_dirname": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes",
+     "_filename": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+     "_flags": {
+      "_blog_post_body": {
+       "form": "markdown"
+      },
+      "body": {
+       "trim": "ends"
+      },
+      "bodywrap": {
+       "trim": "ends"
+      },
+      "crumb_slash": {
+       "trim": "ends"
+      },
+      "crumb_trap": {
+       "same": "append",
+       "trim": "ends"
+      },
+      "crumb_wrap": {
+       "trim": "ends"
+      },
+      "css": {
+       "same": "append"
+      },
+      "head": {
+       "trim": "ends"
+      },
+      "headjs": {
+       "same": "append"
+      },
+      "html": {
+       "trim": "ends"
+      },
+      "title": {
+       "trim": "ends"
+      }
+     },
+     "_root": "../../",
+     "_site": "{_root}",
+     "_sourcename": "blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+     "blog_list": "\n{_it._body}\n\n",
+     "body": "{_blog_post_body_one}",
+     "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+     "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+     "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+     "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+     "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+     "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+     "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+     "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+     "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+     "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+     "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+     "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+     "title": "{_blog_post_json.title}"
+    },
+    {
+     "_blog_json": {
+      "dir": "blog/.",
+      "feed": {
+       "title": "Title"
+      },
+      "posts_per_feed": 20,
+      "posts_per_page": 100,
+      "url": "/"
+     },
+     "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+     "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>I have successfully killed my first PI. This brings the dead hardware \ntotal of the <a href=\"https://github.com/xriss/timecake\">timecake</a> project to \n2, the other casualty is one of the watches.</p>\n<img src=\"{_dirname}/byebyepi.jpg\" width=\"100%\" />\n\n<p>That poor PIs light will never be lit again and the chip gets rather \nhot when you plug it in.</p>\n<p>I&#39;m not sure what killed the first watch it mostly still works but I \ncan not connect to the SWD pins, one of which seem to be shorted. So \nthey are both probably casualties of poking the wrong wire in the wrong \nplace.</p>\n<p>I had been reasonably careful with disconnecting the PI&#39;s power before \nconnecting the watch so I think the PI was killed by the watches \nbattery (I was testing the battery % and had it fully charged). This \nall goes to prove that I should solder some more reasonable connections \nto the watch before continuing.</p>\n<p>Luckily the project is in a working state, with the rom flashed to the \nwatch working as an actual watch. So I think we are going to take a \nlittle break from this hardware for a while and come back with some \nfresh enthusiasm and maybe buy another spare watch just in case. Like \nmost people I have a box of old PI&#39;s under the bed so that is \nnot a problem.</p>\n",
+     "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+     "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+     "_blog_post_json": {
+      "datedash": "2020-01-15",
+      "datetime": [
+       2020,
+       1,
+       15,
+       0,
+       0,
+       0
+      ],
+      "tags": [
+       "pinetime"
+      ],
+      "title": "DeadPi",
+      "unixtime": 1579046400
+     },
+     "_blog_post_newer": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/",
+     "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-01-15-deadpi\">2020-01-15 DeadPi </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-01-15-deadpi\"><div class=\"bloglink-date\">2020-01-15</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-01-15-deadpi/icon.jpg\"/><div class=\"bloglink-title\">DeadPi</div></a>\n",
+     "_dirname": "{_root}blog/2020-01-15-deadpi",
+     "_filename": "{_root}blog/2020-01-15-deadpi/index.html",
+     "_flags": {
+      "_blog_post_body": {
+       "form": "markdown"
+      },
+      "body": {
+       "trim": "ends"
+      },
+      "bodywrap": {
+       "trim": "ends"
+      },
+      "crumb_slash": {
+       "trim": "ends"
+      },
+      "crumb_trap": {
+       "same": "append",
+       "trim": "ends"
+      },
+      "crumb_wrap": {
+       "trim": "ends"
+      },
+      "css": {
+       "same": "append"
+      },
+      "head": {
+       "trim": "ends"
+      },
+      "headjs": {
+       "same": "append"
+      },
+      "html": {
+       "trim": "ends"
+      },
+      "title": {
+       "trim": "ends"
+      }
+     },
+     "_root": "../../",
+     "_site": "{_root}",
+     "_sourcename": "blog/2020-01-15-deadpi/index.html",
+     "blog_list": "\n{_it._body}\n\n",
+     "body": "{_blog_post_body_one}",
+     "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+     "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+     "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+     "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+     "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+     "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+     "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+     "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+     "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+     "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+     "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+     "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+     "title": "{_blog_post_json.title}"
+    }
+   ],
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "Title"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 100,
+    "url": "/"
+   },
+   "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<div class=\"model-container\" ><div class=\"model-view\"><babylon><model url=\"{_dirname}/{_blog_post_json.filename}.stl\"></babylon></div><div class=\"model-download\">\n<a href=\"{_dirname}/{_blog_post_json.filename}.stl\">Download STL file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.blend\">Download BLEND file</a>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a>\n</div></div>\n\n<p>Dice seem like a good first thing to 3D print, small/fast and they do \nhave an actual use. So this was one of the first things I experimented \nwith.</p>\n<p>The indent of the glyphs may seem a little deep (some of the numbers \nalmost intersect) but it really is necessary for useable legibility. \nFor extra legibility you could try and fill in the glyphs with another \nmaterial after printing.</p>\n<p>The blend file is setup to use instanced text objects to cut the \nletters into the main object. Which means you could adjust the \nfont/size/etc if you know how to blender. If you do not know how to \nblender then you want the STL file and will need to slice it yourself.</p>\n<p>I have an Ender 3 Pro loaded with PLA and I use <a href=\"https://slic3r.org/\">https://slic3r.org/</a> \nwith a layer height of 0.25mm which seems a good compromise between \nspeed and quality for a 0.4mm nozzle. </p>\n<p>From various test prints I discovered that you can actually get away \nhere with a 0% infill but a 100% infill seems best as it gives the die \na little bit of heft and helps to keep the weight balanced. </p>\n<p>I recommend not bothering with support or a raft just be extra careful \nwith bed calibration as it is very easy to squash the bottom layer into \nthe print bed rendering its numbers illegible.</p>\n",
+   "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_json": {
+    "datedash": "2020-09-12",
+    "datetime": [
+     2020,
+     9,
+     12,
+     0,
+     0,
+     0
+    ],
+    "filename": "wetgenes_3dprint_d4_numeric",
+    "tags": [
+     "3dprint"
+    ],
+    "title": "3DPrint D4 Numeric",
+    "unixtime": 1599868800
+   },
+   "_blog_post_newer": "{_root}blog/2020-10-22-3dprint-mr-boneman/",
+   "_body": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_root}blog/2020-09-12-3dprint-d4-numeric\">2020-09-12 3DPrint D4 Numeric </a></div>\n-->\n<a class=\"bloglink\" href=\"{_root}blog/2020-09-12-3dprint-d4-numeric\"><div class=\"bloglink-date\">2020-09-12</div><img class=\"bloglink-icon\" src=\"{_root}blog/2020-09-12-3dprint-d4-numeric/icon.jpg\"/><div class=\"bloglink-title\">3DPrint D4 Numeric</div></a>\n",
+   "_dirname": "{_root}blog/2020-09-12-3dprint-d4-numeric",
+   "_filename": "{_root}blog/2020-09-12-3dprint-d4-numeric/index.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/2020-09-12-3dprint-d4-numeric/index.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+   "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+   "title": "{_blog_post_json.title}"
+  }
+ ],
+ "_blog_json": {
+  "dir": "blog/.",
+  "feed": {
+   "title": "Title"
+  },
+  "posts_per_feed": 20,
+  "posts_per_page": 100,
+  "url": "/"
+ },
+ "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+ "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>This is a (bad) video of interlaced update, so half the display updated \neach frame, just to give an idea of the speed.</p>\n<video width=\"100%\" autoplay loop muted>\n<source src=\"{_dirname}/timecake-interlace.mp4\" type=\"video/mp4\" />\n</video>\n\n<p>You can find the driver code here, \n<a href=\"https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c\">https://github.com/xriss/timecake/blob/master/src/sys/lcd_pine.c</a> What \nfollows are some notes on why it does things the way it does.</p>\n<p>Fortunately we have a reasonable bit of documentation for the PineTime \nLCD driver, <a href=\"https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf\">https://wiki.pine64.org/images/5/54/ST7789V_v1.6.pdf</a> It is \noverly verbose with only a few pages of useful information and I have \nread it through repeatedly. Unfortunately I could not see any way of \ndoing something clever, we are at the other end of a rather slow serial \ninterface with limited control over the format of data we can send \nacross. So bandwidth combined with the lack of display configuration \noptions is a real problem.</p>\n<p>The LCD has a 320x240 display buffer with 666 bits of RGB color output \nresolution, this buffer is used to drive the LCD hardware at 60-30fps. \nWe can send data into this buffer across the serial interface as 444, \n565 or 888 bits of RGB. Since we are mostly bound by the speed of \ntransfer, I recommend only using the 444 mode. Remember, even if you \nuse the 888 mode then it will be truncated to 666 bits before it is \ndisplayed. This may cause ugly banding unless pre dithered to 666 \ncolor.</p>\n<p>I attempted a 240x120, half resolution / double height pixels mode by \ntweaking the scroll registers every scan line. This seems impossible as \nwe do not have access to the blanking interrupt pin and even if we did \nthe documentation (and my tests) suggests that changes are ignored mid \nframe. Which is a shame as it would allow for faster and double \nbuffered full screen updates.</p>\n<p>There is still a double buffered mode we could use but it involves \nthrowing away 80 display lines of pixels. The LCD has a 320x240 buffer \non its end of the serial interface so by only displaying half of it at \nonce (160x240) we can update the other half of memory without changes \nbeing visible until we flip the screen using the scroll registers. I \ndid not consider this worthwhile as it would still only be able to \nmanage around 4fps, but it would be easy enough to add.</p>\n<p>So at best we can manage a few frames per second, lets say 4fps, for a \nfull screen update. Obviously we can double that with interleaved \nupdates but that&#39;s as good as it gets and we can not even double buffer \nthese full screen updates. They look more like wipes than animation \nflips.</p>\n<p>The actual display code ended up rather simple, we do not have enough \nRAM for fullscreen buffers on the CPU so we use a \n<a href=\"http://shadertoy.com/\">shadertoy</a> style system with a hook function \ncalled for each x,y pixel returning a 24bit color value, 0xrrggbb or -1 \nfor transparent. We even try and interleave the calls to this function \nwith the serial data transfer so we are using the time we would be \nwaiting for data to transmit to the LCD to work out what color the next \npixel will be. </p>\n<p>This allows us to craft simple functions that take an XY location and \nreturn an RGB color, these do not require any ram buffers as the data \nis sent immediately to the LCD.</p>\n<p>Finally an important note about hardware : One thing I did discover is \nthat using NRF_SPI0 to send data to the LCD means that we can not use \nNRF_TWIM0 to talk to the I2C devices since they both use the same \nhardware. Not a problem, it just means we have to use NRF_TWIM1 for the \nI2C devices. This is probably documented somewhere in the NRF52 chip \ndocumentation but I have no idea where and found it out the hard way.</p>\n",
+ "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
+ "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+ "_blog_post_json": {
+  "datedash": "2020-01-16",
+  "datetime": [
+   2020,
+   1,
+   16,
+   0,
+   0,
+   0
+  ],
+  "tags": [
+   "pinetime"
+  ],
+  "title": "PineTime LCD Driver Notes",
+  "unixtime": 1579132800
+ },
+ "_blog_post_newer": "{_root}blog/2020-09-12-3dprint-d4-numeric/",
+ "_blog_post_older": "{_root}blog/2020-01-15-deadpi/",
+ "_dirname": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes",
+ "_filename": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+ "_flags": {
+  "_blog_post_body": {
+   "form": "markdown"
+  },
+  "body": {
+   "trim": "ends"
+  },
+  "bodywrap": {
+   "trim": "ends"
+  },
+  "crumb_slash": {
+   "trim": "ends"
+  },
+  "crumb_trap": {
+   "same": "append",
+   "trim": "ends"
+  },
+  "crumb_wrap": {
+   "trim": "ends"
+  },
+  "css": {
+   "same": "append"
+  },
+  "head": {
+   "trim": "ends"
+  },
+  "headjs": {
+   "same": "append"
+  },
+  "html": {
+   "trim": "ends"
+  },
+  "title": {
+   "trim": "ends"
+  }
+ },
+ "_output_chunkname": "html",
+ "_output_filename": "blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+ "_root": "../../",
+ "_site": "{_root}",
+ "_sourcename": "blog/2020-01-16-pinetime-lcd-driver-notes/index.html",
+ "blog_list": "\n{_it._body}\n\n",
+ "body": "{_blog_post_body_one}",
+ "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+ "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+ "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_dirname}\">{_blog_post_json.datedash||}</a>",
+ "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+ "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n\theight: 100px;\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\ntable tr {\n\tbackground-color: #fff;\n\tborder-top:1px solid #888;\n}\n\ntable tr:nth-child(odd) td,\ntable td:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable tr:nth-child(odd) td:nth-child(2n) {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th {\n    background-color: #fff;\n}\n\ntable tr:nth-child(odd) th:nth-child(2n) {\n    background-color: #ccc;\n}\n\ntable td, table th {\n    padding: 15px 10px;\n    border: 1px solid #888;\n    border-radius:6px;\n}\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+ "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+ "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"http://cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+ "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+ "link_newer_page": "\n<div style=\"text-align:right\"><a href=\"{_it}\">newer posts</a></div>\n\n",
+ "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">newer post</a>\n\n",
+ "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">older posts</a></div>\n\n",
+ "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">older post</a>\n\n",
+ "title": "{_blog_post_json.title}"
+}

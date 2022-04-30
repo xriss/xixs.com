@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>BADONKADONK - #Bradford #Game #Dev #Donk</title>
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+	height: 100px;
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+table tr {
+	background-color: #fff;
+	border-top:1px solid #888;
+}
+
+table tr:nth-child(odd) td,
+table td:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table tr:nth-child(odd) td:nth-child(2n) {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th {
+    background-color: #fff;
+}
+
+table tr:nth-child(odd) th:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table td, table th {
+    padding: 15px 10px;
+    border: 1px solid #888;
+    border-radius:6px;
+}
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+html {
+	font-size:16px;
+}
+
+a:link, a:visited, a:hover, a:active {text-decoration:none;}
+
+html				{background:url('../badonkadonk/bad_logo.png')center center no-repeat fixed, #000; background-size:cover;}
+.cake_bars_wrap		{display:none;}
+body				{width:100%; height:100%; background-color:transparent; font-family:monospace; font-size:12px;}
+.cake_body			{width:100%; height:100%; position:relative;}
+.default			{width:960px; margin:0 auto; text-align:center;}
+.default.dont		{padding:20px 0; margin-top:60px; color:#fff; text-shadow:1px 1px 0px rgba(0,0,0,1); width:100%; background:url('../badonkadonk/purps_back.png')repeat-x bottom; min-height:250px;}
+
+p					{padding:10px 0;}
+.box a.contact		{color:#539DFF;}
+
+.alert				{display:block; width:100%; padding:10px 0; margin:0 auto; background-color:#b72f24; color:#fff; font-weight:bold; text-align:center; font-size:20px;}
+
+table.notes			{width:1240px; margin:0 auto; padding-top:40px; table-layout:fixed;}
+table.notes td		{padding-bottom:15px; padding-right:0; vertical-align:top; box-sizing:border-box;}
+table.notes td.last	{padding-right:0;}
+table.notes td.greet	{padding-right:0;}
+.box				{width:400px; padding:40px 20px; color:#fff; box-sizing:border-box; margin:0 auto;}
+
+.box.d				{background-color:rgba(0,0,0,0.8); width:810px; padding:20px;}
+.box.e				{background-color:rgba(47,47,60,0.7); padding:20px;}
+
+.box.x				{width:100%; font-size:1.6em; line-height:1.45em; padding:40px 120px;}
+.box.x div			{text-align:center; margin-bottom:40px;}
+.box.y				{padding:20px; font-size:1.2em; line-height:1.45em;}
+
+.box a				{color:#DBFF00;}
+.box.d a			{color:#539DFF; font-size:1.2em; line-height:1.45em;}
+.box span			{color:#ff3f8b; font-weight:bold; font-size:1.05em;}
+
+.box.d a.get		{display:block; padding:10px; background-color:#ff00ff; color:#000; text-align:center; font-size:1.3em;}
+.box.d a.get.s		{background-color:#37BEFF;}
+.box.d a.get:hover	{text-decoration:none; background-color:#DBFF00;}
+
+p i					{font-size:0.8em; font-style:italic;}
+
+.cal				{position:absolute; right:0; opacity:0.85;}
+
+.dont span			{width:80%; display:block; margin:0 auto;}
+
+
+.twerp 				{position:fixed; top:0; left:0; width:0; height:0; border-top:900px solid rgba(0,0,0,1); border-right:900px solid transparent; z-index:-1;}
+
+a.hello				{display:inline-block; padding:20px; color:#FFF; background-color:#070707; margin-top:40px;}
+a.hello:hover		{background-color:#44265F; text-decoration:none;}
+
+twitterwidget		{width:300px; max-width:300px;}
+
+.banner				{width:820px; padding:8px;}
+
+@media screen and (max-width:1024px) {
+html	{background-attachment: fixed; background-image:url('../badonkadonk/bad_logo.png');  background-position:center center; background-repeat:no-repeat;}
+body	{font-size:24px;}
+.cake_body			{max-width:100%;}
+table.notes td		{display:block; width:960px; padding-right:0;}
+.box, .box.d		{width:960px; padding:40px 20px; margin:0 auto;}
+.box.c iframe		{width:100%; height:960px;}
+.cal iframe			{width:100%; height:170px;}
+.box iframe			{width:100%; height:960px;}
+
+.box.x				{padding:40px 60px;}
+
+
+table.notes			{width:100%; margin:auto; table-layout:fixed; padding-top:200px;}
+.cal				{display:block; width:100%;}
+p					{padding:40px 0; line-height:1.4em; font-size:1.0em;}
+div img				{width:100%;}
+.box.d a.get		{font-size:0.6em;}
+.dont span			{font-size:1.2em;}
+
+.banner				{width:100%; padding:0;}
+.banner	img			{width:100%;}
+}
+
+</style></head>
+<body>
+<div class="alert">We are, of course, on hold during Da'Rona and have no idea when we will return.</div>
+
+
+<div class="cal">
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=200&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=n1nuse2f649go98jelmr47jf9c%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=Europe%2FLondon" style="border:solid 1px #777" width="250" height="200" frameborder="0" scrolling="no"></iframe>
+</div>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="https://platform.vine.co/static/scripts/embed.js"></script>
+
+<table class="notes">
+	<tr>
+	<td colspan="3" class="greet">
+		<div class="box x">
+			<div><img src="../badonkadonk/web_banner.png"/></div>
+			A chillaxed 2 hour get together in a pub for game creators in the Bradford area to play each others games (finished digital to paper prototypes to fully realised tabletop games), get face-to-face feedback and general tomfoolery.
+
+			<p>The format is flexible and anyone can show up as long as they are making (or would like to maek) games.</p>
+			<p><a href="https://www.google.co.uk/maps/place/The+Turls+Green/@53.7930896,-1.7547897,15z/data=!4m2!3m1!1s0x0:0xe08c189273d467ae?sa=X&ved=0ahUKEwi56pu3gLjSAhWsCsAKHbRWD28Q_BIIcDAK">Every 2nd Wednesday of the Month, 7-9pm upstairs at The Turls Green. (see map)</a></p>
+			<p><a href="http://twitter.com/wetgenes" class="contact">@wetgenes</a> <a href="https://twitter.com/hashtag/bddonk?src=hash"><span>#BDdonk</span></a>
+			<a href="https://calendar.google.com/calendar/embed?src=n1nuse2f649go98jelmr47jf9c%40group.calendar.google.com&ctz=Europe/London">Calendar!</a>
+			</p>
+		</div>
+	</td>
+</tr>
+
+	<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/001.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/002.jpg" width="360"/>
+			</div>
+		</td>
+		<td class="last">
+			<div class="box e">
+				<img src="../badonkadonk/003.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/004.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/005.jpg" width="360"/>
+			</div>
+		</td>
+		<td class="last">
+			<div class="box e">
+				<img src="../badonkadonk/006.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/101.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/102.jpg" width="360"/>
+			</div>
+		</td>
+		<td class="last">
+			<div class="box e">
+				<img src="../badonkadonk/103.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/113.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/105.jpg" width="360"/>
+			</div>
+		</td>
+		<td class="last">
+			<div class="box e">
+				<img src="../badonkadonk/106.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+		<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/107.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/108.jpg" width="360"/>
+			</div>
+		</td>
+		<td class="last">
+			<div class="box e">
+				<img src="../badonkadonk/109.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/110.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/111.jpg" width="360"/>
+			</div>
+		</td>
+		<td rowspan="3" class="last">
+	<div class="box y">
+		<p>The act of games creation demands a serious amount of hard brain thinking and tinkering, mostly indoors, looking at neon screens between stacks (&amp; stacks) of graph paper and empty ramen cups. This makes games development rather lonely work despite it being the most engaging and interactive of all mediums invented by humankind.</p>
+		<p><span>badonkadonk</span> tries to be a casual meetup where creators can be amongst other creators, whilst creating. for when you want feedback from peers about your recent ludum dare, share your latest monster creation, found sound effects, PnP demos or just comparing pathway algorithms, talk shop, play each others' games or just eat bad pub food together. Also, we're curious and want to know who else is out there making stuff.</p>
+		<p>We're just people who love making games/things/gaems/stuff/gmase!</p>
+		<p>Even if no one turns up, the <a href="http://twitter.com/wetgenes">organ</a> <a href="http://twitter.com/shi">isers</a> <i>(yup, that's us below)</i> should always be present. Except for yog - he guards the house when we're away.</p>
+		<p><img src="../badonkadonk/wetgenes.jpg" width="300"></p>
+		<p><span>make gaems or die tryin.</span></p>
+	</div>
+</td>
+
+	</tr>
+	<tr>
+		<td rowspan="2">
+			<div class="box e">
+				<img src="../badonkadonk/hotdog.jpg" width="360"/>
+			</div>
+		</td>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/vine2.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="box e">
+				<img src="../badonkadonk/vine4.jpg" width="360"/>
+			</div>
+		</td>
+	</tr>
+	<!--<tr>
+		<td colspan="2"><div class="banner"><img src="../badonkadonk/lulz.png" width="812"/></div></td>
+	</tr>-->
+</table>
+<div class="default dont"><span>WE'RE PRETTY RELAXED &amp; ANYTHING GOES BUT DON'T BE A DOUCHECANOE. NO ONE LIKES A DOUCHECANOE.</span><a href="mailto:bddonk-join@wetgenes.com" class="hello">Join the mailing list to get notified when (&amp; where) the next meetup happens!</a>
+</div>
+
+
+</body>
+</html>
