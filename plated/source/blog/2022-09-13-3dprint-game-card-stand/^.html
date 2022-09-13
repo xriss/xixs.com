@@ -1,0 +1,45 @@
+
+#^_blog_post_json
+
+{
+	
+	"title":"3DPrint Game card stand",
+	"tags":["3dprint"],
+	
+	"filename":"wetgenes-3dprint-gamecard-stand",
+
+}
+
+#^title trim=ends
+{_blog_post_json.title}
+
+#^_blog_post_body form=markdown
+
+{title}
+-------
+
+<div class="model-container" ><div class="model-view"><babylon><model url="{_dirname}/{_blog_post_json.filename}.stl"></babylon></div><div class="model-download">
+<a href="{_dirname}/{_blog_post_json.filename}.gcode">Download GCODE file</a>
+<a href="{_dirname}/{_blog_post_json.filename}.stl">Download STL file</a>
+<a href="{_dirname}/{_blog_post_json.filename}.blend">Download BLEND file</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+</div></div>
+
+Card stands like these seem hard to buy if you want a certain size or 
+shape or color. Mostly there seems to only be one style available at a 
+reasonable price at any one time. So I just made one I could print and 
+tweak.
+
+Having a V shaped crevice the bottom part of which clamps and holds 
+onto playing cards. You might need to tweak this blend file as I just 
+did it by trial and error with the minimum distance apart I could get 
+away with printing before it stuck together and that took a fair few 
+tries.
+
+<img src="{_dirname}/photo.jpg"/>
+
+It should print OK without any supports and in batches as it is laying 
+on its side with each layer exactly the same.
+
+I've included a gcode as how its sliced is pretty important for the 
+grip and fit. This works with my default ender 3 pro and generic PLA.
