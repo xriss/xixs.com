@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8">
-<title>Welcome to XIXs.com</title>
+<title>3DPrint Game card stand</title>
 <script>
 (function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
 return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
@@ -11,6 +11,10 @@ c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript")
 function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
 return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
 return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("http://cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
 </script>
 <style>
 
@@ -298,34 +302,47 @@ li {
 }
 
 </style></head>
-<body><div class="crumb-wrap"><a class="crumb" href="./">XIXs</a></div><div class="main"><h1 id="title">Welcome to XIXs.com</h1>
-<p>This is the peculiar domain of Kriss</p>
-<p>I will be your eyes and hands. Direct me with commands of 1 or 2 words. 
-I should warn you that I look at only the first five letters of each 
-word and often misunderstand them, on porpoise.</p>
-<p>Posts can be found <a href="./blog/">at Blog</a><br>Twats can be found <a href="https://twitter.com/wetgenes">@Wetgenes</a><br>Gits can be found <a href="https://github.com/xriss/">at github</a><br>News can be found <a href="http://wetgenes.com/">at WetGenes.com</a></p>
-<p>SiteMap:</p>
-<ol>
-<li><pre><code>[Blog](./blog)
-</code></pre>
-<ol start="2">
-<li><pre><code>[Badonkadonk](./badonkadonk)
-</code></pre>
-<ol start="3">
-<li><pre><code>[Agincards](./agincards)
-</code></pre>
-<ol start="4">
-<li><pre><code>[WetIce](./wetice)
-</code></pre>
-<br/>
-<br/>
-<br/></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+<body><div class="crumb-wrap"><a class="crumb" href="../../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../../blog">Blog</a><span class="crumb-slash">/</span><a href="../../blog/2022-09-13-3dprint-game-card-stand">2022-09-13</a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../../blog/2020-11-22-3dprint-cat-ball-feeder/">older post</a>
+
+  </div>
+<div class="blogpost"><h2 id="title">3DPrint Game card stand</h2>
+<div class="model-container" ><div class="model-view"><babylon><model url="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-gamecard-stand.stl"></babylon></div><div class="model-download">
+<a href="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-gamecard-stand.gcode">Download GCODE file</a>
+<a href="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-gamecard-stand.stl">Download STL file</a>
+<a href="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-gamecard-stand.blend">Download BLEND file</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+</div></div>
+
+<p>Card stands like these seem hard to buy if you want a certain size or 
+shape or color. Mostly there seems to only be one style available at a 
+reasonable price at any one time. So I just made one I could print and 
+tweak.</p>
+<p>Having a V shaped crevice the bottom part of which clamps and holds 
+onto playing cards. You might need to tweak this blend file as I just 
+did it by trial and error with the minimum distance apart I could get 
+away with printing before it stuck together and that took a fair few 
+tries.</p>
+<img src="../../blog/2022-09-13-3dprint-game-card-stand/photo.jpg"/>
+
+<p>It should print OK without any supports and in batches as it is laying 
+on its side with each layer exactly the same.</p>
+<p>I&#39;ve included a gcode as how its sliced is pretty important for the 
+grip and fit. This works with my default ender 3 pro and generic PLA.</p>
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../../blog/2020-11-22-3dprint-cat-ball-feeder/">older post</a>
+
+  </div>
+<div class="utter_wrap">
+<script src="https://utteranc.es/client.js"
+        repo="xriss/xixs.com"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
 </div></body>
 </html>

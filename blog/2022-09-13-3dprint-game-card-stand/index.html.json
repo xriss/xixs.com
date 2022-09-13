@@ -1093,30 +1093,29 @@
   "url": "/"
  },
  "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
- "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<div class=\"model-container\" ><div class=\"model-view\"><babylon><model url=\"{_dirname}/{_blog_post_json.filename}.stl\"></babylon></div><div class=\"model-download\">\n<a href=\"{_dirname}/{_blog_post_json.filename}.stl\">Download STL file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.blend\">Download BLEND file</a>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a>\n</div></div>\n\n<p>Dice seem like a good first thing to 3D print, small/fast and they do \nhave an actual use. So this was one of the first things I experimented \nwith.</p>\n<p>The indent of the glyphs may seem a little deep (some of the numbers \nalmost intersect) but it really is necessary for useable legibility. \nFor extra legibility you could try and fill in the glyphs with another \nmaterial after printing.</p>\n<p>The blend file is setup to use instanced text objects to cut the \nletters into the main object. Which means you could adjust the \nfont/size/etc if you know how to blender. If you do not know how to \nblender then you want the STL file and will need to slice it yourself.</p>\n<p>I have an Ender 3 Pro loaded with PLA and I use <a href=\"https://slic3r.org/\">https://slic3r.org/</a> \nwith a layer height of 0.25mm which seems a good compromise between \nspeed and quality for a 0.4mm nozzle. </p>\n<p>From various test prints I discovered that you can actually get away \nhere with a 0% infill but a 100% infill seems best as it gives the die \na little bit of heft and helps to keep the weight balanced. </p>\n<p>I recommend not bothering with support or a raft just be extra careful \nwith bed calibration as it is very easy to squash the bottom layer into \nthe print bed rendering its numbers illegible.</p>\n",
+ "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<div class=\"model-container\" ><div class=\"model-view\"><babylon><model url=\"{_dirname}/{_blog_post_json.filename}.stl\"></babylon></div><div class=\"model-download\">\n<a href=\"{_dirname}/{_blog_post_json.filename}.gcode\">Download GCODE file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.stl\">Download STL file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.blend\">Download BLEND file</a>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a>\n</div></div>\n\n<p>Card stands like these seem hard to buy if you want a certain size or \nshape or color. Mostly there seems to only be one style available at a \nreasonable price at any one time. So I just made one I could print and \ntweak.</p>\n<p>Having a V shaped crevice the bottom part of which clamps and holds \nonto playing cards. You might need to tweak this blend file as I just \ndid it by trial and error with the minimum distance apart I could get \naway with printing before it stuck together and that took a fair few \ntries.</p>\n<img src=\"{_dirname}/photo.jpg\"/>\n\n<p>It should print OK without any supports and in batches as it is laying \non its side with each layer exactly the same.</p>\n<p>I&#39;ve included a gcode as how its sliced is pretty important for the \ngrip and fit. This works with my default ender 3 pro and generic PLA.</p>\n",
  "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
  "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
  "_blog_post_json": {
-  "datedash": "2020-09-12",
+  "datedash": "2022-09-13",
   "datetime": [
-   2020,
+   2022,
    9,
-   12,
+   13,
    0,
    0,
    0
   ],
-  "filename": "wetgenes_3dprint_d4_numeric",
+  "filename": "wetgenes-3dprint-gamecard-stand",
   "tags": [
    "3dprint"
   ],
-  "title": "3DPrint D4 Numeric",
-  "unixtime": 1599868800
+  "title": "3DPrint Game card stand",
+  "unixtime": 1663027200
  },
- "_blog_post_newer": "{_root}blog/2020-10-22-3dprint-mr-boneman/",
- "_blog_post_older": "{_root}blog/2020-01-16-pinetime-lcd-driver-notes/",
- "_dirname": "{_root}blog/2020-09-12-3dprint-d4-numeric",
- "_filename": "{_root}blog/2020-09-12-3dprint-d4-numeric/index.html",
+ "_blog_post_older": "{_root}blog/2020-11-22-3dprint-cat-ball-feeder/",
+ "_dirname": "{_root}blog/2022-09-13-3dprint-game-card-stand",
+ "_filename": "{_root}blog/2022-09-13-3dprint-game-card-stand/index.html",
  "_flags": {
   "_blog_post_body": {
    "form": "markdown"
@@ -1154,10 +1153,10 @@
   }
  },
  "_output_chunkname": "html",
- "_output_filename": "blog/2020-09-12-3dprint-d4-numeric/index.html",
+ "_output_filename": "blog/2022-09-13-3dprint-game-card-stand/index.html",
  "_root": "../../",
  "_site": "{_root}",
- "_sourcename": "blog/2020-09-12-3dprint-d4-numeric/index.html",
+ "_sourcename": "blog/2022-09-13-3dprint-game-card-stand/index.html",
  "blog_list": "\n{_it._body}\n\n",
  "body": "{_blog_post_body_one}",
  "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
