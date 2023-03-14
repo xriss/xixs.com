@@ -1,0 +1,88 @@
+
+#^_blog_post_json
+{
+	"title":"I made A RSS for myself.",
+	"author":"kriss",
+	tags:[],
+}
+
+#^title trim=ends
+{_blog_post_json.title}
+
+#^_blog_post_body form=markdown
+
+{title}
+-------
+
+<img src="{_dirname}/arss_shot.jpg" width="100%" />
+
+Before RSS I used to read Live Journal, before that it was CIX and 
+before that it was FidoNet with maybe a little bit of Usenet thrown in 
+around the edges. I have been reading the Internets for a very long 
+time.
+
+It has now been ten years since google announced they where shutting down google
+reader signalling the end of RSS as a thing you could rely on and I never
+really found a replacement apart from being annoyed at twitter.
+
+I mean obviously RSS didn't just stop working overnight but it no 
+longer felt like it stood a chance of getting better. From here on in 
+it was only going to get worse, no one big was pushing it and it would 
+suffer a slow painful death.
+
+Which is exactly what happened, it is pretty easy to find big sites now that do
+not provide any RSS feeds of their content and I forget when I last saw a site
+proudly displaying an RSS icon.
+
+Now google reader wasn't the best but it was less terrible than anything else.
+Many readers are more book mark managers or email clients that have had some
+RSS tacked on. I'm not interested in any of these things, I want that endless
+doom scroll that I have been used to for decades.
+
+So, I figure I'm gonna have to build it myself.
+
+I present for you, my A RSS reader and invite you to join me. Go back 
+into the water, live there, die there.
+
+https://github.com/xriss/arss
+
+ARSS Provides a column of endless scrolling and a quick site preview in 
+an iframe right next to it, you never have to click anything just 
+doomscroll and doomread like baby jebus intended.
+
+You got problems, open up an issue on github, you don't got problems 
+then jump right in at https://xriss.github.io/arss/ and import an OPML
+
+Also because we are just a web page we can hot link direct to RSS feeds for a quick
+view like
+https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ
+or like
+https://xriss.github.io/arss/?idb=delete&opml=http://feeds.bbci.co.uk/news/rss.xml#READ
+
+This is a client side application, running dynamical in a web page with no real
+server backend. 
+
+Except, well security theatre is a bitch and we are currently using a CORS
+bouncer to get around web browser issues.
+
+Note that these are not technical issues, everything we are doing is pretty
+simple, these are self induced security restrictions implemented by browsers to
+stop "bad guys" from doing "bad things" unfortunately "bad guy" just means "not
+google" or "not facebook" who get to do all the evil they want.
+
+Think cookie popups, well meaning but ultimately bullshit and with no way to
+opt out of the "solution".
+
+I think we can hack around this some more to remove the CORS bouncer and use a
+browser extension instead but this will obviously be even less user friendly
+than the current solution.
+
+Until then I am happy with the current state, it uses client side 
+databases for caching and even lets you keep your feeds in a gist as a 
+simple persistent login system. Yeah its a bit technical to do that but 
+if you want to read A RSS Feed then you are already in the top tech 
+1%ers :)
+
+
+
+
