@@ -8231,11 +8231,32 @@
   "url": "https://xixs.com/"
  },
  "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+ "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<img src=\"{_dirname}/arss_shot.jpg\" width=\"100%\" />\n\n<p>Before RSS I used to read Live Journal, before that it was CIX and \nbefore that it was FidoNet with maybe a little bit of Usenet thrown in \naround the edges. I have been reading the Internets for a very long \ntime.</p>\n<p>It has now been ten years since google announced they where shutting down google\nreader signalling the end of RSS as a thing you could rely on and I never\nreally found a replacement apart from being annoyed at twitter.</p>\n<p>I mean obviously RSS didn&#39;t just stop working overnight but it no \nlonger felt like it stood a chance of getting better. From here on in \nit was only going to get worse, no one big was pushing it and it would \nsuffer a slow painful death.</p>\n<p>Which is exactly what happened, it is pretty easy to find big sites now that do\nnot provide any RSS feeds of their content and I forget when I last saw a site\nproudly displaying an RSS icon.</p>\n<p>Now google reader wasn&#39;t the best but it was less terrible than anything else.\nMany readers are more book mark managers or email clients that have had some\nRSS tacked on. I&#39;m not interested in any of these things, I want that endless\ndoom scroll that I have been used to for decades.</p>\n<p>So, I figure I&#39;m gonna have to build it myself.</p>\n<p>I present for you, my A RSS reader and invite you to join me. Go back \ninto the water, live there, die there.</p>\n<p><a href=\"https://github.com/xriss/arss\">https://github.com/xriss/arss</a></p>\n<p>ARSS Provides a column of endless scrolling and a quick site preview in \nan iframe right next to it, you never have to click anything just \ndoomscroll and doomread like baby jebus intended.</p>\n<p>You got problems, open up an issue on github, you don&#39;t got problems \nthen jump right in at <a href=\"https://xriss.github.io/arss/\">https://xriss.github.io/arss/</a> and import an OPML</p>\n<p>Also because we are just a web page we can hot link direct to RSS feeds for a quick\nview like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a>\nor like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=http://feeds.bbci.co.uk/news/rss.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=http://feeds.bbci.co.uk/news/rss.xml#READ</a></p>\n<p>This is a client side application, running dynamical in a web page with no real\nserver backend. </p>\n<p>Except, well security theatre is a bitch and we are currently using a CORS\nbouncer to get around web browser issues.</p>\n<p>Note that these are not technical issues, everything we are doing is pretty\nsimple, these are self induced security restrictions implemented by browsers to\nstop &quot;bad guys&quot; from doing &quot;bad things&quot; unfortunately &quot;bad guy&quot; just means &quot;not\ngoogle&quot; or &quot;not facebook&quot; who get to do all the evil they want.</p>\n<p>Think cookie popups, well meaning but ultimately bullshit and with no way to\nopt out of the &quot;solution&quot;.</p>\n<p>I think we can hack around this some more to remove the CORS bouncer and use a\nbrowser extension instead but this will obviously be even less user friendly\nthan the current solution.</p>\n<p>Until then I am happy with the current state, it uses client side \ndatabases for caching and even lets you keep your feeds in a gist as a \nsimple persistent login system. Yeah its a bit technical to do that but \nif you want to read A RSS Feed then you are already in the top tech \n1%ers :)\n<br/>\n<br/>\n<br/>\n<br/></p>\n",
  "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
  "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
- "_dirname": "{_root}blog",
- "_filename": "{_root}blog",
+ "_blog_post_json": {
+  "author": "kriss",
+  "datedash": "2023-03-14",
+  "datetime": [
+   2023,
+   3,
+   14,
+   0,
+   0,
+   0
+  ],
+  "tags": [
+  ],
+  "title": "I made A RSS for myself.",
+  "unixtime": 1678752000
+ },
+ "_blog_post_older": "{_root}blog/2022-09-13-3dprint-game-card-stand/",
+ "_dirname": "{_root}blog/2023-03-14-i-made-a-rss-for-myself",
+ "_filename": "{_root}blog/2023-03-14-i-made-a-rss-for-myself",
  "_flags": {
+  "_blog_post_body": {
+   "form": "markdown"
+  },
   "body": {
    "trim": "ends"
   },
@@ -8268,10 +8289,10 @@
    "trim": "ends"
   }
  },
- "_output_filename": "blog/",
- "_root": "../",
+ "_output_filename": "blog/2023-03-14-i-made-a-rss-for-myself/",
+ "_root": "../../",
  "_site": "{_root}",
- "_sourcename": "blog/.",
+ "_sourcename": "blog/2023-03-14-i-made-a-rss-for-myself/.",
  "blog_list": "\n{_it._body}\n\n",
  "body": "Body is missing.",
  "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
@@ -8286,5 +8307,5 @@
  "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
  "link_older_page": "\n<div style=\"text-align:left\"><a href=\"{_it}\">&lt;olds&lt;</a></div>\n\n",
  "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
- "title": "Welcome to blog!"
+ "title": "{_blog_post_json.title}"
 }
