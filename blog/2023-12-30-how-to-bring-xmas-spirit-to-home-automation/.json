@@ -9405,30 +9405,28 @@
   "url": "https://xixs.com/"
  },
  "_blog_page_body": "\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
- "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<div class=\"model-container\" ><div class=\"model-view\"><babylon><model url=\"{_dirname}/{_blog_post_json.filename}.stl\"></babylon></div><div class=\"model-download\">\n<a href=\"{_dirname}/{_blog_post_json.filename}.stl\">Download STL file</a>\n<a href=\"{_dirname}/{_blog_post_json.filename}.blend\">Download BLEND file</a>\n<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a>\n</div></div>\n\n<p>Mr Bone man is upside down because it eases his passage through the \nbirth canal and into your dimensions.</p>\n<p>This is a test print from my Avatar generator, the mesh had to be \nmessed around with a bit, adding something to hold the hands and feet \nto the torso then bones needed thickening up in places and angles \nreduced in order to get it to print without needing support. Which is \nalso why the STL is upside down, that way it grows upwards like a \nbranching tree and mostly works perfectly until it gets to the feet \nwhich is just OK. It was printed with 2mm of support so the very top of \nthe head sticks to the build plate without being cut flat. The top of \nthe head is still slightly wonky and you need to pull the support hat \noff without breaking the neck but at least it prints.</p>\n<p>In the blender file you see some modifier tricks to get a mesh out that \ndoesn&#39;t crash slic3r using remesh and decimate. Makes the STL file huge \nand blender slow but the output is easier to slice. You can also choose \nbetween lowpoly or smooth by removing the initial subdivide modifier, I \nkinda like the low poly look in 3d prints but other people seem to \nprefer it smooth :)</p>\n<p>This is the <a href=\"{_dirname}/Slic3r_config_bundle.ini\">Slic3r config \nfiles</a> I used with an ender 3 pro. I&#39;ve not really had much luck \nwith support materials beyond using it to stick the first few layers to \nthe bed so that is how it is setup. Should take an hour and half to \nprint and if it goes wrong it will be right at the end when it gets to \nthe feet.</p>\n<img src=\"{_dirname}/photo.jpg\"/>\n\n<p>In other news after ripping a hole in my magnetic bed cover I&#39;ve \nfinally worked out how to use the glass bed. The secret is Pritt Stick, \nslap a bit of that on each time and prints will actually stick to the \nbed rather than start sliding around halfway through a print. Tried \nother suggested tricks but that is the only one that worked for me. Not \nsure needing glue with each print is an upgrade from the magnetic bed \ncover which I found much easier to use but at least it works now.</p>\n",
+ "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<p>Do you enjoy shouting at your house to turn lights on and off?</p>\n<p>Do you wish this simple act of human machine bonding could be more fun \nand or themed for the holidays?</p>\n<p>Then have I got the solution for you.</p>\n<p>First you need to get into the habit of turning lights on by shouting</p>\n<pre><code>ON *lightname*\n</code></pre>\n<p>into the darkness.</p>\n<p>This is one of the optimal ways to control lights with the ON command \ncoming before the name of the light. It is possible you are already \ndoing this, if not I advise practicing it for a few days.</p>\n<p>Once you have accepted this habit as normal the next step is to rename \nall the lights in your home to the names of reindeer.</p>\n<p>Here is a list for reference with sugested location.</p>\n<ul>\n<li>Dasher<ul>\n<li>bathroom</li>\n</ul>\n</li>\n<li>Dancer<ul>\n<li>kitchen</li>\n</ul>\n</li>\n<li>Prancer<ul>\n<li>lounge</li>\n</ul>\n</li>\n<li>Vixen<ul>\n<li>bedroom</li>\n</ul>\n</li>\n<li>Comet<ul>\n<li>hall</li>\n</ul>\n</li>\n<li>Cupid<ul>\n<li>sofa</li>\n</ul>\n</li>\n<li>Donner<ul>\n<li>dining room</li>\n</ul>\n</li>\n<li>Blitzen<ul>\n<li>reading lamp</li>\n</ul>\n</li>\n<li>Rudolph<ul>\n<li>anywhere and everywhere<br/>\n<br/></li>\n</ul>\n</li>\n</ul>\n<p>There is no other step, by simply making these tiny festive changes you \nwill bring holiday joy to your household and possibly neighborhood.</p>\n",
  "_blog_post_body_many": "\n<!--\n<div><a href=\"/\">XIXs</a>/<a href=\"/blog/\">Blog</a>/<a href=\"{_dirname}\">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>\n-->\n<a class=\"bloglink\" href=\"{_dirname}\"><div class=\"bloglink-date\">{_blog_post_json.datedash}</div><img class=\"bloglink-icon\" src=\"{_dirname}/icon.jpg\"/><div class=\"bloglink-title\">{_blog_post_json.title}</div></a>\n",
  "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
  "_blog_post_json": {
-  "datedash": "2020-10-22",
+  "author": "kriss",
+  "datedash": "2023-12-30",
   "datetime": [
-   2020,
-   10,
-   22,
+   2023,
+   12,
+   30,
    0,
    0,
    0
   ],
-  "filename": "wetgenes_3dprint_mr_boneman",
   "tags": [
-   "3dprint"
   ],
-  "title": "3DPrint Mr Boneman",
-  "unixtime": 1603324800
+  "title": "How to bring XMAS spirit to home automation.",
+  "unixtime": 1703894400
  },
- "_blog_post_newer": "{_root}blog/2020-11-22-3dprint-cat-ball-feeder/",
- "_blog_post_older": "{_root}blog/2020-09-12-3dprint-d4-numeric/",
- "_dirname": "{_root}blog/2020-10-22-3dprint-mr-boneman",
- "_filename": "{_root}blog/2020-10-22-3dprint-mr-boneman",
+ "_blog_post_older": "{_root}blog/2023-03-14-i-made-a-rss-for-myself/",
+ "_dirname": "{_root}blog/2023-12-30-how-to-bring-xmas-spirit-to-home-automation",
+ "_filename": "{_root}blog/2023-12-30-how-to-bring-xmas-spirit-to-home-automation",
  "_flags": {
   "_blog_post_body": {
    "form": "markdown"
@@ -9465,10 +9463,10 @@
    "trim": "ends"
   }
  },
- "_output_filename": "blog/2020-10-22-3dprint-mr-boneman/",
+ "_output_filename": "blog/2023-12-30-how-to-bring-xmas-spirit-to-home-automation/",
  "_root": "../../",
  "_site": "{_root}",
- "_sourcename": "blog/2020-10-22-3dprint-mr-boneman/.",
+ "_sourcename": "blog/2023-12-30-how-to-bring-xmas-spirit-to-home-automation/.",
  "blog_list": "\n{_it._body}\n\n",
  "body": "Body is missing.",
  "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
