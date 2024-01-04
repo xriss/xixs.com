@@ -13,7 +13,7 @@ Welcome to blog!
 #^_blog_json
 
 {
-	posts_per_page:100,
+	posts_per_page:19,
 	url:"https://xixs.com/",
 	feed:{
 		title:"XIXs Blog",
@@ -23,21 +23,21 @@ Welcome to blog!
 
 #^link_older_page
 
-<div style="text-align:left"><a href="{_it}">&lt;olds&lt;</a></div>
+<a class="old-link" href="{_it}">&lt;olds&lt;</a>
 
 
 #^link_newer_page
 
-<div style="text-align:right"><a href="{_it}">&gt;news&gt;</a></div>
+<a class="new-link" href="{_it}">&gt;news&gt;</a>
 
 
 #^_blog_page_body
 
-<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>
+<div class="oldnew-links"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>
 <div class="blog_list_wrap">
 	{_list:blog_list}
 </div>
-<div> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>
+<div class="oldnew-links"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>
 
 
 #^blog_list
@@ -70,14 +70,17 @@ Welcome to blog!
 </script>
 </div>
 
+#^_blog_post_icon_wrap
+<img class="bloglink-icon" src="{_it}"/> Click to read more...
+
 #^_blog_post_body_many
 
-<!--
-<div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="{_dirname}">{_blog_post_json.datedash} {_blog_post_json.title} </a></div>
--->
-<a class="bloglink" href="{_dirname}"><div class="bloglink-date">{_blog_post_json.datedash}</div><img class="bloglink-icon" src="{_dirname}/icon.jpg"/><div class="bloglink-title">{_blog_post_json.title}</div></a>
+<div class="bloglink" href="{_blog_post_this}" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">{_blog_post_json.datedash}</div>
+ <div class="bloglink-title">{_blog_post_body}</div>
+</div>
 
 #^crumb_trap trim=ends same=append
 
-{crumb_slash}<a class="crumb" href="{_root}blog">Blog</a>{crumb_slash}<a href="{_dirname}">{_blog_post_json.datedash||}</a>
+{crumb_slash}<a class="crumb" href="{_root}blog">Blog</a>{crumb_slash}<a href="{_blog_post_this}">{_blog_post_json.datedash||}</a>
 

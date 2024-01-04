@@ -82,7 +82,7 @@ for( let id in mds )
 
 		if( medias.length>1 ) // number multiple files
 		{
-			files[ fn ] = id+"-"+(Number(idx)+1)+"."+ext
+			files[ fn ] = id+"."+(Number(idx)+1)+"."+ext
 		}
 		else
 		{
