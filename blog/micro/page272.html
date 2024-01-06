@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../../blog/micro/page273.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../../blog/micro/page271.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-19-052716.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-19</div>
+ <div class="bloglink-title"><p>lets try some level design and tootorialness for rgbTD <a href="http://www.wetgenes.com/betamock/rgbtd.20081118.swf">http://www.wetgenes.com/betamock/rgbtd.20081118.swf</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-16-003938.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-16</div>
+ <div class="bloglink-title"><p>Another day so another build of rgbTD watch in awe as it slowly turns into a real game. <a href="http://www.wetgenes.com/betamock/rgbtd.20081115.swf">http://www.wetgenes.com/betamock/rgbtd.20081115.swf</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-14-234703.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-14</div>
+ <div class="bloglink-title"><p>here is another game alpha, like the last one only, uhm, fused with the power of tetris <a href="http://www.wetgenes.com/betamock/rgbtd.20081114.swf">http://www.wetgenes.com/betamock/rgbtd.20081114.swf</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-13-125939.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-13</div>
+ <div class="bloglink-title"><p>Have stoped using googles custom search engine and instead just added a simple games search. EG <a href="http://tinyurl.com/657mgr">http://tinyurl.com/657mgr</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-14-024452.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-14</div>
+ <div class="bloglink-title"><p>A quick little flash path finding test, just click to place blocks to annoy the pixls <a href="http://www.wetgenes.com/betamock/rgbtd.20081113.swf">http://www.wetgenes.com/betamock/rgbtd.20081113.swf</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-06-151700.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-06</div>
+ <div class="bloglink-title"><p>Informative video : WetVille : How to grow a speed balloon -&gt; <a href="http://tinyurl.com/6ftkl8">http://tinyurl.com/6ftkl8</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-06-130927.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-06</div>
+ <div class="bloglink-title"><p>basic balloon growing is now setup, plant words of power EG SPEED and grow special balloons. Water them well to help them grow big.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-11-04-061018.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-11-04</div>
+ <div class="bloglink-title"><p>from now on retained rooms and even history and room locks/allow etc should be saved and restored across server resets. Hopefully :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-31-064931.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-31</div>
+ <div class="bloglink-title"><p>added balloon transfer, just click and hold on the avatar for menu, also the bots may be used as a sort of public balloon swapping post.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-30-025647.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-30</div>
+ <div class="bloglink-title"><p>kolumbo now sells balloons and his balloons have real world persistence. This is the first step to balloon farming <a href="http://tinyurl.com/5sp84n">http://tinyurl.com/5sp84n</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-29-064502.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-29</div>
+ <div class="bloglink-title"><p>added some ween themed graphical goodness and objects to <a href="http://tinyurl.com/6kr3do">http://tinyurl.com/6kr3do</a> also horror films in <a href="http://tinyurl.com/6kr3do">http://tinyurl.com/6kr3do</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-27-035426.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-27</div>
+ <div class="bloglink-title"><p>added simple user ville home room back wall control and now I fear what the users will put there :) Just say noir vback url</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-25-212428.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-25</div>
+ <div class="bloglink-title"><p>Added a comic room, you may now share a virtual comic reading experience. Added this virtual room into <a href="http://4lfa.com/">http://4lfa.com/</a> so just visit there.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-24-061336.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-24</div>
+ <div class="bloglink-title"><p>Convinced avatars that they should walk out of doors that are probably linked to the room they came from. This is I believe Moar &quot;real&quot;</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-15-015148.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-15</div>
+ <div class="bloglink-title"><p>Added a football game to wetville, use the following link to jump right into it <a href="http://tinyurl.com/3vtaft">http://tinyurl.com/3vtaft</a> and win cookies</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-10-04-165622.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-10-04</div>
+ <div class="bloglink-title"><p>added permalinks to ville so <a href="http://tinyurl.com/52uew6">http://tinyurl.com/52uew6</a> will now automatically take you to the old b/w tv movie room</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-09-26-143301.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-09-26</div>
+ <div class="bloglink-title"><p>I think that the white space handling in python is a really good idea. Much more fun than trying to spot badly balanced parenthesis. NOT</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-09-27-032357.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-09-27</div>
+ <div class="bloglink-title"><p>We now have an early build of the virtual world code live, naturally the first room available is a public toilet. <a href="http://ville.wetgenes.com/">http://ville.wetgenes.com/</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2008/2008-09-23-150607.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2008-09-23</div>
+ <div class="bloglink-title"><p>and on Tuesday god said let there be pron. So we added automatic in chat url to thumbnail display via a google apps bouncer to resize/check.</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../../blog/micro/page273.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../../blog/micro/page271.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

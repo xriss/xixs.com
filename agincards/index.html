@@ -152,9 +152,17 @@ a:hover {
 }
 
 .bloglink {
+/*
 	height: 100px;
+*/
 	display: block;
 	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
 }
 
 .bloglink-icon {
@@ -174,11 +182,13 @@ a:hover {
 .bloglink-title {
 	display: inline-block;
 	width: 500px;
-	line-height: 100px;
 	vertical-align: top;
 	padding-left: 20px;
 	font-weight: bold;
-	text-wrap: nowrap;
+/*
+	height:100px;
+*/
+	overflow:hidden;
 }
 
 .blog_list_wrap {

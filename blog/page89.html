@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page90.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page88.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../blog/micro-2017/2017-08-01-132256.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-08-01</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/892354331697184768">https://twitter.com/wetgenes/status/892354331697184768</a> So that is Wednesday 9th of August. See <a href="http://xixs.com/badonkadonk">http://xixs.com/badonkadonk</a> for more details.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-08-01-130026.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-08-01</div>
+ <div class="bloglink-title"><p>The next #Bradford #GameDev meetup in a pub is coming soon on Wednesday 7-9pm at The Turls Green. All Welcome :) 
+<img src="../blog/micro-2017/2017-08-01-130026.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-28-164627.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-28</div>
+ <div class="bloglink-title"><p>@Acuity_Design FYI @thegamecrafter will print you any custom dice you desire.</p>
+<p><a href="https://www.thegamecrafter.com/publish/product/CustomAcrylicD6">https://www.thegamecrafter.com/publish/product/CustomAcrylicD6</a></p>
+<p>Highly recommended for prototypes etc etc.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-28-231002.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-28</div>
+ <div class="bloglink-title"><p>@Acuity_Design @thegamecrafter I think its pretty reasonably priced for print on demand.</p>
+<p>Only the postage costs from the states annoys me :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-25-104928.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-25</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/889784147639717889">https://twitter.com/wetgenes/status/889784147639717889</a> @mrfavus So achievement already unlocked :) Although I suspect it was due to running out of money to license DPaint and needing something cheaper :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-25-104726.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-25</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/mrfavus/status/889582048142295040">https://twitter.com/mrfavus/status/889582048142295040</a> @mrfavus A long long (long) time ago I worked on Photogenics which ended up replacing Deluxe Paint in an Amiga A1200 bundle in the mid 90s.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-19-223426.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-19</div>
+ <div class="bloglink-title"><p>Fun fact! In the late 90s when the press first started asking &quot;What engine?&quot; 99% of custom engines were instantly given a name on the spot.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-17-225158.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-17</div>
+ <div class="bloglink-title"><p>Spending vast resources on mining crypto currencies makes as much sense as carving giant big head rock statues and then burying them.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-18-182541.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-18</div>
+ <div class="bloglink-title"><p>If only there was a way to get iPhone owners to strap them to their foreheads then we could easily ostracise them.</p>
+<p><a href="https://www.youtube.com/watch?v=w76ESU3XHOg">https://www.youtube.com/watch?v=w76ESU3XHOg</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-14-143010.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-14</div>
+ <div class="bloglink-title"><p>The wall was the color of television tuned to a dead channel. 
+<img src="../blog/micro-2017/2017-07-14-143010.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-11-215514.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-11</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/884705944713744386">https://twitter.com/wetgenes/status/884705944713744386</a> @CharlotteGore Itsa #BDdonk tomorrow are you going to be around?</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-11-215220.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-11</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/ImpactGamersBFD/status/884759776315547648">https://twitter.com/ImpactGamersBFD/status/884759776315547648</a> @ImpactGamersBFD Hopefully :) Are you guys doing something with the SMM for the supersenses exhibit? Going to be at the launch thing this Friday maybe?</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-12-173058.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-12</div>
+ <div class="bloglink-title"><p>In precisely one hour and thirty minutes we will be in The Turls Green for the #Bradford #GameDev meetup in a pub. 
+<img src="../blog/micro-2017/2017-07-12-173058.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-12-093532.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-12</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/sgtruck/status/885052919216779264">https://twitter.com/sgtruck/status/885052919216779264</a> @sgtruck it is large and full of sand, left it running overnight and guess what it looked like in the morning... need to turn all that crap off.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-14-160016.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-14</div>
+ <div class="bloglink-title"><p>Come celebrate 1.5 billion seconds since the beginning of computer time by watching some computers draw on sand!</p>
+<p><a href="https://www.scienceandmediamuseum.org.uk/whats-on/supersenses">https://www.scienceandmediamuseum.org.uk/whats-on/supersenses</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-14-000422.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-14</div>
+ <div class="bloglink-title"><p>This contains the sand pits that we have been working hard on :) <a href="https://twitter.com/mediamuseum/status/885053704755400705">https://twitter.com/mediamuseum/status/885053704755400705</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-12-092237.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-12</div>
+ <div class="bloglink-title"><p>Final artwork for your consideration. 
+<img src="../blog/micro-2017/2017-07-12-092237.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-11-102828.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-11</div>
+ <div class="bloglink-title"><p>Good news everyone! Tomorrow is the #Bradford #GameDev meetup in a pub. 7-9 pm upstairs at The Turls Green. All Welcome :) 
+<img src="../blog/micro-2017/2017-07-11-102828.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2017/2017-07-09-212832.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2017-07-09</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/PixelGuff/status/884132999540953110">https://twitter.com/PixelGuff/status/884132999540953110</a> @PixelGuff you can fix that with the simple application of a bit of black eyeliner.</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page90.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page88.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

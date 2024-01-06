@@ -156,9 +156,17 @@ a:hover {
 }
 
 .bloglink {
+/*
 	height: 100px;
+*/
 	display: block;
 	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
 }
 
 .bloglink-icon {
@@ -178,11 +186,13 @@ a:hover {
 .bloglink-title {
 	display: inline-block;
 	width: 500px;
-	line-height: 100px;
 	vertical-align: top;
 	padding-left: 20px;
 	font-weight: bold;
-	text-wrap: nowrap;
+/*
+	height:100px;
+*/
+	overflow:hidden;
 }
 
 .blog_list_wrap {
@@ -282,44 +292,172 @@ li {
 }
 
 </style></head>
-<body><div class="crumb-wrap"><a class="crumb" href="../../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../../blog">Blog</a><span class="crumb-slash">/</span><a href="../../blog/3dprint"></a></div><div class="main">
-<div>   </div>
+<body><div class="crumb-wrap"><a class="crumb" href="../../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links">   </div>
 <div class="blog_list_wrap">
 	
 
-<!--
-<div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="../../blog/2022-09-13-3dprint-game-card-stand">2022-09-13 3DPrint Game Card Stand </a></div>
--->
-<a class="bloglink" href="../../blog/2022-09-13-3dprint-game-card-stand"><div class="bloglink-date">2022-09-13</div><img class="bloglink-icon" src="../../blog/2022-09-13-3dprint-game-card-stand/icon.jpg"/><div class="bloglink-title">3DPrint Game Card Stand</div></a>
+<div class="bloglink" href="../../blog/2022-09-13-3dprint-game-card-stand/" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2022-09-13</div>
+ <div class="bloglink-title"><h2 id="title">3DPrint Game Card Stand</h2>
+<div class="model-container" ><div class="model-view"><babylon><model url="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-game-card-stand.stl"></babylon></div><div class="model-download">
+<a href="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-game-card-stand.gcode">Download GCODE file</a>
+<a href="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-game-card-stand.stl">Download STL file</a>
+<a href="../../blog/2022-09-13-3dprint-game-card-stand/wetgenes-3dprint-game-card-stand.blend">Download BLEND file</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+</div></div>
+
+<p>Card stands like these seem hard to buy if you want a certain size or 
+shape or color. Mostly there seems to only be one style available at a 
+reasonable price at any one time. So I just made one I could print and 
+tweak :)</p>
+<p>This has a V shaped crevice the bottom part of which clamps and holds 
+onto playing cards. You might need to tweak this blend file as I just 
+did it by trial and error with the minimum distance apart I could get 
+away with printing before it stuck together and that took a fair few 
+tries.</p>
+<img src="../../blog/2022-09-13-3dprint-game-card-stand/photo.jpg"/>
+
+<p>It should print OK without any supports and in batches as it is laying 
+on its side with each layer exactly the same.</p>
+<p>I&#39;ve included a gcode as how its sliced is pretty important for the 
+grip and fit. This works with my default ender 3 pro and generic PLA.</p>
+</div>
+</div>
 
 
 
 
-<!--
-<div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="../../blog/2020-11-22-3dprint-cat-ball-feeder">2020-11-22 3DPrint Catball feeder </a></div>
--->
-<a class="bloglink" href="../../blog/2020-11-22-3dprint-cat-ball-feeder"><div class="bloglink-date">2020-11-22</div><img class="bloglink-icon" src="../../blog/2020-11-22-3dprint-cat-ball-feeder/icon.jpg"/><div class="bloglink-title">3DPrint Catball feeder</div></a>
+<div class="bloglink" href="../../blog/2020-11-22-3dprint-cat-ball-feeder/" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-11-22</div>
+ <div class="bloglink-title"><h2 id="title">3DPrint Catball feeder</h2>
+<div class="model-container" ><div class="model-view"><babylon><model url="../../blog/2020-11-22-3dprint-cat-ball-feeder/wetgenes-3dprint-catball-feeder.stl"></babylon></div><div class="model-download">
+<a href="../../blog/2020-11-22-3dprint-cat-ball-feeder/wetgenes-3dprint-catball-feeder.stl">Download STL file</a>
+<a href="../../blog/2020-11-22-3dprint-cat-ball-feeder/wetgenes-3dprint-catball-feeder.blend">Download BLEND file</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+</div></div>
+
+<p>I have been using a device like this for a few years now, it reduces 
+the ability of the cat to inhale treats. Sure it sounds a bit like the 
+ghost of Christmas past rattling chains and dragging weights across the 
+hard floor but it is still better than the cat screaming at you for 
+more treats five seconds after you just gave them some.</p>
+<p>So this is a 3dprinter recreation of the same sort of device, we have a 
+ball cavity to fill with treats and a couple of holes to let them out 
+slowly with enough vigorous rolling. The simple large screw thread lets 
+you open and lock the ball and works quite well, it has survived cat 
+and foot abuse without separating. So you simply open ( using the holes 
+as a grip point ) scoop some treats into the half with no holes and 
+then screw it closed again.</p>
+<p>Ideally you want a treat similar in size and shape to a &quot;Dreamies&quot; cat 
+treat, the hole is scientifically designed and tested so that such a 
+shaped treat can only fall out when the correct orientation is achieved 
+though aggressive perturbation of the device providing optimal cat 
+exercise.</p>
+<img src="../../blog/2020-11-22-3dprint-cat-ball-feeder/photo.jpg"/>
+
+<p>It should print OK without any supports but the roof of each dome will 
+probably fall slightly and need a bit of clean up. However as this is 
+just on the inside it is an acceptable print flaw. I&#39;d recommend 100% 
+infill so it is less likely to be crushed when you inevitably step on 
+it.</p>
+<p>PLA filament is reasonably food safe and my cat keeps trying to chew 
+the prints and any discarded stringing filament anyway. Still it is up 
+to you what you print it with and you can get safer filament and print 
+heads if you want. Mostly you are going to get cat treat dust build up 
+inside which happens with the store bought ones anyway and requires the 
+occasional clean. This is a dispenser rather than a food bowl that your 
+cat will be licking, so I don&#39;t think it is that big of a risk.</p>
+</div>
+</div>
 
 
 
 
-<!--
-<div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="../../blog/2020-10-22-3dprint-mr-boneman">2020-10-22 3DPrint Mr Boneman </a></div>
--->
-<a class="bloglink" href="../../blog/2020-10-22-3dprint-mr-boneman"><div class="bloglink-date">2020-10-22</div><img class="bloglink-icon" src="../../blog/2020-10-22-3dprint-mr-boneman/icon.jpg"/><div class="bloglink-title">3DPrint Mr Boneman</div></a>
+<div class="bloglink" href="../../blog/2020-10-22-3dprint-mr-boneman/" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-10-22</div>
+ <div class="bloglink-title"><h2 id="title">3DPrint Mr Boneman</h2>
+<div class="model-container" ><div class="model-view"><babylon><model url="../../blog/2020-10-22-3dprint-mr-boneman/wetgenes_3dprint_mr_boneman.stl"></babylon></div><div class="model-download">
+<a href="../../blog/2020-10-22-3dprint-mr-boneman/wetgenes_3dprint_mr_boneman.stl">Download STL file</a>
+<a href="../../blog/2020-10-22-3dprint-mr-boneman/wetgenes_3dprint_mr_boneman.blend">Download BLEND file</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+</div></div>
+
+<p>Mr Bone man is upside down because it eases his passage through the 
+birth canal and into your dimensions.</p>
+<p>This is a test print from my Avatar generator, the mesh had to be 
+messed around with a bit, adding something to hold the hands and feet 
+to the torso then bones needed thickening up in places and angles 
+reduced in order to get it to print without needing support. Which is 
+also why the STL is upside down, that way it grows upwards like a 
+branching tree and mostly works perfectly until it gets to the feet 
+which is just OK. It was printed with 2mm of support so the very top of 
+the head sticks to the build plate without being cut flat. The top of 
+the head is still slightly wonky and you need to pull the support hat 
+off without breaking the neck but at least it prints.</p>
+<p>In the blender file you see some modifier tricks to get a mesh out that 
+doesn&#39;t crash slic3r using remesh and decimate. Makes the STL file huge 
+and blender slow but the output is easier to slice. You can also choose 
+between lowpoly or smooth by removing the initial subdivide modifier, I 
+kinda like the low poly look in 3d prints but other people seem to 
+prefer it smooth :)</p>
+<p>This is the <a href="../../blog/2020-10-22-3dprint-mr-boneman/Slic3r_config_bundle.ini">Slic3r config 
+files</a> I used with an ender 3 pro. I&#39;ve not really had much luck 
+with support materials beyond using it to stick the first few layers to 
+the bed so that is how it is setup. Should take an hour and half to 
+print and if it goes wrong it will be right at the end when it gets to 
+the feet.</p>
+<img src="../../blog/2020-10-22-3dprint-mr-boneman/photo.jpg"/>
+
+<p>In other news after ripping a hole in my magnetic bed cover I&#39;ve 
+finally worked out how to use the glass bed. The secret is Pritt Stick, 
+slap a bit of that on each time and prints will actually stick to the 
+bed rather than start sliding around halfway through a print. Tried 
+other suggested tricks but that is the only one that worked for me. Not 
+sure needing glue with each print is an upgrade from the magnetic bed 
+cover which I found much easier to use but at least it works now.</p>
+</div>
+</div>
 
 
 
 
-<!--
-<div><a href="/">XIXs</a>/<a href="/blog/">Blog</a>/<a href="../../blog/2020-09-12-3dprint-d4-numeric">2020-09-12 3DPrint D4 Numeric </a></div>
--->
-<a class="bloglink" href="../../blog/2020-09-12-3dprint-d4-numeric"><div class="bloglink-date">2020-09-12</div><img class="bloglink-icon" src="../../blog/2020-09-12-3dprint-d4-numeric/icon.jpg"/><div class="bloglink-title">3DPrint D4 Numeric</div></a>
+<div class="bloglink" href="../../blog/2020-09-12-3dprint-d4-numeric/" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-09-12</div>
+ <div class="bloglink-title"><h2 id="title">3DPrint D4 Numeric</h2>
+<div class="model-container" ><div class="model-view"><babylon><model url="../../blog/2020-09-12-3dprint-d4-numeric/wetgenes_3dprint_d4_numeric.stl"></babylon></div><div class="model-download">
+<a href="../../blog/2020-09-12-3dprint-d4-numeric/wetgenes_3dprint_d4_numeric.stl">Download STL file</a>
+<a href="../../blog/2020-09-12-3dprint-d4-numeric/wetgenes_3dprint_d4_numeric.blend">Download BLEND file</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+</div></div>
+
+<p>Dice seem like a good first thing to 3D print, small/fast and they do 
+have an actual use. So this was one of the first things I experimented 
+with.</p>
+<p>The indent of the glyphs may seem a little deep (some of the numbers 
+almost intersect) but it really is necessary for useable legibility. 
+For extra legibility you could try and fill in the glyphs with another 
+material after printing.</p>
+<p>The blend file is setup to use instanced text objects to cut the 
+letters into the main object. Which means you could adjust the 
+font/size/etc if you know how to blender. If you do not know how to 
+blender then you want the STL file and will need to slice it yourself.</p>
+<p>I have an Ender 3 Pro loaded with PLA and I use <a href="https://slic3r.org/">https://slic3r.org/</a> 
+with a layer height of 0.25mm which seems a good compromise between 
+speed and quality for a 0.4mm nozzle. </p>
+<p>From various test prints I discovered that you can actually get away 
+here with a 0% infill but a 100% infill seems best as it gives the die 
+a little bit of heft and helps to keep the weight balanced. </p>
+<p>I recommend not bothering with support or a raft just be extra careful 
+with bed calibration as it is very easy to squash the bottom layer into 
+the print bed rendering its numbers illegible.</p>
+</div>
+</div>
 
 
 
 </div>
-<div>   </div>
+<div class="oldnew-links">   </div>
 
 </div></body>
 </html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../../blog/micro/page107.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../../blog/micro/page105.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-12-202948.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-12</div>
+ <div class="bloglink-title"><p>I have just remembered that tomorrow is the #Bradford #GameDev meetup in a pub. <a href="http://xixs.com/badonkadonk">http://xixs.com/badonkadonk</a></p>
+<p>. 
+<img src="../../blog/micro-2016/2016-07-12-202948.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-10-165250.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-10</div>
+ <div class="bloglink-title"><p>Caught some fish pokemon. 
+<img src="../../blog/micro-2016/2016-07-10-165250.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-12-211204.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-12</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/dukeeen/status/752949701079687168">https://twitter.com/dukeeen/status/752949701079687168</a> @dukeeen Often in multiple pubs. :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-10-163704.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-10</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/VertigoJones/status/752163299211485184">https://twitter.com/VertigoJones/status/752163299211485184</a> @vertigojones @shi it seemed more keen on climbing than flying which reminded me of birds kept in cages.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-10-213123.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-10</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/VertigoJones/status/752180735679795201">https://twitter.com/VertigoJones/status/752180735679795201</a> @vertigojones @shi just walked back down. No sign of them so they must have flown away :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-09-184628.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-09</div>
+ <div class="bloglink-title"><p>Delivery for Caturday? 
+<img src="../../blog/micro-2016/2016-07-09-184628.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-09-214302.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-09</div>
+ <div class="bloglink-title"><p>So, does Pokemon Go feature Brian Blessed?</p>
+<p>and If not, why does it bother to exist?</p>
+<p>#BlessedBe
+<a href="https://www.youtube.com/watch?v=aPPW-t4OszM&feature=youtu.be&t=3m30s">https://www.youtube.com/watch?v=aPPW-t4OszM&amp;feature=youtu.be&amp;t=3m30s</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-09-213412.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-09</div>
+ <div class="bloglink-title"><p>Missing letter?
+ or 
+Photo opportunity?</p>
+<p>#Bradford <a href="https://twitter.com/shi/status/751810414686662656">https://twitter.com/shi/status/751810414686662656</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-10-172108.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-10</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/VertigoJones/status/752175194551250944">https://twitter.com/VertigoJones/status/752175194551250944</a> @vertigojones @shi more of a jump with flapping than flying. Going to check on it later see if it&#39;s still there, it&#39;s not that far away.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-10-160754.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-10</div>
+ <div class="bloglink-title"><p>Does anyone know what this bird is, seems tame, could be someone&#39;s pet? #Bradford city centre 
+<img src="../../blog/micro-2016/2016-07-10-160754.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-09-220819.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-09</div>
+ <div class="bloglink-title"><p>@el_burro_muerto I got the silly PSP camera so I could try that game :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-04-154539.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-04</div>
+ <div class="bloglink-title"><p>You have 2.3 hours left to buy Swanky Paint at 23% off :)</p>
+<p><a href="http://store.steampowered.com/app/432030">http://store.steampowered.com/app/432030</a></p>
+<p>#pixelart #pixel #retro #paint
+<a href="https://www.youtube.com/watch?v=EqttrD_ED4o">https://www.youtube.com/watch?v=EqttrD_ED4o</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-04-172851.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-04</div>
+ <div class="bloglink-title"><p>@magic_bane the sky <a href="https://www.youtube.com/watch?v=bcYppAs6ZdI">https://www.youtube.com/watch?v=bcYppAs6ZdI</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-04-171839.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-04</div>
+ <div class="bloglink-title"><p>You&#39;re probably wondering what Bernie, artist on such spectrum classics as Head Over Heels, is up to now...</p>
+<p><a href="https://www.youtube.com/watch?v=a6Pv2lzipPk">https://www.youtube.com/watch?v=a6Pv2lzipPk</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-07-01-162808.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-07-01</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/mike_robbo/status/748894614233513984">https://twitter.com/mike_robbo/status/748894614233513984</a> @mike_robbo All that happens is I set one up, forget to use it, then totally confuse myself when I accidental switch to it days later :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-06-29-164559.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-06-29</div>
+ <div class="bloglink-title"><p>About to record the next episode of @itstuffradio  this image will help you put faces to voices . 
+<img src="../../blog/micro-2016/2016-06-29-164559.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-06-29-222647.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-06-29</div>
+ <div class="bloglink-title"><p>Lost a leg to a cat. Help me @shi . Send tea and biscuits. I am thirsty and may die. 
+<img src="../../blog/micro-2016/2016-06-29-222647.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-06-27-005457.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-06-27</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/Never2Oldf4Tech/status/747049299284992000">https://twitter.com/Never2Oldf4Tech/status/747049299284992000</a> @AgeingDigital @pixlz Yes you can, one of our PI&#39;s is setup similar. No buttons, just pre configured so you plug in and noise happens.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../../blog/micro-2016/2016-06-29-171428.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2016-06-29</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/748180724348485632">https://twitter.com/wetgenes/status/748180724348485632</a> @itstuffradio each radio persona is represented perfectly even me despite not being visible as I am the sarcastic twat who took the photo.</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../../blog/micro/page107.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../../blog/micro/page105.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page39.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page37.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../blog/micro-2020/2020-02-11-005547.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-02-11</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1227030480865890305">https://twitter.com/wetgenes/status/1227030480865890305</a> I mean <a href="http://groups.io">http://groups.io</a> also here is a picture of my cat with a keyboard reflected in his eyes. 
+<img src="../blog/micro-2020/2020-02-11-005547.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-02-11-004358.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-02-11</div>
+ <div class="bloglink-title"><p>Wowzers <a href="http://group.io">http://group.io</a> has just successfully sent out a reminder that it is the #Bradford #GameDev meetup inapub AKA #badonkadonk this wednesday.</p>
+<p><a href="https://groups.io/g/badonkadonk/message/1">https://groups.io/g/badonkadonk/message/1</a></p>
+<p>If you too would like such reminders then you should click that link and subscribe.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-02-09-220138.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-02-09</div>
+ <div class="bloglink-title"><p>Some brilliant detective work by Peter Cushing in Dracula A.D. 1972. 
+<img src="../blog/micro-2020/2020-02-09-220138.1.jpg"></img></p>
+<p><img src="../blog/micro-2020/2020-02-09-220138.2.jpg"></img></p>
+<p><img src="../blog/micro-2020/2020-02-09-220138.3.jpg"></img></p>
+<p><img src="../blog/micro-2020/2020-02-09-220138.4.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-30-195627.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-30</div>
+ <div class="bloglink-title"><p>@el_burro_muerto Nah, that&#39;s what I use when I&#39;m scripting, programming requires antonyms and allegorical devices.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-30-004201.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/andrewcrawshaw/status/1222650333140279296">https://twitter.com/andrewcrawshaw/status/1222650333140279296</a> @andrewcrawshaw Pfffft.</p>
+<p>The natural way to achieve a heavy blanket is just to adopt 5 or more cats.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-30-002234.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/noii/status/1222670218234925057">https://twitter.com/noii/status/1222670218234925057</a> @noii Such a common need that...</p>
+<p><a href="https://github.com/xriss/phantom-raspberry">https://github.com/xriss/phantom-raspberry</a></p>
+<p>I guess I should stick a prebuilt SD card image up as a github release.</p>
+<p>Although the main point here is to be able to build an SD card image with the correct video file embedded in it without having to use a PI.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-30-190858.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-30</div>
+ <div class="bloglink-title"><p>Programming is mostly about finding antonyms that have the same* number of letters.</p>
+<p>*I believe that prev is a real word and I will fight you.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-30-200720.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-30</div>
+ <div class="bloglink-title"><p>@el_burro_muerto I think that one might be hacking.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-27-203005.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-27</div>
+ <div class="bloglink-title"><p>For anyone who needs a historical Picard documentary before going into the new series.</p>
+<p><a href="https://www.youtube.com/watch?v=gXB84fpWzg8">https://www.youtube.com/watch?v=gXB84fpWzg8</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-26-193652.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-26</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1221517020925132800">https://twitter.com/wetgenes/status/1221517020925132800</a> Is totally Hex Pool (Arcade 1985)</p>
+<p><a href="https://www.youtube.com/watch?v=T7Pr8WxUO90">https://www.youtube.com/watch?v=T7Pr8WxUO90</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-26-193527.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-26</div>
+ <div class="bloglink-title"><p>Something that trawling randomly through Mame teaches me:</p>
+<p>How many games I remember from the 8bit days that I thought  original which are in fact versions of arcade machines.</p>
+<p>For instance Angle Ball (C64 1987)</p>
+<p><a href="https://www.youtube.com/watch?v=GM5vL_xfzdY">https://www.youtube.com/watch?v=GM5vL_xfzdY</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-24-163855.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-24</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/lingmops/status/1220726954648883203">https://twitter.com/lingmops/status/1220726954648883203</a> @lingmops Shi is currently doing research for a zine on Organs, with a local focus.</p>
+<p>Which means I am now aware that the &quot;Bradford Computing Organ&quot; exists.</p>
+<p>The Bradford Computing Organ, is, essentially, chip tunes in a large hall :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-17-225456.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-17</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/RaymondDoerr/status/1218285213501075457">https://twitter.com/RaymondDoerr/status/1218285213501075457</a> @RaymondDoerr In the late 70s and early 80s we had computers capable of Tetris or Match3 style puzzle games but these did not exist in any form until the mid 80s at the earliest.</p>
+<p>That&#39;s some really easy pickins :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-18-193845.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-18</div>
+ <div class="bloglink-title"><p>13 years ago I woke up with this game design almost fully formed in my head <a href="http://xixs.com/agincards">http://xixs.com/agincards</a> That may sound unlikely but I had been thinking/trying to design a simple card solitaire placement game like it since I was a kid. So I guess it just finally clicked :) 
+<img src="../blog/micro-2020/2020-01-18-193845.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-17-164145.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-17</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1218211392714690560">https://twitter.com/wetgenes/status/1218211392714690560</a> @pimoroni With a PI the obvious speedup would be to render to a local buffer and then make sure to only squirt areas that have changed over the SPI.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-17-164003.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-17</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/pimoroni/status/1218204359219204098">https://twitter.com/pimoroni/status/1218204359219204098</a> @pimoroni This looks like the same ST7789 controller as on the #PineTime but the PI has much faster SPI speeds. You can see some recent notes I made about driving that chipset with an NRF52 at <a href="http://xixs.com/blog/2020-01-16-pinetime-lcd-driver-notes/">http://xixs.com/blog/2020-01-16-pinetime-lcd-driver-notes/</a> and the code might be useful if you want to drive it yourself.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-17-193429.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-17</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1218254164259758080">https://twitter.com/wetgenes/status/1218254164259758080</a> @DavidGlaude @pimoroni @adafruit Glancing at the code it would be 25% faster if you just switched to 444 from 565 per pixel and I would consider adding simple dithering to reduce the color resolution loss from doing that.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-18-191632.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-18</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/RaymondDoerr/status/1218317590721957888">https://twitter.com/RaymondDoerr/status/1218317590721957888</a> @RaymondDoerr Exactly, there are a large amount of puzzle designs created, tested and honed to the point that their final form could easily be created for hardware 10 years out of date.</p>
+<p>It is somewhat saddening how little respect there is for that sort of game design work.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-01-17-193001.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-01-17</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/DavidGlaude/status/1218248377617539072">https://twitter.com/DavidGlaude/status/1218248377617539072</a> @DavidGlaude @pimoroni @adafruit Yup, that looks like partial updates :)</p>
+<p>I think you could also dynamically switch between 444,565,888 color modes depending on the size of the current frame update.</p>
+<p>You are only choosing the transport format, they all update the same back buffer so can be intermixed.</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page39.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page37.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

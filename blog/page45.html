@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page46.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page44.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-31-024026.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-31</div>
+ <div class="bloglink-title"><p>I can&#39;t take any more fraggles, time to switch to carole and tuesday.</p>
+<p><a href="https://www.youtube.com/watch?v=XeIX2sz0OkU">https://www.youtube.com/watch?v=XeIX2sz0OkU</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-30-132551.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-30</div>
+ <div class="bloglink-title"><p>@Acuity_Design Back in the 2000s there was this piza place in Croydon called &quot;Pizza Online&quot; because it was next to the tram line and no, it did not have a website with online ordering.</p>
+<p>Might still be there and if it is, it probably has a website now but at the time it upset me considerably :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-28-125308.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-28</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/IcepickInTheory/status/1166678347772026883">https://twitter.com/IcepickInTheory/status/1166678347772026883</a> @IcepickInTheory It could be worse.</p>
+<p>Your internet could be down*</p>
+<p>*My internet is down.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-29-232510.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-29</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/MartinCaine/status/1167059330149101568">https://twitter.com/MartinCaine/status/1167059330149101568</a> @MartinCaine @LeedsGamesToast @huddevfield @shindigdev @magic_bane Be good to see you, BTW if the 7pm is a bit early, we usually stay later than 9pm the 7-9pm is more of a core hours sort of thing.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-27-135933.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-27</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1166155754275049474">https://twitter.com/wetgenes/status/1166155754275049474</a> Now I need to get one of these Brazil screen magnifiers to be able to read it easily. 
+<video controls autoplay muted><source src="../blog/micro-2019/2019-08-27-135933.mp4"/></video></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-29-132430.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-29</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/LeedsGamesToast/status/1166972434987331584">https://twitter.com/LeedsGamesToast/status/1166972434987331584</a> @LeedsGamesToast @huddevfield @shindigdev @magic_bane Everything you need to know about the #Bradford #GameDev meetup in a pub can be found on this page</p>
+<p><a href="http://xixs.com/badonkadonk">http://xixs.com/badonkadonk</a></p>
+<p>we even have a meetup</p>
+<p><a href="https://www.meetup.com/Badonkadonk/">https://www.meetup.com/Badonkadonk/</a></p>
+<p>and our next date is Wednesday 11th September.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-29-231741.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-29</div>
+ <div class="bloglink-title"><p>I think we will give the couch coop on this one a go, I mean, how cheezy can it be? :) <a href="https://twitter.com/WhatsOnSteam/status/1167198340498505730">https://twitter.com/WhatsOnSteam/status/1167198340498505730</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-29-011424.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-29</div>
+ <div class="bloglink-title"><p>People questioning the value of the royal family have obviously not taken into account the amount of magical energy you can generate from just one royal sacrifice.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-27-172240.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-27</div>
+ <div class="bloglink-title"><p>If PUSH is four letters and PULL is four letters then why would you use POP, a three letter word?</p>
+<p>No human being would stack words like that.</p>
+<p><a href="https://www.youtube.com/watch?v=Cmy-4QC0U0g">https://www.youtube.com/watch?v=Cmy-4QC0U0g</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-24-165840.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-24</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/accessjames/status/1165249334453133312">https://twitter.com/accessjames/status/1165249334453133312</a> @accessjames Do you have funding? because I need investment to build a physical escape room game which is just a perfect reconstruction of the final scene form the Italian Job.</p>
+<p>We are talking pneumatic tilting floor, full back projection of the alps, real gold bars, live music, everything.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-26-222227.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-26</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/K_0/status/1166057007775911938">https://twitter.com/K_0/status/1166057007775911938</a> @K_0 We made a similar thing :) 
+<video controls autoplay muted><source src="../blog/micro-2019/2019-08-26-222227.mp4"/></video></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-27-020932.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-27</div>
+ <div class="bloglink-title"><p>Generated some PSF files for <a href="https://github.com/xriss/fun64/tree/master/art/funfont64">https://github.com/xriss/fun64/tree/master/art/funfont64</a> which means my 4x8 pixel font can now be used in a linux terminal (setfont).</p>
+<p>This is a photo of a 480x320 raspberry pi LCD showing a screen of text.</p>
+<p>Yup, them there letters are all 3 pixels wide with a 1 pixel space :) 
+<img src="../blog/micro-2019/2019-08-27-020932.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-23-124651.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-23</div>
+ <div class="bloglink-title"><p>@DickWThomas @KeybaseIO I ended up just getting a dedicated server last time I looked at backup options.</p>
+<p><a href="https://oneprovider.com/search">https://oneprovider.com/search</a></p>
+<p>7 euros a month gets you a box with 1TB and you can use it for other things as well.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-24-162621.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-24</div>
+ <div class="bloglink-title"><p>I have just realized you can put under construction gifs in the readme of your unfinished github projects and now I feel it should be mandatory.</p>
+<p><a href="https://github.com/xriss/jamming-raspberry">https://github.com/xriss/jamming-raspberry</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-22-152118.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-22</div>
+ <div class="bloglink-title"><p>Alien without O&#39;Bannon is just Prometheus. <a href="https://twitter.com/timmaughan/status/1164517655845515265">https://twitter.com/timmaughan/status/1164517655845515265</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-18-224341.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-18</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/Stuart_Lilford/status/1163099161182515200">https://twitter.com/Stuart_Lilford/status/1163099161182515200</a> @Stuart_Lilford Maybe more separation between mechanics and flavor.</p>
+<p>If you hit a story cliche you can&#39;t also hit a mechanic one and vice versa.</p>
+<p>So Zombie horde shooter bad</p>
+<p>but Zombie farm and cook,less bad. </p>
+<p><a href="https://store.steampowered.com/app/266390/Farm_for_your_Life/">https://store.steampowered.com/app/266390/Farm_for_your_Life/</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-16-155307.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-16</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1162375985829990402">https://twitter.com/wetgenes/status/1162375985829990402</a> Skipped most of the dialogue :) but I would say its the best Ys game Ive played.</p>
+<p>Only thing I did not like was the breaking of the map into area chunks, often at places that make no sense. Would have felt much more coherent to be one seamless area.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-16-155005.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-16</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1162111043579064331">https://twitter.com/wetgenes/status/1162111043579064331</a> It is good, you should try it, has a nice feeling of progression (kinda important for RPGs) and a pikmin style unlocking of areas (need x people to move obstacles) the fights are button mashes but there is a little bit of tactics to switching damage types and it&#39;s very polished.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2019/2019-08-18-152031.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2019-08-18</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/Stuart_Lilford/status/1163029265530662913">https://twitter.com/Stuart_Lilford/status/1163029265530662913</a> @Stuart_Lilford I figure farming is not the same as crafting. IE something like rune factory doesn&#39;t have crafting (I think) but is very farm.</p>
+<p>Procedural Generation is probably too a big catch all, eg shuffling a pack of cards is procedural generation.</p>
+<p>Chulip</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page46.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page44.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

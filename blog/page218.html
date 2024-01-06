@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page219.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page217.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../blog/micro-2012/2012-02-07-122734.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-02-07</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/sgtruck/status/166798067784355840">https://twitter.com/sgtruck/status/166798067784355840</a> @sgtruck Well from my point of view its replaying, think games on android devices. Want to create a tracker mzk + sfx sort of sound system.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-02-06-223052.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-02-06</div>
+ <div class="bloglink-title"><p>@sgtruck is milkytracker the &quot;right&quot; choice nowadays? and if it is should I just rip player code out of it or is there something better?</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-02-04-225300.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-02-04</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/shi/status/165849167468568576">https://twitter.com/shi/status/165849167468568576</a> @shi We can be Heroes, just for the UK.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-02-04-135819.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-02-04</div>
+ <div class="bloglink-title"><p>This is the weekend where you must celebrate the fact that 35 years ago 2000AD was in the future.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-02-04-134700.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-02-04</div>
+ <div class="bloglink-title"><p>New wettest builds, the avatar editor in the windows/wine version will now actually let you load and save avatars... : <a href="http://goo.gl/dfUct">http://goo.gl/dfUct</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-02-03-130725.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-02-03</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/Tony_Gowland/status/165374424445485056">https://twitter.com/Tony_Gowland/status/165374424445485056</a> @FreakyZoid Hmmm, I wonder if @StooCambridge has seen the thing. <a href="http://www.youtube.com/watch?v=gP5i2V2IkME">http://www.youtube.com/watch?v=gP5i2V2IkME</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-30-152729.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/jeffnoon/status/163809991747309570">https://twitter.com/jeffnoon/status/163809991747309570</a> @jeffnoon Those are true random numbers. I prefer pseudo. A sequence that is only random enough to fool people, not machines. :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-30-132352.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-30</div>
+ <div class="bloglink-title"><p>There are ten times more bytes in this minor source file than there was memory in my first computer and that must be why I cant see the bug.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-30-021806.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/jeffnoon/status/163794877904203776">https://twitter.com/jeffnoon/status/163794877904203776</a> @jeffnoon that 64k number sequence is a Lehmer random number generator as used on the spectrum. <a href="http://en.wikipedia.org/wiki/Lehmer_random_number_generator">http://en.wikipedia.org/wiki/Lehmer_random_number_generator</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-30-021342.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/jeffnoon/status/163794877904203776">https://twitter.com/jeffnoon/status/163794877904203776</a> @jeffnoon (((p+1)<em>75)%65537)-1 to loop over every pixel in a 256</em>256 block randomly and then muck with each pixel swap/copy/darken</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-28-201057.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-28</div>
+ <div class="bloglink-title"><p>Looks like the server is down, sorry. It is just the hosting place having a hiccup by the looks of it. Will probably : <a href="http://goo.gl/UgwzG">http://goo.gl/UgwzG</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-25-042426.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-25</div>
+ <div class="bloglink-title"><p>Psssst, wanna buy some cheap marketing? 100% indie guranteeeeeeed : <a href="http://www.indieroyale.com/newsletter/98">http://www.indieroyale.com/newsletter/98</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-17-193032.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-17</div>
+ <div class="bloglink-title"><p>Hmmm, tomorrow I think I shall [REDACTED]</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-15-125055.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-15</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/jeffnoon/status/158526844952522752">https://twitter.com/jeffnoon/status/158526844952522752</a> @jeffnoon <a href="http://cb.4lfa.com/comic/Zenophobia">http://cb.4lfa.com/comic/Zenophobia</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-16-152913.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-16</div>
+ <div class="bloglink-title"><p>Sadly, I bet this guy has never met the audience. <a href="http://www.kickstarter.com/projects/632613697/city-conquest">http://www.kickstarter.com/projects/632613697/city-conquest</a> I guarantee an unbalanced TD will sell more. EG: <a href="http://www.youtube.com/watch?v=1yHEow_ss_8">http://www.youtube.com/watch?v=1yHEow_ss_8</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-16-222330.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-16</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/BinaryTweedDeej/status/159016738762133504">https://twitter.com/BinaryTweedDeej/status/159016738762133504</a> @BinaryTweedDeej I remember that feeling, although my package did actually included a game I did a small amount of work on.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-16-132558.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-16</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/JazRignall/status/158825523362009088">https://twitter.com/JazRignall/status/158825523362009088</a> @jazrignall Actually, yes they do. It is just that now they are called art games.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-15-210205.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-15</div>
+ <div class="bloglink-title"><p>In the 80s I remember there was a TOTP episode where Brian Blessed sat on Keith Harris&#39; knee and sang &quot;I wish I could fly&quot;.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2012/2012-01-15-021225.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2012-01-15</div>
+ <div class="bloglink-title"><p>Behold a dtrash youtube megaplaylist <a href="http://www.youtube.com/playlist?list=PL9D92B7417898AF59">http://www.youtube.com/playlist?list=PL9D92B7417898AF59</a> I recommend 64revolt <a href="http://www.youtube.com/watch?v=NJbOM4kGmcU&list=PL9D92B7417898AF59">http://www.youtube.com/watch?v=NJbOM4kGmcU&amp;list=PL9D92B7417898AF59</a> and john merricks… <a href="https://plus.google.com/109440170884180647149/posts/VsVJmXorSeX">https://plus.google.com/109440170884180647149/posts/VsVJmXorSeX</a></p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page219.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page217.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

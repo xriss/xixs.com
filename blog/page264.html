@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page265.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page263.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../blog/micro-2009/2009-12-11-010048.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-12-11</div>
+ <div class="bloglink-title"><p>Photo: The garden gnomes have been working hard to increased the size of your magick shed. Enjoy but beware... <a href="http://tumblr.com/xjv4lmuzz">http://tumblr.com/xjv4lmuzz</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-28-192111.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-28</div>
+ <div class="bloglink-title"><p>Link: Gamasutra - Features - No Laughing Matter: Making Humor Work in Games <a href="http://tumblr.com/xjv4bekij">http://tumblr.com/xjv4bekij</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-28-192108.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-28</div>
+ <div class="bloglink-title"><p>Link: Pixel Poppers: Awesome By Proxy: Addicted to Fake Achievement <a href="http://tumblr.com/xjv4bekgk">http://tumblr.com/xjv4bekgk</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-29-021436.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-29</div>
+ <div class="bloglink-title"><p>Link: A Business Fable - In which business is fully explained. <a href="http://tumblr.com/xjv4bnoyj">http://tumblr.com/xjv4bnoyj</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-29-010558.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-29</div>
+ <div class="bloglink-title"><p>Photo: Kolumbo Bobs new balloon emporium can now be found in the dunbonkin level of... <a href="http://tumblr.com/xjv4bm4b9">http://tumblr.com/xjv4bm4b9</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-24-085955.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-24</div>
+ <div class="bloglink-title"><p>Link: Game marketing is three times more important than product quality - Remember, if you are in marketing,... <a href="http://tumblr.com/xjv4835sz">http://tumblr.com/xjv4835sz</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-24-085954.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-24</div>
+ <div class="bloglink-title"><p>Link: IBM brain simulations reach cat equivalency - I prefer angry rants from people wot know shit, to press... <a href="http://tumblr.com/xjv4835sm">http://tumblr.com/xjv4835sm</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-23-190534.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-23</div>
+ <div class="bloglink-title"><p>Video: Have you stopped beating your wife? <a href="http://tumblr.com/xjv47ku3q">http://tumblr.com/xjv47ku3q</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-18-013833.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-18</div>
+ <div class="bloglink-title"><p>Link: NYT: Can Indie Games Supplant the First-Person Shooter? - There is one very simple problem I have with... <a href="http://tumblr.com/xjv43k7e0">http://tumblr.com/xjv43k7e0</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-15-205924.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-15</div>
+ <div class="bloglink-title"><p>Link: Returning to the Industry « Applied Game Design <a href="http://tumblr.com/xjv41yb2v">http://tumblr.com/xjv41yb2v</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-17-081059.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-17</div>
+ <div class="bloglink-title"><p>Link: United States Of Earth - I’m pretty sure libertarian means “Have the dancing boys oiled and sent to my... <a href="http://tumblr.com/xjv432twr">http://tumblr.com/xjv432twr</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-15-181412.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-15</div>
+ <div class="bloglink-title"><p>Link: Interview: Al Lowe Talks New iPhone App, Evolution Of The Adventure Game Genre - It surprises Lowe that... <a href="http://tumblr.com/xjv41uzan">http://tumblr.com/xjv41uzan</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-05-214006.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-05</div>
+ <div class="bloglink-title"><p>Link: Scamville: The Social Gaming Ecosystem Of Hell - Make money, make more money… <a href="http://tumblr.com/xjv3vgqwp">http://tumblr.com/xjv3vgqwp</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-11-01-055758.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-11-01</div>
+ <div class="bloglink-title"><p>Video: I believe we have all reached a point of maturity in our internet lives where the words “new” and... <a href="http://tumblr.com/xjv3sn28k">http://tumblr.com/xjv3sn28k</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-10-31-195308.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-10-31</div>
+ <div class="bloglink-title"><p>Video: Bad news, everyone! Torchlight, the follow up to Fate, is now live. Huzzah. <a href="http://tumblr.com/xjv3sexe2">http://tumblr.com/xjv3sexe2</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-10-30-050404.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-10-30</div>
+ <div class="bloglink-title"><p>Video: SPOON! <a href="http://tumblr.com/xjv3rjc25">http://tumblr.com/xjv3rjc25</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-10-28-181033.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-10-28</div>
+ <div class="bloglink-title"><p>Link: “It’s easy” - The way I see it, server crashes should be treated the same way that the sound of... <a href="http://tumblr.com/xjv3qm03d">http://tumblr.com/xjv3qm03d</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-10-27-142020.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-10-27</div>
+ <div class="bloglink-title"><p>Link: Statement on Sockington Selling Out - Remember kids, “If you work in advertising or marketing… kill... <a href="http://tumblr.com/xjv3pwbgv">http://tumblr.com/xjv3pwbgv</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2009/2009-10-27-221520.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2009-10-27</div>
+ <div class="bloglink-title"><p>Link: Massive fail - the anti-social world of social media | Article | The Punch - I see he is going for the... <a href="http://tumblr.com/xjv3q3qzq">http://tumblr.com/xjv3q3qzq</a></p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page265.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page263.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>

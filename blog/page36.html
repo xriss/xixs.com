@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+<title>Welcome to blog!</title>
+<link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
+<script>
+(function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
+return(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\.css[^\.]*$/.test(a.url)?(c=e.createElement("link"),c.type="text/"+(a.type||"css"),c.rel="stylesheet",
+c.href=a.url):(c=e.createElement("script"),c.type="text/"+(a.type||"javascript"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if("load"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName("head")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):
+(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener("DOMContentLoaded",t,!1),i()):"complete"===e.readyState&&(e.detachEvent("onreadystatechange",t),i())}var e=f.document,A=[],B=[],l={},p={},E="async"in e.createElement("script")||"MozAppearance"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||"head",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-
+1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:"cache"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=
+function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!1,failure:c?v("Array",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a="ALL");if("string"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||"ALL"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];
+return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
+return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
+
+head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
+BabylonViewer.InitTags('babylon');
+});
+</script>
+<style>
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+	color:inherit;
+	text-decoration:inherit;
+	text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+}
+
+body, html {
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	width:100%;
+	font-weight:normal;
+	font-style:normal;
+}
+
+body {
+	font-size:20px;
+	background:#eee;
+	font-family:monospace, sans-serif;
+	font-size:20px;
+	line-height:1.5;
+	color:#444;
+}
+
+html {
+	height:100%;
+}
+
+h1,h2,h3,h4,h5 {
+    margin:1em 0 0 0;
+	font-weight:bold;
+}
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:32px;
+	border-bottom:1px solid #888;
+	padding-bottom:10px;
+}
+h3,h4,h5 {
+	font-size:24px;
+}
+
+p {
+	margin-top:1.5em;
+	margin-bottom:1em;
+}
+
+em {
+	font-style:italic;
+}
+
+ul {
+	padding-inline-start: 40px;
+}
+
+strong,
+a {
+	font-weight:bold;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+.main {
+	margin:20px auto 60px auto;
+	width:960px;
+}
+
+
+.oldnew-links {
+	width:960px;
+	height:50px;
+	padding-bottom:10px;
+	position:relative;
+	font-size:16px;
+}
+
+.old-link {
+	left: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.new-link {
+	right: 0;
+	top: 10px;
+	position:absolute;
+	background:#444;
+	color:#eee;
+	padding:4px 8px;
+	border-radius: 8px;
+}
+
+.old-link:hover,
+.new-link:hover {
+	text-decoration:none;
+	background:#888;
+}
+
+.model-container {
+	padding-top:20px;
+}
+
+.model-view {
+	display: inline-block;
+	width:75%;
+	height:480px;
+}
+
+.model-download {
+	display: inline-block;
+	width:25%;
+}
+
+.model-download a {
+	display: inline-block;
+}
+
+.bloglink {
+/*
+	height: 100px;
+*/
+	display: block;
+	padding-bottom: 20px;
+}
+
+.bloglink img , .bloglink video , .bloglink audio {
+    max-width:500px;
+    height:auto;
+    width:auto;
+}
+
+.bloglink-icon {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.bloglink-date {
+	display: inline-block;
+	width: 150px;
+	line-height: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+
+.bloglink-title {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	padding-left: 20px;
+	font-weight: bold;
+/*
+	height:100px;
+*/
+	overflow:hidden;
+}
+
+.blog_list_wrap {
+	padding:20px 0;
+}
+
+table {
+	display: block;
+    max-width: 100%;
+    border-spacing: 15px 10px;
+}
+
+
+
+.crumb-wrap {
+	margin:0px auto;
+	width:960px;
+	padding:20px 0;
+	text-align:right;
+}
+
+.crumb-slash {
+	margin:0px 20px 0px 20px;
+}
+
+.crumb {
+}
+
+.utter_wrap {
+	padding-top:30px;
+}
+
+
+.blogpost img {
+	width:100%;
+}
+
+/*	PHONES & STUFF
+	============================================= */
+	
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+* {
+	width:100%; 
+	height:auto; 
+	min-height:1px; 
+	max-height:999999px;
+}
+
+body {
+	font-size:3rem; 
+	padding:30px 50px;
+}
+
+h1, h2 {
+	font-size:4rem;
+}
+
+li {
+	list-style-position:inside;
+}
+
+.old-link,
+.new-link {
+	width:initial;
+	font-size:2.5rem;
+	padding:4px 14px;
+}
+
+.bloglink {
+	height:initial;
+}
+
+.bloglink-title {
+	width:initial;
+}
+
+.bloglink-date {
+	width:initial;
+	padding-right:20px;
+}
+
+.model-download {
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+.model-download a {
+    display:block;
+    line-height:1em;
+    padding-bottom:15px;
+}
+
+}
+
+</style></head>
+<body><div class="crumb-wrap"><a class="crumb" href="../">XIXs</a><span class="crumb-slash">/</span><a class="crumb" href="../blog">Blog</a><span class="crumb-slash">/</span><a href="{_blog_post_this}"></a></div><div class="main">
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page37.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page35.html">&gt;news&gt;</a>
+
+ </div>
+<div class="blog_list_wrap">
+	
+
+<div class="bloglink" href="../blog/micro-2020/2020-04-02-132051.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-04-02</div>
+ <div class="bloglink-title"><p>@johnmclear Snaps seem a lot easier to keep up to date from a publishing point of view. I tried and gave up with deb and ppa after I failed to update them regulary. Snaps are mostly painless once you get them working :)</p>
+<p>The only downside with snaps is if you have to fight the sandboxing.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-04-01-152712.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-04-01</div>
+ <div class="bloglink-title"><p>never go full donkey <a href="https://t.co/Y8xodzgcXe">https://t.co/Y8xodzgcXe</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-04-01-152247.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-04-01</div>
+ <div class="bloglink-title"><p>who seeks minerals should start by digging two graves 
+<img src="../blog/micro-2020/2020-04-01-152247.png"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-31-193317.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-31</div>
+ <div class="bloglink-title"><p>I found your crackers @arturcz 
+<img src="../blog/micro-2020/2020-03-31-193317.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-30-134551.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/MartinCaine/status/1244535486628192256">https://twitter.com/MartinCaine/status/1244535486628192256</a> @MartinCaine I think there has to be a market for a graphics card attachment that takes the exhaust and blows it over your keyboard and mouse.</p>
+<p>I&#39;m going to create it and call it gamer ducts so it can sell on amazon next to the yellow game glasses.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-04-02-010815.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-04-02</div>
+ <div class="bloglink-title"><p>I only subscribe to project gutenberg for the pictures. <a href="https://twitter.com/gutenberg_new/status/1245491159289356290">https://twitter.com/gutenberg_new/status/1245491159289356290</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-30-163957.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-30</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/1244634808673763333">https://twitter.com/wetgenes/status/1244634808673763333</a> On a whim I figured I would try Google translate camera magic thingy on the snes screen and it only bleeding works. You have no idea how much easier this makes the game. 
+<img src="../blog/micro-2020/2020-03-30-163957.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-30-153717.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-30</div>
+ <div class="bloglink-title"><p>This is the view from the window. 
+<img src="../blog/micro-2020/2020-03-30-153717.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-31-111903.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-31</div>
+ <div class="bloglink-title"><p>@ekoner Ah, &quot;Shiren The Wanderer&quot; SNES so Japanese only. The second in the &quot;Mystery Dungeon&quot; series of which there are many, but it&#39;s the best one :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-30-142636.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-30</div>
+ <div class="bloglink-title"><p>Built a daybed with a view by the window,  for the cat, obviously. 
+<img src="../blog/micro-2020/2020-03-30-142636.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-31-180646.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-31</div>
+ <div class="bloglink-title"><p>@ekoner Probably I&#39;m not to sure how Popular Shiren is in Japan but it is part of a very popular series of games that is usually themed with other IPs, such as dragon quest or pokemon.</p>
+<p>There are lots of Shiren games only available in Japan so still kinda obscure in the west.</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-30-231438.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-30</div>
+ <div class="bloglink-title"><p>@ekoner A dusty collection of old consoles?</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-28-134758.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-28</div>
+ <div class="bloglink-title"><p>Hiding / finding elicit goods feels like the right sort of gameplay loop for a narrative light, environment heavy, walking sim style game.</p>
+<p>Mostly about requiring very close attention to the environment.</p>
+<p>Like late night graffiti action in a city.</p>
+<p><a href="https://www.vice.com/en_us/article/g5x3zj/hydra-russia-drug-cartel-dark-web">https://www.vice.com/en_us/article/g5x3zj/hydra-russia-drug-cartel-dark-web</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-29-152124.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-29</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/GaryAshurstArt/status/1244216872331030528">https://twitter.com/GaryAshurstArt/status/1244216872331030528</a> @GaryLloydArt I got yelled at for taking junk out of the recycle bin. :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-26-225950.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-26</div>
+ <div class="bloglink-title"><p>I want Space Columbo where every episode someone is killed by a new form of technobabble and most of the episode is exposition about how that technobabble works and then Columbo tricks the bad guy into confessing by pretending to be a a silly broken old malfunctioning android. <a href="https://twitter.com/BrennanML/status/1243221969694347270">https://twitter.com/BrennanML/status/1243221969694347270</a></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-28-192901.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-28</div>
+ <div class="bloglink-title"><p>Have decided to add a background lava lamp to my 3d print video captures. 
+<video controls autoplay muted><source src="../blog/micro-2020/2020-03-28-192901.mp4"/></video></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-29-201138.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-29</div>
+ <div class="bloglink-title"><p>How do you stack yours? 
+<img src="../blog/micro-2020/2020-03-29-201138.jpg"></img></p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-28-150252.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-28</div>
+ <div class="bloglink-title"><p>NINE INCH NAILS GHOSTS V-VI AVAILABLE NOW <a href="https://www.nin.com/nine-inch-nails-ghosts-v-vi-available-now/">https://www.nin.com/nine-inch-nails-ghosts-v-vi-available-now/</a> Free MP3 download link in the middle of the page :)</p>
+</div>
+</div>
+
+
+
+
+<div class="bloglink" href="../blog/micro-2020/2020-03-24-175632.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2020-03-24</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/IATI_aid/status/1242496649198526467">https://twitter.com/IATI_aid/status/1242496649198526467</a> @IATI_aid Related link...</p>
+<p><a href="http://d-portal.org/ctrack.html?text_search=COVID-19#view=main">http://d-portal.org/ctrack.html?text_search=COVID-19#view=main</a></p>
+<p>This was 8 activities last week and has gained another one over the weekend to now total 9.</p>
+<p>Obviously this may not be all the published activities related to COVID-19 but it is all activities with COVID-19 in the title or description.</p>
+</div>
+</div>
+
+
+
+</div>
+<div class="oldnew-links"> 
+<a class="old-link" href="../blog/page37.html">&lt;olds&lt;</a>
+
+ 
+<a class="new-link" href="../blog/page35.html">&gt;news&gt;</a>
+
+ </div>
+
+</div></body>
+</html>
