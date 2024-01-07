@@ -61,6 +61,202 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<p><a href=\"https://twitter.com/slembcke/status/1291445242361675778\">https://twitter.com/slembcke/status/1291445242361675778</a> @slembcke /me points at scratch, it is, sadly, a corruption that starts young.</p>\n<p>I&#39;m kinda working on a text editor so I can attempt to combat it (by partially embracing it but with a text first ethos). </p>\n<p>But, you know, big projects and all that :)</p>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
+   "_blog_post_json": {
+    "datedash": "2020-08-06",
+    "datetime": [
+     2020,
+     8,
+     6,
+     20,
+     2,
+     46
+    ],
+    "files": {
+     "md": [
+      "blog/micro-2020/2020-08-06-200246.md"
+     ]
+    },
+    "htmlname": "blog/micro-2020/2020-08-06-200246.html",
+    "tags": [
+     "micro"
+    ],
+    "timecolon": "20:02:46",
+    "unixtime": 1596744166
+   },
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-06-201955.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-08-06-164157.html",
+   "_blog_post_this": "{_root}blog/micro-2020/2020-08-06-200246.html",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-06-200246.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-06</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/slembcke/status/1291445242361675778\">https://twitter.com/slembcke/status/1291445242361675778</a> @slembcke /me points at scratch, it is, sadly, a corruption that starts young.</p>\n<p>I&#39;m kinda working on a text editor so I can attempt to combat it (by partially embracing it but with a text first ethos). </p>\n<p>But, you know, big projects and all that :)</p>\n</div>\n</div>\n",
+   "_dirname": "{_root}blog/micro-2020",
+   "_filename": "{_root}blog/micro-2020/2020-08-06-200246.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/micro-2020/2020-08-06-200246.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "title": "Welcome to blog!"
+  },
+  {
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "XIXs Blog"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 19,
+    "url": "https://xixs.com/"
+   },
+   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<p>This is some real amateur game design thinking.</p>\n<p>Personally I would go for rules about having to hold you breath when close to other people.</p>\n<p>Kinda like Kabaddi.</p>\n<p>get some tech in there and fouls for breathing at the wrong time and booom, better than american football :) <a href=\"https://twitter.com/BBCSport/status/1291335713502433281\">https://twitter.com/BBCSport/status/1291335713502433281</a></p>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
+   "_blog_post_json": {
+    "datedash": "2020-08-06",
+    "datetime": [
+     2020,
+     8,
+     6,
+     16,
+     41,
+     57
+    ],
+    "files": {
+     "md": [
+      "blog/micro-2020/2020-08-06-164157.md"
+     ]
+    },
+    "htmlname": "blog/micro-2020/2020-08-06-164157.html",
+    "tags": [
+     "micro"
+    ],
+    "timecolon": "16:41:57",
+    "unixtime": 1596732117
+   },
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-06-200246.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-08-05-155019.html",
+   "_blog_post_this": "{_root}blog/micro-2020/2020-08-06-164157.html",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-06-164157.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-06</div>\n <div class=\"bloglink-title\"><p>This is some real amateur game design thinking.</p>\n<p>Personally I would go for rules about having to hold you breath when close to other people.</p>\n<p>Kinda like Kabaddi.</p>\n<p>get some tech in there and fouls for breathing at the wrong time and booom, better than american football :) <a href=\"https://twitter.com/BBCSport/status/1291335713502433281\">https://twitter.com/BBCSport/status/1291335713502433281</a></p>\n</div>\n</div>\n",
+   "_dirname": "{_root}blog/micro-2020",
+   "_filename": "{_root}blog/micro-2020/2020-08-06-164157.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/micro-2020/2020-08-06-164157.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "title": "Welcome to blog!"
+  },
+  {
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "XIXs Blog"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 19,
+    "url": "https://xixs.com/"
+   },
+   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>A bit of the old Jodorowsky and plenty of Metal Hurlant in this comic bundle.</p>\n<p>and at this point I realize that I have never actually read a Barbarella comic.</p>\n<p>how can that be?</p>\n<p><a href=\"https://www.humblebundle.com/books/incal-and-more-humanoids-books\">https://www.humblebundle.com/books/incal-and-more-humanoids-books</a></p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -72,7 +268,7 @@
      8,
      5,
      15,
-     5019,
+     50,
      19
     ],
     "files": {
@@ -84,8 +280,8 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "15:19:19",
-    "unixtime": 1596940759
+    "timecolon": "15:50:19",
+    "unixtime": 1596642619
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-08-06-164157.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-08-05-153959.html",
@@ -170,7 +366,7 @@
      8,
      5,
      15,
-     3959,
+     39,
      59
     ],
     "files": {
@@ -182,11 +378,11 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "15:59:59",
-    "unixtime": 1596877199
+    "timecolon": "15:39:59",
+    "unixtime": 1596641999
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-08-05-155019.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-08-06-201955.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-08-03-143752.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-08-05-153959.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-05-153959.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-05</div>\n <div class=\"bloglink-title\"><p>No staby in backy but I liked the demo and the shell system is interesting, similar to the let it die &quot;shells&quot;.</p>\n<p><a href=\"https://www.youtube.com/watch?v=i1AESBecyTc\">https://www.youtube.com/watch?v=i1AESBecyTc</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2020",
@@ -257,300 +453,6 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
-   "_blog_post_body": "<p><a href=\"https://twitter.com/slembcke/status/1291451241957142529\">https://twitter.com/slembcke/status/1291451241957142529</a> @slembcke I&#39;m not sure it really helps at all to be honest, it makes kids think that the <em>hard</em> bit of programing is writing text.</p>\n<p>When actually that is the easiest bit. :)</p>\n<p>Even worse, in my experience, kids take to editing text just fine and all scratch does is hold some of them back.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
-   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
-   "_blog_post_json": {
-    "datedash": "2020-08-06",
-    "datetime": [
-     2020,
-     8,
-     6,
-     20,
-     1955,
-     55
-    ],
-    "files": {
-     "md": [
-      "blog/micro-2020/2020-08-06-201955.md"
-     ]
-    },
-    "htmlname": "blog/micro-2020/2020-08-06-201955.html",
-    "tags": [
-     "micro"
-    ],
-    "timecolon": "20:55:55",
-    "unixtime": 1596861355
-   },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-05-153959.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-08-06-200246.html",
-   "_blog_post_this": "{_root}blog/micro-2020/2020-08-06-201955.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-06-201955.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-06</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/slembcke/status/1291451241957142529\">https://twitter.com/slembcke/status/1291451241957142529</a> @slembcke I&#39;m not sure it really helps at all to be honest, it makes kids think that the <em>hard</em> bit of programing is writing text.</p>\n<p>When actually that is the easiest bit. :)</p>\n<p>Even worse, in my experience, kids take to editing text just fine and all scratch does is hold some of them back.</p>\n</div>\n</div>\n",
-   "_dirname": "{_root}blog/micro-2020",
-   "_filename": "{_root}blog/micro-2020/2020-08-06-201955.html",
-   "_flags": {
-    "_blog_post_body": {
-     "form": "markdown"
-    },
-    "body": {
-     "trim": "ends"
-    },
-    "bodywrap": {
-     "trim": "ends"
-    },
-    "crumb_slash": {
-     "trim": "ends"
-    },
-    "crumb_trap": {
-     "same": "append",
-     "trim": "ends"
-    },
-    "crumb_wrap": {
-     "trim": "ends"
-    },
-    "css": {
-     "same": "append"
-    },
-    "head": {
-     "trim": "ends"
-    },
-    "headjs": {
-     "same": "append"
-    },
-    "html": {
-     "trim": "ends"
-    },
-    "title": {
-     "trim": "ends"
-    }
-   },
-   "_root": "../../",
-   "_site": "{_root}",
-   "_sourcename": "blog/micro-2020/2020-08-06-201955.html",
-   "blog_list": "\n{_it._body}\n\n",
-   "body": "{_blog_post_body_one}",
-   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
-   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
-   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
-   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
-   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
-   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
-   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
-   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
-   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "title": "Welcome to blog!"
-  },
-  {
-   "_blog_json": {
-    "dir": "blog/.",
-    "feed": {
-     "title": "XIXs Blog"
-    },
-    "posts_per_feed": 20,
-    "posts_per_page": 19,
-    "url": "https://xixs.com/"
-   },
-   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
-   "_blog_post_body": "<p><a href=\"https://twitter.com/slembcke/status/1291445242361675778\">https://twitter.com/slembcke/status/1291445242361675778</a> @slembcke /me points at scratch, it is, sadly, a corruption that starts young.</p>\n<p>I&#39;m kinda working on a text editor so I can attempt to combat it (by partially embracing it but with a text first ethos). </p>\n<p>But, you know, big projects and all that :)</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
-   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
-   "_blog_post_json": {
-    "datedash": "2020-08-06",
-    "datetime": [
-     2020,
-     8,
-     6,
-     20,
-     246,
-     46
-    ],
-    "files": {
-     "md": [
-      "blog/micro-2020/2020-08-06-200246.md"
-     ]
-    },
-    "htmlname": "blog/micro-2020/2020-08-06-200246.html",
-    "tags": [
-     "micro"
-    ],
-    "timecolon": "20:46:46",
-    "unixtime": 1596758806
-   },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-06-201955.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-08-02-195827.html",
-   "_blog_post_this": "{_root}blog/micro-2020/2020-08-06-200246.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-06-200246.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-06</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/slembcke/status/1291445242361675778\">https://twitter.com/slembcke/status/1291445242361675778</a> @slembcke /me points at scratch, it is, sadly, a corruption that starts young.</p>\n<p>I&#39;m kinda working on a text editor so I can attempt to combat it (by partially embracing it but with a text first ethos). </p>\n<p>But, you know, big projects and all that :)</p>\n</div>\n</div>\n",
-   "_dirname": "{_root}blog/micro-2020",
-   "_filename": "{_root}blog/micro-2020/2020-08-06-200246.html",
-   "_flags": {
-    "_blog_post_body": {
-     "form": "markdown"
-    },
-    "body": {
-     "trim": "ends"
-    },
-    "bodywrap": {
-     "trim": "ends"
-    },
-    "crumb_slash": {
-     "trim": "ends"
-    },
-    "crumb_trap": {
-     "same": "append",
-     "trim": "ends"
-    },
-    "crumb_wrap": {
-     "trim": "ends"
-    },
-    "css": {
-     "same": "append"
-    },
-    "head": {
-     "trim": "ends"
-    },
-    "headjs": {
-     "same": "append"
-    },
-    "html": {
-     "trim": "ends"
-    },
-    "title": {
-     "trim": "ends"
-    }
-   },
-   "_root": "../../",
-   "_site": "{_root}",
-   "_sourcename": "blog/micro-2020/2020-08-06-200246.html",
-   "blog_list": "\n{_it._body}\n\n",
-   "body": "{_blog_post_body_one}",
-   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
-   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
-   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
-   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
-   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
-   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
-   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
-   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
-   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "title": "Welcome to blog!"
-  },
-  {
-   "_blog_json": {
-    "dir": "blog/.",
-    "feed": {
-     "title": "XIXs Blog"
-    },
-    "posts_per_feed": 20,
-    "posts_per_page": 19,
-    "url": "https://xixs.com/"
-   },
-   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
-   "_blog_post_body": "<p>Just had a fun glsl bug that kept me guessing for a while.</p>\n<p>Turns out an A*B was getting optimized to 0 when i explicitly set B to 0 but not when I read 0 from an attribute.</p>\n<p>Not a problem yup?</p>\n<p>Except if A is a nan, you now have different results depending on the source of 0.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
-   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
-   "_blog_post_json": {
-    "datedash": "2020-08-02",
-    "datetime": [
-     2020,
-     8,
-     2,
-     19,
-     5827,
-     27
-    ],
-    "files": {
-     "md": [
-      "blog/micro-2020/2020-08-02-195827.md"
-     ]
-    },
-    "htmlname": "blog/micro-2020/2020-08-02-195827.html",
-    "tags": [
-     "micro"
-    ],
-    "timecolon": "19:27:27",
-    "unixtime": 1596744447
-   },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-06-200246.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-08-03-143752.html",
-   "_blog_post_this": "{_root}blog/micro-2020/2020-08-02-195827.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-02-195827.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-02</div>\n <div class=\"bloglink-title\"><p>Just had a fun glsl bug that kept me guessing for a while.</p>\n<p>Turns out an A*B was getting optimized to 0 when i explicitly set B to 0 but not when I read 0 from an attribute.</p>\n<p>Not a problem yup?</p>\n<p>Except if A is a nan, you now have different results depending on the source of 0.</p>\n</div>\n</div>\n",
-   "_dirname": "{_root}blog/micro-2020",
-   "_filename": "{_root}blog/micro-2020/2020-08-02-195827.html",
-   "_flags": {
-    "_blog_post_body": {
-     "form": "markdown"
-    },
-    "body": {
-     "trim": "ends"
-    },
-    "bodywrap": {
-     "trim": "ends"
-    },
-    "crumb_slash": {
-     "trim": "ends"
-    },
-    "crumb_trap": {
-     "same": "append",
-     "trim": "ends"
-    },
-    "crumb_wrap": {
-     "trim": "ends"
-    },
-    "css": {
-     "same": "append"
-    },
-    "head": {
-     "trim": "ends"
-    },
-    "headjs": {
-     "same": "append"
-    },
-    "html": {
-     "trim": "ends"
-    },
-    "title": {
-     "trim": "ends"
-    }
-   },
-   "_root": "../../",
-   "_site": "{_root}",
-   "_sourcename": "blog/micro-2020/2020-08-02-195827.html",
-   "blog_list": "\n{_it._body}\n\n",
-   "body": "{_blog_post_body_one}",
-   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
-   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
-   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
-   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
-   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
-   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
-   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
-   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
-   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "title": "Welcome to blog!"
-  },
-  {
-   "_blog_json": {
-    "dir": "blog/.",
-    "feed": {
-     "title": "XIXs Blog"
-    },
-    "posts_per_feed": 20,
-    "posts_per_page": 19,
-    "url": "https://xixs.com/"
-   },
-   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/wetgenes/status/1290280013162586112\">https://twitter.com/wetgenes/status/1290280013162586112</a> @gamepopper You can snip a few pixels of the height, so a 4x6 will work at the cost of bad line spacing and no descenders but anything bellow that will be bad.</p>\n<p>So 4x5 is almost acceptable but 4x4 is pretty terrible :)</p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -562,7 +464,7 @@
      8,
      3,
      14,
-     3752,
+     37,
      52
     ],
     "files": {
@@ -574,10 +476,10 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "14:52:52",
-    "unixtime": 1596688372
+    "timecolon": "14:37:52",
+    "unixtime": 1596465472
    },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-02-195827.html",
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-05-153959.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-08-03-143502.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-08-03-143752.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-03-143752.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-03</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/wetgenes/status/1290280013162586112\">https://twitter.com/wetgenes/status/1290280013162586112</a> @gamepopper You can snip a few pixels of the height, so a 4x6 will work at the cost of bad line spacing and no descenders but anything bellow that will be bad.</p>\n<p>So 4x5 is almost acceptable but 4x4 is pretty terrible :)</p>\n</div>\n</div>\n",
@@ -660,7 +562,7 @@
      8,
      3,
      14,
-     3502,
+     35,
      2
     ],
     "files": {
@@ -672,8 +574,8 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "14:02:02",
-    "unixtime": 1596673322
+    "timecolon": "14:35:02",
+    "unixtime": 1596465302
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-08-03-143752.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-08-02-202539.html",
@@ -758,7 +660,7 @@
      8,
      2,
      20,
-     2539,
+     25,
      39
     ],
     "files": {
@@ -770,8 +672,8 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "20:39:39",
-    "unixtime": 1596550779
+    "timecolon": "20:25:39",
+    "unixtime": 1596399939
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-08-03-143502.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-08-02-200838.html",
@@ -856,7 +758,7 @@
      8,
      2,
      20,
-     838,
+     8,
      38
     ],
     "files": {
@@ -868,11 +770,11 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "20:38:38",
-    "unixtime": 1596448718
+    "timecolon": "20:08:38",
+    "unixtime": 1596398918
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-08-02-202539.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-08-02-150059.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-08-02-195827.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-08-02-200838.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-02-200838.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-02</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/wetgenes/status/1289999019775647744\">https://twitter.com/wetgenes/status/1289999019775647744</a> I can&#39;t say I have ever had a positive use case for nan values?</p>\n<p>Does anyone?</p>\n<p>It is just a source of stupid bugs every single bleedin time.</p>\n<p>One of the simplest QA breaks is just inputting a NaN.</p>\n<p>I am wasting my life putting &quot; if x != x then x = 0 &quot; everywhere :)</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2020",
@@ -943,6 +845,104 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<p>Just had a fun glsl bug that kept me guessing for a while.</p>\n<p>Turns out an A*B was getting optimized to 0 when i explicitly set B to 0 but not when I read 0 from an attribute.</p>\n<p>Not a problem yup?</p>\n<p>Except if A is a nan, you now have different results depending on the source of 0.</p>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
+   "_blog_post_json": {
+    "datedash": "2020-08-02",
+    "datetime": [
+     2020,
+     8,
+     2,
+     19,
+     58,
+     27
+    ],
+    "files": {
+     "md": [
+      "blog/micro-2020/2020-08-02-195827.md"
+     ]
+    },
+    "htmlname": "blog/micro-2020/2020-08-02-195827.html",
+    "tags": [
+     "micro"
+    ],
+    "timecolon": "19:58:27",
+    "unixtime": 1596398307
+   },
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-02-200838.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-08-02-150059.html",
+   "_blog_post_this": "{_root}blog/micro-2020/2020-08-02-195827.html",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-02-195827.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-02</div>\n <div class=\"bloglink-title\"><p>Just had a fun glsl bug that kept me guessing for a while.</p>\n<p>Turns out an A*B was getting optimized to 0 when i explicitly set B to 0 but not when I read 0 from an attribute.</p>\n<p>Not a problem yup?</p>\n<p>Except if A is a nan, you now have different results depending on the source of 0.</p>\n</div>\n</div>\n",
+   "_dirname": "{_root}blog/micro-2020",
+   "_filename": "{_root}blog/micro-2020/2020-08-02-195827.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/micro-2020/2020-08-02-195827.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "title": "Welcome to blog!"
+  },
+  {
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "XIXs Blog"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 19,
+    "url": "https://xixs.com/"
+   },
+   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Any sufficiently broken technology is indistinguishable from magic. <a href=\"https://twitter.com/CMRosens/status/1289492787910467584\">https://twitter.com/CMRosens/status/1289492787910467584</a></p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -954,7 +954,7 @@
      8,
      2,
      15,
-     59,
+     0,
      59
     ],
     "files": {
@@ -966,10 +966,10 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "15:59:59",
-    "unixtime": 1596383999
+    "timecolon": "15:00:59",
+    "unixtime": 1596380459
    },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-02-200838.html",
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-08-02-195827.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-07-29-162926.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-08-02-150059.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-08-02-150059.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-08-02</div>\n <div class=\"bloglink-title\"><p>Any sufficiently broken technology is indistinguishable from magic. <a href=\"https://twitter.com/CMRosens/status/1289492787910467584\">https://twitter.com/CMRosens/status/1289492787910467584</a></p>\n</div>\n</div>\n",
@@ -1052,7 +1052,7 @@
      7,
      29,
      16,
-     2926,
+     29,
      26
     ],
     "files": {
@@ -1064,8 +1064,8 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "16:26:26",
-    "unixtime": 1596213986
+    "timecolon": "16:29:26",
+    "unixtime": 1596040166
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-08-02-150059.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-07-29-162603.html",
@@ -1150,7 +1150,7 @@
      7,
      29,
      16,
-     2603,
+     26,
      3
     ],
     "files": {
@@ -1162,11 +1162,11 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "16:03:03",
-    "unixtime": 1596194583
+    "timecolon": "16:26:03",
+    "unixtime": 1596039963
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-07-29-162926.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-07-28-232446.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-07-29-150115.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-07-29-162603.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-29-162603.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-29</div>\n <div class=\"bloglink-title\"><p>@johnmclear Personally I&#39;m just too distrustful of APIs to want to actually go near it :)</p>\n<p>It seems like it could be used to fuzz say 10 hand crafted Eliza style sentances into 1000 slight more varied but equally viable. The thing that gives away something as simple as Eliza is repitition.</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2020",
@@ -1237,104 +1237,6 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
-   "_blog_post_body": "<p><a href=\"https://twitter.com/puppygames/status/1288237220252602368\">https://twitter.com/puppygames/status/1288237220252602368</a> @puppygames Have you tried killing them?</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
-   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
-   "_blog_post_json": {
-    "datedash": "2020-07-28",
-    "datetime": [
-     2020,
-     7,
-     28,
-     23,
-     2446,
-     46
-    ],
-    "files": {
-     "md": [
-      "blog/micro-2020/2020-07-28-232446.md"
-     ]
-    },
-    "htmlname": "blog/micro-2020/2020-07-28-232446.html",
-    "tags": [
-     "micro"
-    ],
-    "timecolon": "23:46:46",
-    "unixtime": 1596124006
-   },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-29-162603.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-07-29-150115.html",
-   "_blog_post_this": "{_root}blog/micro-2020/2020-07-28-232446.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-28-232446.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-28</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/puppygames/status/1288237220252602368\">https://twitter.com/puppygames/status/1288237220252602368</a> @puppygames Have you tried killing them?</p>\n</div>\n</div>\n",
-   "_dirname": "{_root}blog/micro-2020",
-   "_filename": "{_root}blog/micro-2020/2020-07-28-232446.html",
-   "_flags": {
-    "_blog_post_body": {
-     "form": "markdown"
-    },
-    "body": {
-     "trim": "ends"
-    },
-    "bodywrap": {
-     "trim": "ends"
-    },
-    "crumb_slash": {
-     "trim": "ends"
-    },
-    "crumb_trap": {
-     "same": "append",
-     "trim": "ends"
-    },
-    "crumb_wrap": {
-     "trim": "ends"
-    },
-    "css": {
-     "same": "append"
-    },
-    "head": {
-     "trim": "ends"
-    },
-    "headjs": {
-     "same": "append"
-    },
-    "html": {
-     "trim": "ends"
-    },
-    "title": {
-     "trim": "ends"
-    }
-   },
-   "_root": "../../",
-   "_site": "{_root}",
-   "_sourcename": "blog/micro-2020/2020-07-28-232446.html",
-   "blog_list": "\n{_it._body}\n\n",
-   "body": "{_blog_post_body_one}",
-   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
-   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
-   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
-   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
-   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
-   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
-   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
-   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
-   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "title": "Welcome to blog!"
-  },
-  {
-   "_blog_json": {
-    "dir": "blog/.",
-    "feed": {
-     "title": "XIXs Blog"
-    },
-    "posts_per_feed": 20,
-    "posts_per_page": 19,
-    "url": "https://xixs.com/"
-   },
-   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>I wonder if GPT-3 produces enough smoke and mirrors to be able to build a working talkie toaster?</p>\n<p>I mean yeah sure, Eliza is  &quot;enough&quot; but would repeat far too obviously. You want something capable of a diferent bread based windup everyday.</p>\n<p><a href=\"https://www.youtube.com/watch?v=LRq_SAuQDec\">https://www.youtube.com/watch?v=LRq_SAuQDec</a></p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -1346,7 +1248,7 @@
      7,
      29,
      15,
-     115,
+     1,
      15
     ],
     "files": {
@@ -1358,11 +1260,11 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "15:15:15",
-    "unixtime": 1596041715
+    "timecolon": "15:01:15",
+    "unixtime": 1596034875
    },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-28-232446.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-07-25-200524.html",
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-29-162603.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-07-28-232446.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-07-29-150115.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-29-150115.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-29</div>\n <div class=\"bloglink-title\"><p>I wonder if GPT-3 produces enough smoke and mirrors to be able to build a working talkie toaster?</p>\n<p>I mean yeah sure, Eliza is  &quot;enough&quot; but would repeat far too obviously. You want something capable of a diferent bread based windup everyday.</p>\n<p><a href=\"https://www.youtube.com/watch?v=LRq_SAuQDec\">https://www.youtube.com/watch?v=LRq_SAuQDec</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2020",
@@ -1433,6 +1335,104 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<p><a href=\"https://twitter.com/puppygames/status/1288237220252602368\">https://twitter.com/puppygames/status/1288237220252602368</a> @puppygames Have you tried killing them?</p>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
+   "_blog_post_json": {
+    "datedash": "2020-07-28",
+    "datetime": [
+     2020,
+     7,
+     28,
+     23,
+     24,
+     46
+    ],
+    "files": {
+     "md": [
+      "blog/micro-2020/2020-07-28-232446.md"
+     ]
+    },
+    "htmlname": "blog/micro-2020/2020-07-28-232446.html",
+    "tags": [
+     "micro"
+    ],
+    "timecolon": "23:24:46",
+    "unixtime": 1595978686
+   },
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-29-150115.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-07-25-200524.html",
+   "_blog_post_this": "{_root}blog/micro-2020/2020-07-28-232446.html",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-28-232446.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-28</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/puppygames/status/1288237220252602368\">https://twitter.com/puppygames/status/1288237220252602368</a> @puppygames Have you tried killing them?</p>\n</div>\n</div>\n",
+   "_dirname": "{_root}blog/micro-2020",
+   "_filename": "{_root}blog/micro-2020/2020-07-28-232446.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/micro-2020/2020-07-28-232446.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "title": "Welcome to blog!"
+  },
+  {
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "XIXs Blog"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 19,
+    "url": "https://xixs.com/"
+   },
+   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Perfectly normal picture of a cat on an arcade machine. \n<img src=\"{_root}blog/micro-2020/2020-07-25-200524.jpg\"></img></p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -1444,7 +1444,7 @@
      7,
      25,
      20,
-     524,
+     5,
      24
     ],
     "files": {
@@ -1459,11 +1459,11 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "20:24:24",
-    "unixtime": 1595738664
+    "timecolon": "20:05:24",
+    "unixtime": 1595707524
    },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-29-150115.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-07-19-235256.html",
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-28-232446.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-07-20-132554.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-07-25-200524.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-25-200524.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-25</div>\n <div class=\"bloglink-title\"><p>Perfectly normal picture of a cat on an arcade machine. \n<img src=\"{_root}blog/micro-2020/2020-07-25-200524.jpg\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2020",
@@ -1534,104 +1534,6 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
-   "_blog_post_body": "<p>When will the world learn to stop at Ringo? <a href=\"https://twitter.com/Jontofski/status/1284892422410063872\">https://twitter.com/Jontofski/status/1284892422410063872</a></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
-   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
-   "_blog_post_json": {
-    "datedash": "2020-07-19",
-    "datetime": [
-     2020,
-     7,
-     19,
-     23,
-     5256,
-     56
-    ],
-    "files": {
-     "md": [
-      "blog/micro-2020/2020-07-19-235256.md"
-     ]
-    },
-    "htmlname": "blog/micro-2020/2020-07-19-235256.html",
-    "tags": [
-     "micro"
-    ],
-    "timecolon": "23:56:56",
-    "unixtime": 1595515016
-   },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-25-200524.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-07-20-132554.html",
-   "_blog_post_this": "{_root}blog/micro-2020/2020-07-19-235256.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-19-235256.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-19</div>\n <div class=\"bloglink-title\"><p>When will the world learn to stop at Ringo? <a href=\"https://twitter.com/Jontofski/status/1284892422410063872\">https://twitter.com/Jontofski/status/1284892422410063872</a></p>\n</div>\n</div>\n",
-   "_dirname": "{_root}blog/micro-2020",
-   "_filename": "{_root}blog/micro-2020/2020-07-19-235256.html",
-   "_flags": {
-    "_blog_post_body": {
-     "form": "markdown"
-    },
-    "body": {
-     "trim": "ends"
-    },
-    "bodywrap": {
-     "trim": "ends"
-    },
-    "crumb_slash": {
-     "trim": "ends"
-    },
-    "crumb_trap": {
-     "same": "append",
-     "trim": "ends"
-    },
-    "crumb_wrap": {
-     "trim": "ends"
-    },
-    "css": {
-     "same": "append"
-    },
-    "head": {
-     "trim": "ends"
-    },
-    "headjs": {
-     "same": "append"
-    },
-    "html": {
-     "trim": "ends"
-    },
-    "title": {
-     "trim": "ends"
-    }
-   },
-   "_root": "../../",
-   "_site": "{_root}",
-   "_sourcename": "blog/micro-2020/2020-07-19-235256.html",
-   "blog_list": "\n{_it._body}\n\n",
-   "body": "{_blog_post_body_one}",
-   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
-   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
-   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
-   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
-   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
-   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
-   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
-   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
-   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
-   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
-   "title": "Welcome to blog!"
-  },
-  {
-   "_blog_json": {
-    "dir": "blog/.",
-    "feed": {
-     "title": "XIXs Blog"
-    },
-    "posts_per_feed": 20,
-    "posts_per_page": 19,
-    "url": "https://xixs.com/"
-   },
-   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/nachimir/status/1285186665481408513\">https://twitter.com/nachimir/status/1285186665481408513</a> @nachimir @Robin_B \n<img src=\"{_root}blog/micro-2020/2020-07-20-132554.png\"></img></p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -1643,7 +1545,7 @@
      7,
      20,
      13,
-     2554,
+     25,
      54
     ],
     "files": {
@@ -1658,10 +1560,10 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "13:54:54",
-    "unixtime": 1595403294
+    "timecolon": "13:25:54",
+    "unixtime": 1595251554
    },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-19-235256.html",
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-25-200524.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-07-20-132027.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-07-20-132554.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-20-132554.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-20</div>\n <div class=\"bloglink-title\"><p><a href=\"https://twitter.com/nachimir/status/1285186665481408513\">https://twitter.com/nachimir/status/1285186665481408513</a> @nachimir @Robin_B \n<img src=\"{_root}blog/micro-2020/2020-07-20-132554.png\"></img></p>\n</div>\n</div>\n",
@@ -1744,7 +1646,7 @@
      7,
      20,
      13,
-     2027,
+     20,
      27
     ],
     "files": {
@@ -1756,11 +1658,11 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "13:27:27",
-    "unixtime": 1595371647
+    "timecolon": "13:20:27",
+    "unixtime": 1595251227
    },
    "_blog_post_newer": "{_root}blog/micro-2020/2020-07-20-132554.html",
-   "_blog_post_older": "{_root}blog/micro-2020/2020-07-12-192746.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-07-19-235256.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-07-20-132027.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-20-132027.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-20</div>\n <div class=\"bloglink-title\"><p>We have all seen the photo of Data escaping from LA now, but has anyone found out why Data was in LA in the first place?</p>\n<p><a href=\"https://www.youtube.com/watch?v=Jb8nbZDtgNg\">https://www.youtube.com/watch?v=Jb8nbZDtgNg</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2020",
@@ -1831,6 +1733,104 @@
     "url": "https://xixs.com/"
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
+   "_blog_post_body": "<p>When will the world learn to stop at Ringo? <a href=\"https://twitter.com/Jontofski/status/1284892422410063872\">https://twitter.com/Jontofski/status/1284892422410063872</a></p>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
+   "_blog_post_json": {
+    "datedash": "2020-07-19",
+    "datetime": [
+     2020,
+     7,
+     19,
+     23,
+     52,
+     56
+    ],
+    "files": {
+     "md": [
+      "blog/micro-2020/2020-07-19-235256.md"
+     ]
+    },
+    "htmlname": "blog/micro-2020/2020-07-19-235256.html",
+    "tags": [
+     "micro"
+    ],
+    "timecolon": "23:52:56",
+    "unixtime": 1595202776
+   },
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-20-132027.html",
+   "_blog_post_older": "{_root}blog/micro-2020/2020-07-12-192746.html",
+   "_blog_post_this": "{_root}blog/micro-2020/2020-07-19-235256.html",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-19-235256.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-19</div>\n <div class=\"bloglink-title\"><p>When will the world learn to stop at Ringo? <a href=\"https://twitter.com/Jontofski/status/1284892422410063872\">https://twitter.com/Jontofski/status/1284892422410063872</a></p>\n</div>\n</div>\n",
+   "_dirname": "{_root}blog/micro-2020",
+   "_filename": "{_root}blog/micro-2020/2020-07-19-235256.html",
+   "_flags": {
+    "_blog_post_body": {
+     "form": "markdown"
+    },
+    "body": {
+     "trim": "ends"
+    },
+    "bodywrap": {
+     "trim": "ends"
+    },
+    "crumb_slash": {
+     "trim": "ends"
+    },
+    "crumb_trap": {
+     "same": "append",
+     "trim": "ends"
+    },
+    "crumb_wrap": {
+     "trim": "ends"
+    },
+    "css": {
+     "same": "append"
+    },
+    "head": {
+     "trim": "ends"
+    },
+    "headjs": {
+     "same": "append"
+    },
+    "html": {
+     "trim": "ends"
+    },
+    "title": {
+     "trim": "ends"
+    }
+   },
+   "_root": "../../",
+   "_site": "{_root}",
+   "_sourcename": "blog/micro-2020/2020-07-19-235256.html",
+   "blog_list": "\n{_it._body}\n\n",
+   "body": "{_blog_post_body_one}",
+   "bodywrap": "{crumb_wrap}<div class=\"main\">{body}</div>",
+   "crumb_slash": "<span class=\"crumb-slash\">/</span>",
+   "crumb_trap": "<a class=\"crumb\" href=\"{_root}\">XIXs</a>{crumb_slash}<a class=\"crumb\" href=\"{_root}blog\">Blog</a>{crumb_slash}<a href=\"{_blog_post_this}\">{_blog_post_json.datedash||}</a>",
+   "crumb_wrap": "<div class=\"crumb-wrap\">{crumb_trap}</div>",
+   "css": "\n* {\n\tmargin:0;\n\tpadding:0;\n\tborder:0;\n\toutline:0;\n\tfont-size:inherit;\n\tfont-weight:normal;\n\tvertical-align:baseline;\n\tbackground:transparent;\n\tcolor:inherit;\n\ttext-decoration:inherit;\n\ttext-size-adjust:none;\n\t-moz-text-size-adjust:none;\n\t-webkit-text-size-adjust:none;\n\t-ms-text-size-adjust:none;\n}\n\nbody, html {\n\t-webkit-font-smoothing:antialiased;\n\t-moz-osx-font-smoothing:grayscale;\n\twidth:100%;\n\tfont-weight:normal;\n\tfont-style:normal;\n}\n\nbody {\n\tfont-size:20px;\n\tbackground:#eee;\n\tfont-family:monospace, sans-serif;\n\tfont-size:20px;\n\tline-height:1.5;\n\tcolor:#444;\n}\n\nhtml {\n\theight:100%;\n}\n\nh1,h2,h3,h4,h5 {\n    margin:1em 0 0 0;\n\tfont-weight:bold;\n}\nh1 {\n\tfont-size:40px;\n}\nh2 {\n\tfont-size:32px;\n\tborder-bottom:1px solid #888;\n\tpadding-bottom:10px;\n}\nh3,h4,h5 {\n\tfont-size:24px;\n}\n\np {\n\tmargin-top:1.5em;\n\tmargin-bottom:1em;\n}\n\nem {\n\tfont-style:italic;\n}\n\nul {\n\tpadding-inline-start: 40px;\n}\n\nstrong,\na {\n\tfont-weight:bold;\n}\n\na:hover {\n\ttext-decoration:underline;\n}\n\n\n.main {\n\tmargin:20px auto 60px auto;\n\twidth:960px;\n}\n\n\n.oldnew-links {\n\twidth:960px;\n\theight:50px;\n\tpadding-bottom:10px;\n\tposition:relative;\n\tfont-size:16px;\n}\n\n.old-link {\n\tleft: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.new-link {\n\tright: 0;\n\ttop: 10px;\n\tposition:absolute;\n\tbackground:#444;\n\tcolor:#eee;\n\tpadding:4px 8px;\n\tborder-radius: 8px;\n}\n\n.old-link:hover,\n.new-link:hover {\n\ttext-decoration:none;\n\tbackground:#888;\n}\n\n.model-container {\n\tpadding-top:20px;\n}\n\n.model-view {\n\tdisplay: inline-block;\n\twidth:75%;\n\theight:480px;\n}\n\n.model-download {\n\tdisplay: inline-block;\n\twidth:25%;\n}\n\n.model-download a {\n\tdisplay: inline-block;\n}\n\n.bloglink {\n/*\n\theight: 100px;\n*/\n\tdisplay: block;\n\tpadding-bottom: 20px;\n}\n\n.bloglink img , .bloglink video , .bloglink audio {\n    max-width:500px;\n    height:auto;\n    width:auto;\n}\n\n.bloglink-icon {\n\twidth: 100px;\n\theight: 100px;\n\tdisplay: inline-block;\n}\n\n.bloglink-date {\n\tdisplay: inline-block;\n\twidth: 150px;\n\tline-height: 100px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n}\n\n.bloglink-title {\n\tdisplay: inline-block;\n\twidth: 500px;\n\tvertical-align: top;\n\tpadding-left: 20px;\n\tfont-weight: bold;\n/*\n\theight:100px;\n*/\n\toverflow:hidden;\n}\n\n.blog_list_wrap {\n\tpadding:20px 0;\n}\n\ntable {\n\tdisplay: block;\n    max-width: 100%;\n    border-spacing: 15px 10px;\n}\n\n\n\n.crumb-wrap {\n\tmargin:0px auto;\n\twidth:960px;\n\tpadding:20px 0;\n\ttext-align:right;\n}\n\n.crumb-slash {\n\tmargin:0px 20px 0px 20px;\n}\n\n.crumb {\n}\n\n.utter_wrap {\n\tpadding-top:30px;\n}\n\n\n.blogpost img {\n\twidth:100%;\n}\n\n/*\tPHONES & STUFF\n\t============================================= */\n\t\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5),\nonly screen and (-o-min-device-pixel-ratio: 3/2),\nonly screen and (min--moz-device-pixel-ratio: 1.5),\nonly screen and (min-device-pixel-ratio: 1.5) {\n\n* {\n\twidth:100%; \n\theight:auto; \n\tmin-height:1px; \n\tmax-height:999999px;\n}\n\nbody {\n\tfont-size:3rem; \n\tpadding:30px 50px;\n}\n\nh1, h2 {\n\tfont-size:4rem;\n}\n\nli {\n\tlist-style-position:inside;\n}\n\n.old-link,\n.new-link {\n\twidth:initial;\n\tfont-size:2.5rem;\n\tpadding:4px 14px;\n}\n\n.bloglink {\n\theight:initial;\n}\n\n.bloglink-title {\n\twidth:initial;\n}\n\n.bloglink-date {\n\twidth:initial;\n\tpadding-right:20px;\n}\n\n.model-download {\n\tpadding-left:20px;\n\tbox-sizing:border-box;\n}\n\n.model-download a {\n    display:block;\n    line-height:1em;\n    padding-bottom:15px;\n}\n\n}\n",
+   "head": "<meta charset=\"UTF-8\">\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+   "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n\nhead.js(\"//cdn.babylonjs.com/viewer/babylon.viewer.js\",function(){\nBabylonViewer.InitTags('babylon');\n});\n",
+   "html": "<!DOCTYPE html>\n<html>\n<head>{head}</head>\n<body>{bodywrap}</body>\n</html>",
+   "link_newer_page": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_newer_post": "\n<a class=\"new-link\" href=\"{_it}\">&gt;news&gt;</a>\n\n",
+   "link_older_page": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "link_older_post": "\n<a class=\"old-link\" href=\"{_it}\">&lt;olds&lt;</a>\n\n",
+   "title": "Welcome to blog!"
+  },
+  {
+   "_blog_json": {
+    "dir": "blog/.",
+    "feed": {
+     "title": "XIXs Blog"
+    },
+    "posts_per_feed": 20,
+    "posts_per_page": 19,
+    "url": "https://xixs.com/"
+   },
+   "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>@magic_bane mr bone man rides what mr bone man wants to ride.</p>\n",
    "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"bloglink-title\">{_blog_post_body}</div>\n</div>\n",
    "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">{_blog_post_body}</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
@@ -1842,7 +1842,7 @@
      7,
      12,
      19,
-     2746,
+     27,
      46
     ],
     "files": {
@@ -1854,10 +1854,10 @@
     "tags": [
      "micro"
     ],
-    "timecolon": "19:46:46",
-    "unixtime": 1594745206
+    "timecolon": "19:27:46",
+    "unixtime": 1594582066
    },
-   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-20-132027.html",
+   "_blog_post_newer": "{_root}blog/micro-2020/2020-07-19-235256.html",
    "_blog_post_older": "{_root}blog/micro-2020/2020-07-12-192315.html",
    "_blog_post_this": "{_root}blog/micro-2020/2020-07-12-192746.html",
    "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2020/2020-07-12-192746.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2020-07-12</div>\n <div class=\"bloglink-title\"><p>@magic_bane mr bone man rides what mr bone man wants to ride.</p>\n</div>\n</div>\n",
