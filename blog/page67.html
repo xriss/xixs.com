@@ -303,6 +303,15 @@ li {
 <div class="blog_list_wrap">
 	
 
+<div class="bloglink" href="../blog/micro-2018/2018-07-02-105250.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
+ <div class="bloglink-date">2018-07-02</div>
+ <div class="bloglink-title"><p><a href="https://twitter.com/Graham_T_S/status/1013719922072006656">https://twitter.com/Graham_T_S/status/1013719922072006656</a> @GrimSpence @shi at 120fps and that number can sometimes go as high as 600fps which is pretty inspiring really, the way numbers can keep getting bigger.</p>
+</div>
+</div>
+
+
+
+
 <div class="bloglink" href="../blog/micro-2018/2018-07-02-002719.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-07-02</div>
  <div class="bloglink-title"><p><a href="https://twitter.com/sgtruck/status/1013554733389402112">https://twitter.com/sgtruck/status/1013554733389402112</a> @sgtruck Sadly the topic has already been decided and I am to believe that the children catcher is working overnight to provide us with an audience.</p>
@@ -485,26 +494,6 @@ li {
  <div class="bloglink-date">2018-06-20</div>
  <div class="bloglink-title"><p><a href="https://twitter.com/DavitMasia/status/1009438710037966849">https://twitter.com/DavitMasia/status/1009438710037966849</a> @DavitMasia @kometbomb @not_surt @the_ptoing Another option is hard baking the palette into the shader source. So any palette change would require an automatic construction of the palette into a unique shader.</p>
 <p>This is probably more efficient that 256 texture lookups per texel and might suit your needs better.</p>
-</div>
-</div>
-
-
-
-
-<div class="bloglink" href="../blog/micro-2018/2018-06-20-135905.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
- <div class="bloglink-date">2018-06-20</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/DavitMasia/status/1009413280874549248">https://twitter.com/DavitMasia/status/1009413280874549248</a> @DavitMasia @kometbomb @not_surt @the_ptoing Need to fetch it in from a texture:</p>
-<p>vec4 colors[COLORS];
-bool gotcolors=false;</p>
-<p>void getcolors(sampler2D tex1)
-{
-if(gotcolors) { return; }
-for(int i=0;i&lt;COLORS;i++)
-{
-colors[i]=texture2D(tex1, vec2( (0.5+float(i))/256.0 , 0.5 ) ).rgba;
-}
-gotcolors=true;
-}</p>
 </div>
 </div>
 
