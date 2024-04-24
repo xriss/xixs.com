@@ -3,6 +3,16 @@
  "home_page_url": "https://xixs.com/",
  "items": [
   {
+   "content_html": "\n<div class=\"bloglink\" href=\"https://xixs.com/blog/micro-2024/2024-04-24-010317.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2024-04-24</div>\n <div class=\"bloglink-title\"><p>Lost one star because the inventory was not titled &#39;What Has It Got in Its Pocketses?&#39; <a href=\"https://www.youtube.com/embed/8VA0uGtHqQI\">https://www.youtube.com/embed/8VA0uGtHqQI</a></p>\n</div>\n</div>\n",
+   "date_published": "2024-04-24T01:03:17.000Z",
+   "id": "https://xixs.com/blog/micro-2024/2024-04-24-010317.html",
+   "tags": [
+    "micro"
+   ],
+   "title": "",
+   "url": "https://xixs.com/blog/micro-2024/2024-04-24-010317.html"
+  },
+  {
    "content_html": "\n<div class=\"bloglink\" href=\"https://xixs.com/blog/micro-2024/2024-04-18-153601.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2024-04-18</div>\n <div class=\"bloglink-title\"><p>Importing text files the same way in node (commandline) or webpack \n(browser) code should be possible but its all a bit confusing with the \nnew ES module system so I had to put my thinking cap on and read through \n<a href=\"https://nodejs.org/api/module.html#loadurl-context-nextload\">https://nodejs.org/api/module.html#loadurl-context-nextload</a> to work out \nhow exactly to do it.</p>\n<p>Seems you need a couple of files to preload the module hooks, one to be \nimported on the command line so it gets run before anything else tries \nto import anything and then another one to contain the actual module \nhooks. I tried using one file, which kinda works but ends up registers \nthe hooks twice which is not good.</p>\n<p>I&#39;ve also synced the pattern test with the one used by raw-loader in \nwebpack.config.cjs so node and webpack should always consider the same \nfiles as text.</p>\n<p>All the new code is in this commit \n<a href=\"https://github.com/notshi/seance/commit/e7a541356449c2eb924c98e8f244e21ac46ca73a\">https://github.com/notshi/seance/commit/e7a541356449c2eb924c98e8f244e21ac46ca73a</a> \nand you can also see how the imports have replaced readfile hacks.</p>\n</div>\n</div>\n",
    "date_published": "2024-04-18T15:36:01.000Z",
    "id": "https://xixs.com/blog/micro-2024/2024-04-18-153601.html",
@@ -191,16 +201,6 @@
    ],
    "title": "",
    "url": "https://xixs.com/blog/micro-2023/2023-09-23-101806.html"
-  },
-  {
-   "content_html": "\n<div class=\"bloglink\" href=\"https://xixs.com/blog/micro-2023/2023-09-21-110505.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-09-21</div>\n <div class=\"bloglink-title\"><p>We <em>can</em> fix this with.</p>\n<p>Dark Web Rings!</p>\n<p>That&#39;s my pitch. <a href=\"https://twitter.com/abenanav/status/1704502893204648013\">https://twitter.com/abenanav/status/1704502893204648013</a></p>\n</div>\n</div>\n",
-   "date_published": "2023-09-21T11:05:05.000Z",
-   "id": "https://xixs.com/blog/micro-2023/2023-09-21-110505.html",
-   "tags": [
-    "micro"
-   ],
-   "title": "",
-   "url": "https://xixs.com/blog/micro-2023/2023-09-21-110505.html"
   }
  ],
  "title": "XIXs Blog",
