@@ -31,9 +31,28 @@ html {
   else { document.addEventListener("DOMContentLoaded", callback); }
 })(function(){
 
+let q=(function(){
+	let qs=window.location.search.substring(1)
+    let q = {}
+    let ps = qs.split("&")
+    for( let i=0; i<ps.length; i++ )
+    {
+        let p = ps[i].split('=')
+        if( p[0]!="" )
+        {
+			q[ decodeURIComponent( p[0] ) ] = decodeURIComponent( p[1] || "" ) || true
+		}
+    }
+    return q;
+})()
+
+let aa=[ "-lcmd" , "swed" ]
+if(q.run) { aa.push("--run") }
+if(q.load) { aa.push(q.load) }
+
 	gamecake=gamecake_loader({
 		dir:"./exe/",
-		args:[ "-lcmd" , "swed" ],
+		args:aa,
 //		urlopts:true,
 		});
 
