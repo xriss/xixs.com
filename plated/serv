@@ -8,5 +8,5 @@ echo
 echo http://0.0.0.0:8080$PLATED_ROOT
 echo
 
-./node_modules/.bin/http-server $PLATED_OUTPUT $*
+./node_modules/.bin/statikk --expose --cors --coi --port 8080 $PLATED_OUTPUT $*
 
