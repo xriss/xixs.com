@@ -5,6 +5,5 @@ rsync -avh ../../gamecake/html/js plated/source/wasm/ --delete --human-readable
 
 rm plated/source/wasm/exe/.git
 
-plated/build
 
 

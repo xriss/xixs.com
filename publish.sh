@@ -5,6 +5,7 @@ git commit -m.
 git pull
 git push
 
-./build.sh
+./sync.sh
+plated/build
 rsync -avh ./docs/ /server/public/xixs.com/ --delete --human-readable
 
