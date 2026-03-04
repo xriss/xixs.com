@@ -27,7 +27,7 @@ body {
 	right: 10%;
 	top: 10%;
 	bottom: 10%;
-	background: url("https://source.unsplash.com/random") no-repeat center center fixed;
+	background: url("http://picsum.photos/1920/1080");
 	background-size: cover;
 	background-color: white;
 	background-blend-mode: luminosity;
@@ -133,6 +133,13 @@ var zxprogress=function(percent)
 
 var start=function()
 {
+	let imgurl=window.location.hash.substring(1)
+	if(imgurl!="") // can specify imgurl to display using #
+	{
+//		console.log(imgurl)
+		let sc=document.getElementById("zx-screen")
+		sc.style.backgroundImage="url(\""+imgurl+"\")"
+	}
 	var count=0
 	var cb ; cb=function()
 	{
