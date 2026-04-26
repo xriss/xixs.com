@@ -42,7 +42,7 @@ body, html {
 
 body {
 	font-size:20px;
-	background:#eee;
+	background:#cacaca;
 	font-family:monospace, sans-serif;
 	font-size:20px;
 	line-height:1.5;
@@ -287,20 +287,171 @@ li {
 
 }
 
+body {
+	margin: 0;
+}
+
+.main {
+	background-color: #cacaca;
+}
+
+@keyframes zx-slide {
+	0%		{background-position: 0 0; }
+	100%	{background-position: 0 -400px; }
+}
+#zx-border{
+	width:  100%;
+	height: 100%;
+	background-size: 8px 400px;
+	background-color: #00c7c9;
+	animation: zx-slide 1s infinite linear;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#zx-screen{
+	background-color: #cacaca;
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	top: 10%;
+	bottom: 10%;
+	padding: 20px;
+	overflow: hidden;
+}
+#zx-cover{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #cacaca;
+}
+
+
 </style></head>
-<body><div class="crumb-wrap"><a class="crumb" href="./">XIXs</a></div><div class="main"><h1 id="title">Welcome to XIXs.com</h1>
+<body><div id="zx-border">
+<div class="crumb-wrap"><a class="crumb" href="./">XIXs</a></div>
+<div id="zx-screen"><h1 id="title">Welcome to XIXs.com</h1>
 <p>This is the peculiar domain of Kriss</p>
 <p>I will be your eyes and hands. Direct me with commands of 1 or 2 words. 
 I should warn you that I look at only the first five letters of each 
 word and often misunderstand them, on porpoise.</p>
-<p>Posts can be found <a href="./blog/">at Blog</a><br>Twats can be found <a href="https://twitter.com/wetgenes">@Wetgenes</a><br>Gits can be found <a href="https://github.com/xriss/">at github</a><br>News can be found <a href="http://wetgenes.com/">at WetGenes.com</a></p>
+<p>Posts can be found <a href="./blog/">at Blog</a><br>Twats can be found <a href="https://bsky.app/profile/xixs.com">at Bsky</a><br>Gits can be found <a href="https://github.com/xriss/">at github</a><br>Games can be found <a href="https://wetgenes.itch.io/">at itch</a><br>Games can be found <a href="https://store.steampowered.com/developer/wetgenes/">at steam</a><br>Comics can be found <a href="https://4lfa.com/">at 4lfa</a><br>News can be found <a href="http://wetgenes.com/">at WetGenes.com</a></p>
 <p>SiteMap:</p>
 <p>1 <a href="./blog">Blog</a>
 2 <a href="./badonkadonk">Badonkadonk</a>
 3 <a href="./agincards">Agincards</a>
-4 <a href="./wetice">WetIce</a>
-<br/>
-<br/>
-<br/></p>
+4 <a href="./wetice">WetIce</a></p>
+<div id="zx-cover"></div></div>
+<script>
+var zxprogress=function(percent)
+{
+	var bd=document.getElementById("zx-border")
+	var sc=document.getElementById("zx-screen")
+	var cv=document.getElementById("zx-cover")
+
+	var gradient=function(c1,c2,count,rnd)
+	{
+		var p=100/count
+		var i=0
+		var j=0
+		var aa=[]
+		
+		for(i=0;i<=count;i++)
+		{
+			aa[i]=p;
+		}
+
+		for(i=0;i<=count;i++)
+		{
+			var f=Math.random()*rnd
+			aa[i]-=p*f
+			for(j=0;j<=count;j++)
+			{
+				if(j!=i)
+				{
+					aa[j]+=p*f/(count-1)
+				}
+			}
+		}
+
+
+		var s="linear-gradient( "
+		var a=0
+		for(var i=0;i<count;i++)
+		{
+			var c=c2
+			if((i%2)==0) { c=c1 }
+			var b=a+aa[i]
+			s+=" "+c+" "+a+"% "+b+"% "
+			if(i==count-1) { s+=" ) " }
+			else { s+=" , " }
+			a=b
+		}
+		return s
+	}
+	
+	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
+	var scritch=gradient("#fffc36","#002bfb",40,0.9)
+
+	cv.style.top="0"
+
+	if(percent<=0)
+	{
+		bd.style.backgroundImage="";
+	}
+	else
+	if(percent<100)
+	{
+		if(percent<4)
+		{
+			bd.style.backgroundImage="";
+		}
+		else
+		if(percent<8)
+		{
+			bd.style.backgroundImage=wheeeee;
+		}
+		else
+		{
+			bd.style.backgroundImage=scritch;
+			cv.style.top=(100*(percent-8)/92)+"%"
+		}
+	}
+	else
+	{
+		sc.style.filter="none"
+		sc.style.backgroundBlendMode="normal"
+		bd.style.backgroundImage="";
+		bd.style.backgroundColor="#cacaca";
+		cv.style.top="100%"
+	}
+}
+
+var start=function()
+{
+//	let imgurl=window.location.hash.substring(1)
+//	if(imgurl!="") // can specify imgurl to display using #
+//	{
+//		console.log(imgurl)
+//		let sc=document.getElementById("zx-screen")
+//		sc.style.backgroundImage="url(\""+imgurl+"\")"
+//	}
+	var count=0
+	var cb ; cb=function()
+	{
+		setTimeout(cb,1000/25)
+		count++
+		var percent=100*( (count-25)/250) ;
+		if(percent<0){percent=0;}
+		if(percent>100){percent=100;}
+		zxprogress(percent)
+	}
+	cb()
+}
+start()
+
+</script>
 </div></body>
 </html>
