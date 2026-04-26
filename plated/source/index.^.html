@@ -13,8 +13,11 @@ I should warn you that I look at only the first five letters of each
 word and often misunderstand them, on porpoise.
 
 Posts can be found [at Blog](./blog/)  
-Twats can be found [@Wetgenes](https://twitter.com/wetgenes)  
+Twats can be found [at Bsky](https://bsky.app/profile/xixs.com)  
 Gits can be found [at github](https://github.com/xriss/)  
+Games can be found [at itch](https://wetgenes.itch.io/)  
+Games can be found [at steam](https://store.steampowered.com/developer/wetgenes/)  
+Comics can be found [at 4lfa](https://4lfa.com/)  
 News can be found [at WetGenes.com](http://wetgenes.com/)
 
 SiteMap:
@@ -25,4 +28,164 @@ SiteMap:
 4 [WetIce](./wetice)
 
 
+#^bodywrap trim=ends
+
+<div id="zx-border">
+{crumb_wrap}
+<div id="zx-screen">{body}<div id="zx-cover"></div></div>
+<script>{script}</script>
+</div>
+
+#^script same=append
+
+var zxprogress=function(percent)
+{
+	var bd=document.getElementById("zx-border")
+	var sc=document.getElementById("zx-screen")
+	var cv=document.getElementById("zx-cover")
+
+	var gradient=function(c1,c2,count,rnd)
+	{
+		var p=100/count
+		var i=0
+		var j=0
+		var aa=[]
+		
+		for(i=0;i<=count;i++)
+		{
+			aa[i]=p;
+		}
+
+		for(i=0;i<=count;i++)
+		{
+			var f=Math.random()*rnd
+			aa[i]-=p*f
+			for(j=0;j<=count;j++)
+			{
+				if(j!=i)
+				{
+					aa[j]+=p*f/(count-1)
+				}
+			}
+		}
+
+
+		var s="linear-gradient( "
+		var a=0
+		for(var i=0;i<count;i++)
+		{
+			var c=c2
+			if((i%2)==0) { c=c1 }
+			var b=a+aa[i]
+			s+=" "+c+" "+a+"% "+b+"% "
+			if(i==count-1) { s+=" ) " }
+			else { s+=" , " }
+			a=b
+		}
+		return s
+	}
+	
+	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
+	var scritch=gradient("#fffc36","#002bfb",40,0.9)
+
+	cv.style.top="0"
+
+	if(percent<=0)
+	{
+		bd.style.backgroundImage="";
+	}
+	else
+	if(percent<100)
+	{
+		if(percent<4)
+		{
+			bd.style.backgroundImage="";
+		}
+		else
+		if(percent<8)
+		{
+			bd.style.backgroundImage=wheeeee;
+		}
+		else
+		{
+			bd.style.backgroundImage=scritch;
+			cv.style.top=(100*(percent-8)/92)+"%"
+		}
+	}
+	else
+	{
+		sc.style.filter="none"
+		sc.style.backgroundBlendMode="normal"
+		bd.style.backgroundImage="";
+		bd.style.backgroundColor="#cacaca";
+		cv.style.top="100%"
+	}
+}
+
+var start=function()
+{
+//	let imgurl=window.location.hash.substring(1)
+//	if(imgurl!="") // can specify imgurl to display using #
+//	{
+//		console.log(imgurl)
+//		let sc=document.getElementById("zx-screen")
+//		sc.style.backgroundImage="url(\""+imgurl+"\")"
+//	}
+	var count=0
+	var cb ; cb=function()
+	{
+		setTimeout(cb,1000/25)
+		count++
+		var percent=100*( (count-25)/250) ;
+		if(percent<0){percent=0;}
+		if(percent>100){percent=100;}
+		zxprogress(percent)
+	}
+	cb()
+}
+start()
+
+
+#^css same=append
+
+body {
+	margin: 0;
+}
+
+.main {
+	background-color: #cacaca;
+}
+
+@keyframes zx-slide {
+	0%		{background-position: 0 0; }
+	100%	{background-position: 0 -400px; }
+}
+#zx-border{
+	width:  100%;
+	height: 100%;
+	background-size: 8px 400px;
+	background-color: #00c7c9;
+	animation: zx-slide 1s infinite linear;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#zx-screen{
+	background-color: #cacaca;
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	top: 10%;
+	bottom: 10%;
+	padding: 20px;
+	overflow: hidden;
+}
+#zx-cover{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #cacaca;
+}
 
