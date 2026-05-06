@@ -32,7 +32,7 @@ SiteMap:
 
 <div id="zx-border">
 {crumb_wrap}
-<div id="zx-screen">{body}<div id="zx-cover"></div></div>
+<div id="zx-screen"><div class="left_text">{body}</div><div class="right_image"></div><div id="zx-cover"></div></div>
 <script>{script}</script>
 </div>
 
@@ -179,6 +179,7 @@ body {
 	bottom: 10%;
 	padding: 20px;
 	overflow: hidden;
+	background-blend-mode: luminosity;
 }
 #zx-cover{
 	position: absolute;
@@ -187,5 +188,25 @@ body {
 	top: 0;
 	bottom: 0;
 	background-color: #cacaca;
+}
+
+.left_text{
+	left: 0px;
+	width: 50%;
+}
+
+.right_image{
+	top: 0px;
+	right: 0px;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	background-color: #cacaca;
+	background-image: url(kriss_200x100.png);
+	background-blend-mode: inherit;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	image-rendering: pixelated;
 }
 
