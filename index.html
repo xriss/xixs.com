@@ -309,17 +309,22 @@ body {
 	left: 0;
 	top: 0;
 }
-#zx-screen{
-	background-color: #cacaca;
+#zx-wrap{
 	position: absolute;
-	left: 10%;
-	right: 10%;
+	overflow: hidden;
+	left: 5%;
+	right: 5%;
 	top: 10%;
 	bottom: 10%;
-	padding: 20px;
-	overflow: hidden;
+	background-color: #cacaca;
+}
+#zx-screen{
+	background-color: #cacaca;
+	position: relative;
+	padding: 20px 20px 200px 20px;
 	background-blend-mode: luminosity;
-	min-width: 880px;
+	min-width: 960px;
+	max-height: 960px;
 }
 #zx-cover{
 	position: absolute;
@@ -354,7 +359,7 @@ body {
 </style></head>
 <body><div id="zx-border">
 <div class="crumb-wrap"><a class="crumb" href="./">XIXs</a></div>
-<div id="zx-screen"><div class="left_text"><h1 id="title">Welcome to XIXs.com</h1>
+<div id="zx-wrap"><div id="zx-screen"><div class="left_text"><h1 id="title">Welcome to XIXs.com</h1>
 <p>This is the peculiar domain of Kriss</p>
 <p>I will be your eyes and hands. Direct me with commands of 1 or 2 words. 
 I should warn you that I look at only the first five letters of each 
@@ -365,7 +370,7 @@ word and often misunderstand them, on porpoise.</p>
 2 <a href="./badonkadonk">Badonkadonk</a>
 3 <a href="./agincards">Agincards</a>
 4 <a href="./wetice">WetIce</a></p>
-</div><div class="right_image"></div><div id="zx-cover"></div></div>
+</div><div class="right_image"></div><div id="zx-cover"></div></div></div>
 <script>
 var zxprogress=function(percent)
 {
