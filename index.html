@@ -305,9 +305,7 @@ body {
 	background-size: 8px 400px;
 	background-color: #00c7c9;
 	animation: zx-slide 1s infinite linear;
-	position: absolute;
-	left: 0;
-	top: 0;
+	position: fixed;
 }
 #zx-wrap{
 	position: absolute;
@@ -453,6 +451,7 @@ var zxprogress=function(percent)
 		bd.style.backgroundImage="";
 		bd.style.backgroundColor="#cacaca";
 		cv.style.top="100%"
+		bd.style.animation="none"
 	}
 }
 
