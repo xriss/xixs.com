@@ -1,6 +1,9 @@
+
+#^----------------------------------------------------------------------
 #^title trim=ends
 XIXs.com
 
+#^----------------------------------------------------------------------
 #^body form=markdown trim=ends
 
 <div id="zx-cover"></div>
@@ -21,25 +24,7 @@ Codes at [GitHub](https://github.com/xriss/)
 Games at [Steam](https://store.steampowered.com/developer/wetgenes/) / [Itch](https://wetgenes.itch.io/)  
 Comics at [4lfa](https://4lfa.com/)  
 
-#^bodyold
-
-News can be found at [WetGenes.com](http://wetgenes.com/)
-
-This is the peculiar domain of Kriss
-
-I will be your eyes and hands. Direct me with commands of 1 or 2 words. 
-I should warn you that I look at only the first five letters of each 
-word and often misunderstand them, on porpoise.
-
-
-SiteMap:
-
-1 [Blog](./blog)
-2 [Badonkadonk](./badonkadonk)
-3 [Agincards](./agincards)
-4 [WetIce](./wetice)
-
-
+#^----------------------------------------------------------------------
 #^footjs same=append
 
 var zxprogress=function(percent)
@@ -88,8 +73,8 @@ var zxprogress=function(percent)
 		return s
 	}
 	
-	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
-	var scritch=gradient("#fffc36","#002bfb",40,0.9)
+	var wheeeee=gradient("#0cc","#d32",16,0.1)
+	var scritch=gradient("#ff3","#03f",40,0.9)
 
 	cv.style.top="0"
 
@@ -120,9 +105,13 @@ var zxprogress=function(percent)
 		sc.style.filter="none"
 		sc.style.backgroundBlendMode="normal"
 		bd.style.backgroundImage="";
-		bd.style.backgroundColor="#bababa";
+		bd.style.backgroundColor="#bbb";
 		cv.style.top="100%"
 		bd.style.animation="none"
+
+		document.getElementById('head').style.animation="fadeIn 2s forwards"
+		document.getElementById('foot').style.animation="fadeIn 2s forwards"
+
 	}
 }
 
@@ -149,7 +138,13 @@ var start=function()
 }
 start()
 
+document.getElementById('head').style.opacity=0
+document.getElementById('foot').style.opacity=0
 
+// document.getElementById('right_image').scrollIntoView({ block: 'center' });
+
+
+#^----------------------------------------------------------------------
 #^css same=append
 
 @keyframes zx-slide {
@@ -159,7 +154,7 @@ start()
 
 body{
 	background-size: 8px 400px;
-	background-color: #00c7c9;
+	background-color: #0cc;
 	animation: zx-slide 1s infinite linear;
 }
 	
@@ -169,19 +164,20 @@ body{
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background-color: #cacaca;
+	background-color: #ccc;
 }
 
 #right_image{
 	float: right;
 	width: 300px;
 	height: 600px;
-	background-color: #cacaca;
-	background-image: url(kriss_200x100.png);
+	background-color: #ccc;
+	background-image: url("art/kriss_200x100.png");
 	background-blend-mode: inherit;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
 	image-rendering: pixelated;
+	margin-left: 20px;
 }
 

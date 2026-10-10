@@ -11,7 +11,7 @@ html {
 body {
 	font-weight: normal;
 	font-family: sans-serif;
-	background: #bababa;
+	background: #bbb;
 	margin: 0;
 	padding: 0;
 }
@@ -29,7 +29,7 @@ ol, ul {
 	list-style: none;
 }
 
-img {
+img , video {
 	max-width: 100%;
 	height: auto;
 }
@@ -40,7 +40,9 @@ body {
 	min-width: 900px;
 }
 
-
+a {
+	text-decoration: unset;
+}
 
 #show {
 	width: 900px;
@@ -56,10 +58,99 @@ body {
 	width: 860px;
 	min-height: 640px;
 	position: relative;
-	background: #cacaca;
-	border: 20px solid #cacaca;
+	background: #ccc;
+	border: 20px solid #ccc;
+	overflow-wrap: break-word;
 }
 
 #foot {
 	height: 200px;
+}
+
+#body img , #body video {
+	width: 100%;
+}
+
+#body p {
+	border-width: 10px 0px 10px 0px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+.oldnew-links {
+	font-family: monospace;
+	font-weight: bold;
+	height: 60px;
+}
+.old-link , .new-link {
+	background: #bbb;
+	color: #aaa;
+	border: 10px solid #aaa;
+	padding: 0px 10px 0px 10px;
+}
+.new-link {
+	float: right;
+}
+.old-link {
+	float: left;
+}
+
+
+
+
+.bloglink-date {
+	position: relative;
+	left: -41px;
+	background: #dadada;
+	border: 5px solid #ddd;
+	margin: 20px 0px 20px 0px;
+	width: 900px;
+}
+
+.blogbody a {
+	text-decoration: unset;
+	margin: 20px;
+	display: block;
+	max-width: 780px;
+}
+
+.blogpost {
+	min-height: 900px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.bloglink {
+	margin-bottom: 40px;
+}
+
+#xiximg {
+	width: 600px;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	image-rendering: pixelated;
+	margin: auto;
+	display: block;
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+.blog-link , .wiki-link {
+	font-family: monospace;
+	font-weight: bold;
+	background: #bbb;
+	color: #ddd;
+	padding: 20px 20px 20px 20px;
+}
+.blog-link {
+	float: right;
+}
+.wiki-link {
+	float: left;
 }

@@ -1,10 +1,12 @@
 
+#^----------------------------------------------------------------------
 #^headjs same=append
 
 head.js("//cdn.babylonjs.com/viewer/babylon.viewer.js",function(){
 BabylonViewer.InitTags('babylon');
 });
 
+#^----------------------------------------------------------------------
 #^title trim=ends
 
 Welcome to blog!
@@ -21,16 +23,19 @@ Welcome to blog!
 }
 
 
+#^----------------------------------------------------------------------
 #^link_older_page
 
-<a class="old-link" href="{_it}">&lt;olds&lt;</a>
+<a class="old-link" href="{_it}">&lt;OLDS&lt;</a>
 
 
+#^----------------------------------------------------------------------
 #^link_newer_page
 
-<a class="new-link" href="{_it}">&gt;news&gt;</a>
+<a class="new-link" href="{_it}">&gt;NEWS&gt;</a>
 
 
+#^----------------------------------------------------------------------
 #^_blog_page_body
 
 <div class="oldnew-links"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>
@@ -40,25 +45,29 @@ Welcome to blog!
 <div class="oldnew-links"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>
 
 
+#^----------------------------------------------------------------------
 #^blog_list
 
 {_it._body}
 
 
+#^----------------------------------------------------------------------
 #^link_older_post
 
-<a class="old-link" href="{_it}">&lt;olds&lt;</a>
+<a class="old-link" href="{_it}">&lt;OLDS&lt;</a>
 
 
+#^----------------------------------------------------------------------
 #^link_newer_post
 
-<a class="new-link" href="{_it}">&gt;news&gt;</a>
+<a class="new-link" href="{_it}">&gt;NEWS&gt;</a>
 
 
+#^----------------------------------------------------------------------
 #^_blog_post_body_one
 
 <div class="oldnew-links"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
-<div class="blogpost">{_blog_post_body}</div>
+<div class="blogpost"><div class="blogbody">{_blog_post_body}</div></div>
 <div class="oldnew-links"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>
 <div class="utter_wrap">
 <script src="https://utteranc.es/client.js"
@@ -70,17 +79,61 @@ Welcome to blog!
 </script>
 </div>
 
+#^----------------------------------------------------------------------
 #^_blog_post_icon_wrap
 <img class="bloglink-icon" src="{_it}"/> Click to read more...
 
+#^----------------------------------------------------------------------
 #^_blog_post_body_many
 
 <div class="bloglink" href="{_blog_post_this}" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">{_blog_post_json.datedash}</div>
- <div class="bloglink-title">{_blog_post_body}</div>
+ <div class="blogbody">{_blog_post_body}</div>
 </div>
 
+#^----------------------------------------------------------------------
 #^crumb_trap trim=ends same=append
 
 {crumb_slash}<a class="crumb" href="{_root}blog">Blog</a>{crumb_slash}<a href="{_blog_post_this}">{_blog_post_json.datedash||}</a>
 
+
+
+#^----------------------------------------------------------------------
+#^footjs
+
+// run at bottom so no need to wait
+
+console.log("upgrading links")
+
+let links = document.querySelectorAll('.blogbody a')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	console.log(ext,link)
+	
+	let ytpre="https://www.youtube.com/watch?v="
+	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
+	{
+		let VIDEO_ID=href.substr(ytpre.length,11)
+		let div=document.createElement("div")
+		div.innerHTML=`
+<iframe width="820" height="600" src="https://www.youtube.com/embed/${VIDEO_ID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		`
+
+		link.after(div)
+	}
+	else
+	{
+		switch(ext.toLowerCase())
+		{
+			case "png":
+				link.innerHTML=`<image src="${href}"></image>`
+			break;
+		}
+	}
+	
+}

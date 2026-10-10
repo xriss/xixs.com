@@ -1,8 +1,13 @@
 
 #^----------------------------------------------------------------------
 
+Use this css for relative URLS since it is embeded in each page.
+
 #^css same=append
 
+#xiximg {
+	background-image: url("{_root}art/xix.png");
+}
 
 #^----------------------------------------------------------------------
 
@@ -20,7 +25,7 @@
 #^head trim=ends
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="{_root}styles.css" />
 <title>{title}</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -57,6 +62,9 @@ return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
 
 <div id="show">
 	<div id="head">
+		<a class="blog-link" href="{_root}blog">BLOG</a>
+		<a class="wiki-link" href="{_root}wiki">WIKI</a>
+		<a id="xiximg" href="{_root}" ></a>
 	</div>
 	<div id="body">
 		{body}
@@ -69,7 +77,7 @@ return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
 
 #^title trim=ends
 
-Title is missing.
+XIXs.com
 
 #^----------------------------------------------------------------------
 
