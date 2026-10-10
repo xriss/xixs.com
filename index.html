@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta charset="UTF-8">
-<title>Welcome to XIXs.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./styles.css" />
+<title>XIXs.com</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
 <script>
 (function(f,w){function m(){}function g(a,b){if(a){"object"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v("Function",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if("object"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split("/"),b=b[b.length-1],c=b.indexOf("?"),b={name:-1!==c?b.substring(0,c):b,url:a};
@@ -15,315 +17,18 @@ return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
 </script>
 <style>
 
-* {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size:inherit;
-	font-weight:normal;
-	vertical-align:baseline;
-	background:transparent;
-	color:inherit;
-	text-decoration:inherit;
-	text-size-adjust:none;
-	-moz-text-size-adjust:none;
-	-webkit-text-size-adjust:none;
-	-ms-text-size-adjust:none;
-}
-
-body, html {
-	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
-	width:100%;
-	font-weight:normal;
-	font-style:normal;
-}
-
-body {
-	font-size:20px;
-	background:#cacaca;
-	font-family:monospace, sans-serif;
-	font-size:20px;
-	line-height:1.5;
-	color:#444;
-}
-
-html {
-	height:100%;
-}
-
-h1,h2,h3,h4,h5 {
-    margin:1em 0 0 0;
-	font-weight:bold;
-}
-h1 {
-	font-size:40px;
-}
-h2 {
-	font-size:32px;
-	border-bottom:1px solid #888;
-	padding-bottom:10px;
-}
-h3,h4,h5 {
-	font-size:24px;
-}
-
-p {
-	margin-top:1.5em;
-	margin-bottom:1em;
-}
-
-em {
-	font-style:italic;
-}
-
-ul {
-	padding-inline-start: 40px;
-}
-
-strong,
-a {
-	font-weight:bold;
-}
-
-a:hover {
-	text-decoration:underline;
-}
-
-
-.main {
-	margin:20px auto 60px auto;
-	width:960px;
-}
-
-
-.oldnew-links {
-	width:960px;
-	height:50px;
-	padding-bottom:10px;
-	position:relative;
-	font-size:16px;
-}
-
-.old-link {
-	left: 0;
-	top: 10px;
-	position:absolute;
-	background:#444;
-	color:#eee;
-	padding:4px 8px;
-	border-radius: 8px;
-}
-
-.new-link {
-	right: 0;
-	top: 10px;
-	position:absolute;
-	background:#444;
-	color:#eee;
-	padding:4px 8px;
-	border-radius: 8px;
-}
-
-.old-link:hover,
-.new-link:hover {
-	text-decoration:none;
-	background:#888;
-}
-
-.model-container {
-	padding-top:20px;
-}
-
-.model-view {
-	display: inline-block;
-	width:75%;
-	height:480px;
-}
-
-.model-download {
-	display: inline-block;
-	width:25%;
-}
-
-.model-download a {
-	display: inline-block;
-}
-
-.bloglink {
-/*
-	height: 100px;
-*/
-	display: block;
-	padding-bottom: 20px;
-}
-
-.bloglink img , .bloglink video , .bloglink audio {
-    max-width:500px;
-    height:auto;
-    width:auto;
-}
-
-.bloglink-icon {
-	width: 100px;
-	height: 100px;
-	display: inline-block;
-}
-
-.bloglink-date {
-	display: inline-block;
-	width: 150px;
-	line-height: 100px;
-	vertical-align: top;
-	padding-left: 20px;
-}
-
-.bloglink-title {
-	display: inline-block;
-	width: 500px;
-	vertical-align: top;
-	padding-left: 20px;
-	font-weight: bold;
-/*
-	height:100px;
-*/
-	overflow:hidden;
-}
-
-.blog_list_wrap {
-	padding:20px 0;
-}
-
-table {
-	display: block;
-    max-width: 100%;
-    border-spacing: 15px 10px;
-}
-
-
-
-.crumb-wrap {
-	margin:0px auto;
-	width:960px;
-	padding:20px 0;
-	text-align:right;
-}
-
-.crumb-slash {
-	margin:0px 20px 0px 20px;
-}
-
-.crumb {
-}
-
-.utter_wrap {
-	padding-top:30px;
-}
-
-
-.blogpost img {
-	width:100%;
-}
-
-/*	PHONES & STUFF
-	
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-
-* {
-	width:100%; 
-	height:auto; 
-	min-height:1px; 
-	max-height:999999px;
-}
-
-body {
-	font-size:3rem; 
-	padding:30px 50px;
-}
-
-h1, h2 {
-	font-size:4rem;
-}
-
-li {
-	list-style-position:inside;
-}
-
-.old-link,
-.new-link {
-	width:initial;
-	font-size:2.5rem;
-	padding:4px 14px;
-}
-
-.bloglink {
-	height:initial;
-}
-
-.bloglink-title {
-	width:initial;
-}
-
-.bloglink-date {
-	width:initial;
-	padding-right:20px;
-}
-
-.model-download {
-	padding-left:20px;
-	box-sizing:border-box;
-}
-
-.model-download a {
-    display:block;
-    line-height:1em;
-    padding-bottom:15px;
-}
-
-}
-	============================================= */
-
-body {
-	margin: 0;
-}
-
-.main {
-	background-color: #cacaca;
-}
 
 @keyframes zx-slide {
 	0%		{background-position: 0 0; }
 	100%	{background-position: 0 -400px; }
 }
-#zx-border{
-	width:  100%;
-	height: 100%;
+
+body{
 	background-size: 8px 400px;
 	background-color: #00c7c9;
 	animation: zx-slide 1s infinite linear;
-	position: fixed;
 }
-#zx-wrap{
-	position: absolute;
-	overflow: hidden;
-	left: 5%;
-	right: 5%;
-	top: 10%;
-	bottom: 10%;
-	background-color: #cacaca;
-}
-#zx-screen{
-	background-color: #cacaca;
-	position: relative;
-	padding: 20px 20px 200px 20px;
-	background-blend-mode: luminosity;
-	min-width: 960px;
-	max-height: 960px;
-}
+	
 #zx-cover{
 	position: absolute;
 	left: 0;
@@ -333,17 +38,10 @@ body {
 	background-color: #cacaca;
 }
 
-.left_text{
-	left: 0px;
-	width: 50%;
-}
-
-.right_image{
-	top: 0px;
-	right: 0px;
-	width: 50%;
-	height: 100%;
-	position: absolute;
+#right_image{
+	float: right;
+	width: 300px;
+	height: 600px;
 	background-color: #cacaca;
 	background-image: url(kriss_200x100.png);
 	background-blend-mode: inherit;
@@ -355,25 +53,35 @@ body {
 
 
 </style></head>
-<body><div id="zx-border">
-<div class="crumb-wrap"><a class="crumb" href="./">XIXs</a></div>
-<div id="zx-wrap"><div id="zx-screen"><div class="left_text"><h1 id="title">Welcome to XIXs.com</h1>
-<p>This is the peculiar domain of Kriss</p>
+<body><div id="show">
+	<div id="head">
+	</div>
+	<div id="body">
+		<div id="zx-cover"></div>
+<div id="right_image"></div>
+
+<p>Welcome to XIXs.com
+<br/>
+<br/></p>
 <p>I will be your eyes and hands. Direct me with commands of 1 or 2 words. 
 I should warn you that I look at only the first five letters of each 
-word and often misunderstand them, on porpoise.</p>
-<p>Posts can be found <a href="./blog/">at Blog</a><br>Twats can be found <a href="https://bsky.app/profile/xixs.com">at Bsky</a><br>Gits can be found <a href="https://github.com/xriss/">at github</a><br>Games can be found <a href="https://wetgenes.itch.io/">at itch</a><br>Games can be found <a href="https://store.steampowered.com/developer/wetgenes/">at steam</a><br>Comics can be found <a href="https://4lfa.com/">at 4lfa</a><br>News can be found <a href="http://wetgenes.com/">at WetGenes.com</a></p>
-<p>SiteMap:</p>
-<p>1 <a href="./blog">Blog</a>
-2 <a href="./badonkadonk">Badonkadonk</a>
-3 <a href="./agincards">Agincards</a>
-4 <a href="./wetice">WetIce</a></p>
-</div><div class="right_image"></div><div id="zx-cover"></div></div></div>
+word and will often misunderstand them, on porpoise.
+<br/>
+<br/></p>
+<p>Info at <a href="./wiki/">Wiki</a><br>Posts at <a href="./blog/">Blog</a><br>Twats at <a href="https://mastodon.social/@xriss">Mastodon</a> / <a href="https://bsky.app/profile/xixs.com">Bsky</a><br>Codes at <a href="https://github.com/xriss/">GitHub</a><br>Games at <a href="https://store.steampowered.com/developer/wetgenes/">Steam</a> / <a href="https://wetgenes.itch.io/">Itch</a><br>Comics at <a href="https://4lfa.com/">4lfa</a></p>
+
+	</div>
+	<div id="foot">
+	</div>
+</div></body>
 <script>
+// run some js at foot of the page maybe
+
+
 var zxprogress=function(percent)
 {
-	var bd=document.getElementById("zx-border")
-	var sc=document.getElementById("zx-screen")
+	var bd=document.body
+	var sc=document.getElementById("body")
 	var cv=document.getElementById("zx-cover")
 
 	var gradient=function(c1,c2,count,rnd)
@@ -400,7 +108,6 @@ var zxprogress=function(percent)
 				}
 			}
 		}
-
 
 		var s="linear-gradient( "
 		var a=0
@@ -449,7 +156,7 @@ var zxprogress=function(percent)
 		sc.style.filter="none"
 		sc.style.backgroundBlendMode="normal"
 		bd.style.backgroundImage="";
-		bd.style.backgroundColor="#cacaca";
+		bd.style.backgroundColor="#bababa";
 		cv.style.top="100%"
 		bd.style.animation="none"
 	}
@@ -479,5 +186,4 @@ var start=function()
 start()
 
 </script>
-</div></body>
 </html>
