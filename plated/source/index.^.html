@@ -1,10 +1,29 @@
 #^title trim=ends
+XIXs.com
+
+#^body form=markdown trim=ends
+
+<div id="zx-cover"></div>
+<div id="right_image"></div>
+
 Welcome to XIXs.com
 
 
-#^body form=markdown
-{title}
-=======
+I will be your eyes and hands. Direct me with commands of 1 or 2 words. 
+I should warn you that I look at only the first five letters of each 
+word and will often misunderstand them, on porpoise.
+
+
+Info at [Wiki](./wiki/)  
+Posts at [Blog](./blog/)  
+Twats at [Mastodon](https://mastodon.social/@xriss) / [Bsky](https://bsky.app/profile/xixs.com)  
+Codes at [GitHub](https://github.com/xriss/)  
+Games at [Steam](https://store.steampowered.com/developer/wetgenes/) / [Itch](https://wetgenes.itch.io/)  
+Comics at [4lfa](https://4lfa.com/)  
+
+#^bodyold
+
+News can be found at [WetGenes.com](http://wetgenes.com/)
 
 This is the peculiar domain of Kriss
 
@@ -12,13 +31,6 @@ I will be your eyes and hands. Direct me with commands of 1 or 2 words.
 I should warn you that I look at only the first five letters of each 
 word and often misunderstand them, on porpoise.
 
-Posts can be found [at Blog](./blog/)  
-Twats can be found [at Bsky](https://bsky.app/profile/xixs.com)  
-Gits can be found [at github](https://github.com/xriss/)  
-Games can be found [at itch](https://wetgenes.itch.io/)  
-Games can be found [at steam](https://store.steampowered.com/developer/wetgenes/)  
-Comics can be found [at 4lfa](https://4lfa.com/)  
-News can be found [at WetGenes.com](http://wetgenes.com/)
 
 SiteMap:
 
@@ -28,20 +40,12 @@ SiteMap:
 4 [WetIce](./wetice)
 
 
-#^bodywrap trim=ends
-
-<div id="zx-border">
-{crumb_wrap}
-<div id="zx-wrap"><div id="zx-screen"><div class="left_text">{body}</div><div class="right_image"></div><div id="zx-cover"></div></div></div>
-<script>{script}</script>
-</div>
-
-#^script same=append
+#^footjs same=append
 
 var zxprogress=function(percent)
 {
-	var bd=document.getElementById("zx-border")
-	var sc=document.getElementById("zx-screen")
+	var bd=document.body
+	var sc=document.getElementById("body")
 	var cv=document.getElementById("zx-cover")
 
 	var gradient=function(c1,c2,count,rnd)
@@ -68,7 +72,6 @@ var zxprogress=function(percent)
 				}
 			}
 		}
-
 
 		var s="linear-gradient( "
 		var a=0
@@ -117,7 +120,7 @@ var zxprogress=function(percent)
 		sc.style.filter="none"
 		sc.style.backgroundBlendMode="normal"
 		bd.style.backgroundImage="";
-		bd.style.backgroundColor="#cacaca";
+		bd.style.backgroundColor="#bababa";
 		cv.style.top="100%"
 		bd.style.animation="none"
 	}
@@ -149,43 +152,17 @@ start()
 
 #^css same=append
 
-body {
-	margin: 0;
-}
-
-.main {
-	background-color: #cacaca;
-}
-
 @keyframes zx-slide {
 	0%		{background-position: 0 0; }
 	100%	{background-position: 0 -400px; }
 }
-#zx-border{
-	width:  100%;
-	height: 100%;
+
+body{
 	background-size: 8px 400px;
 	background-color: #00c7c9;
 	animation: zx-slide 1s infinite linear;
-	position: fixed;
 }
-#zx-wrap{
-	position: absolute;
-	overflow: hidden;
-	left: 5%;
-	right: 5%;
-	top: 10%;
-	bottom: 10%;
-	background-color: #cacaca;
-}
-#zx-screen{
-	background-color: #cacaca;
-	position: relative;
-	padding: 20px 20px 200px 20px;
-	background-blend-mode: luminosity;
-	min-width: 960px;
-	max-height: 960px;
-}
+	
 #zx-cover{
 	position: absolute;
 	left: 0;
@@ -195,17 +172,10 @@ body {
 	background-color: #cacaca;
 }
 
-.left_text{
-	left: 0px;
-	width: 50%;
-}
-
-.right_image{
-	top: 0px;
-	right: 0px;
-	width: 50%;
-	height: 100%;
-	position: absolute;
+#right_image{
+	float: right;
+	width: 300px;
+	height: 600px;
 	background-color: #cacaca;
 	background-image: url(kriss_200x100.png);
 	background-blend-mode: inherit;

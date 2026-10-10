@@ -1,20 +1,27 @@
 
-#^------------------------------
+#^----------------------------------------------------------------------
+
+#^css same=append
+
+
+#^----------------------------------------------------------------------
+
 #^html trim=ends
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>{head}</head>
 <body>{bodywrap}</body>
+<script>{footjs}</script>
 </html>
 
-#^bodywrap trim=ends
+#^----------------------------------------------------------------------
 
-{crumb_wrap}<div class="main">{body}</div>
-
-#^------------------------------
 #^head trim=ends
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{_root}styles.css" />
 <title>{title}</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
 <script>{headjs}</script>
@@ -24,7 +31,7 @@
 
 #^----------------------------------------------------------------------
 
-https://headjs.github.io/  provides a simple resource loader.
+ https://headjs.github.io/  provides a simple resource loader.
 
 #^headjs same=append
 
@@ -37,30 +44,36 @@ function(a,b,c,e){a="object"===typeof a?a:{test:a,success:b?v("Array",b)?b:[b]:!
 return d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature("domloaded",!0)});if("complete"===e.readyState)i();else if(e.addEventListener)e.addEventListener("DOMContentLoaded",t,!1),f.addEventListener("load",i,!1);else{e.attachEvent("onreadystatechange",t);f.attachEvent("onload",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll("left")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);
 return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
 
-#^------------------------------
+#^----------------------------------------------------------------------
+
+#^footjs same=append
+
+// run some js at foot of the page maybe
+
+
+#^----------------------------------------------------------------------
+
+#^bodywrap trim=ends
+
+<div id="show">
+	<div id="head">
+	</div>
+	<div id="body">
+		{body}
+	</div>
+	<div id="foot">
+	</div>
+</div>
+
+#^----------------------------------------------------------------------
+
 #^title trim=ends
 
 Title is missing.
 
-#^------------------------------
+#^----------------------------------------------------------------------
+
 #^body trim=ends
 
 Body is missing.
-
-
-#^------------------------------
-
-handle crumbs
-
-#^crumb_wrap trim=ends
-
-<div class="crumb-wrap">{crumb_trap}</div>
-
-#^crumb_slash trim=ends
-
-<span class="crumb-slash">/</span>
-
-#^crumb_trap trim=ends same=append
-
-<a class="crumb" href="{_root}">XIXs</a>
 
