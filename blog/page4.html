@@ -308,7 +308,7 @@ Feed then you are already in the top tech 1%ers :)
 <script>
 // run at bottom so no need to wait
 
-console.log("upgrading links")
+//console.log("upgrading links")
 
 let links = document.querySelectorAll('.blogbody a')
 for( let idx=0 ; idx<links.length ; idx++ )
@@ -318,7 +318,7 @@ for( let idx=0 ; idx<links.length ; idx++ )
 	let ext=href.match(/\.([^\./]+)+$/)
 	ext=ext && ext[1] || ""
 
-	console.log(ext,link)
+//	console.log(ext,link)
 	
 	let ytpre="https://www.youtube.com/watch?v="
 	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
