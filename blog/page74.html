@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../styles.css" />
 <title>Welcome to blog!</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -21,18 +21,24 @@ BabylonViewer.InitTags('babylon');
 </script>
 <style>
 
+#xiximg {
+	background-image: url("../art/xix.png");
+}
 
 </style></head>
 <body><div id="show">
 	<div id="head">
+		<a class="blog-link" href="../blog">BLOG</a>
+		<a class="wiki-link" href="../wiki">WIKI</a>
+		<a id="xiximg" href="../" ></a>
 	</div>
 	<div id="body">
 		
 <div class="oldnew-links"> 
-<a class="old-link" href="../blog/page75.html">&lt;olds&lt;</a>
+<a class="old-link" href="../blog/page75.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../blog/page73.html">&gt;news&gt;</a>
+<a class="new-link" href="../blog/page73.html">&gt;NEWS&gt;</a>
 
  </div>
 <div class="blog_list_wrap">
@@ -40,7 +46,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-31-231539.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-31</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/icculus/status/980202714432000001">https://twitter.com/icculus/status/980202714432000001</a> @icculus math.h doesn&#39;t help, float.h fixes it.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/icculus/status/980202714432000001">https://twitter.com/icculus/status/980202714432000001</a> @icculus math.h doesn&#39;t help, float.h fixes it.</p>
 <p>I see that my launchpad builds hit the same FLT_MAX problem <a href="https://launchpadlibrarian.net/362800403/buildlog_snap_ubuntu_xenial_amd64_gamecake_BUILDING.txt.gz">https://launchpadlibrarian.net/362800403/buildlog_snap_ubuntu_xenial_amd64_gamecake_BUILDING.txt.gz</a></p>
 <p>So maybe not just mingw.</p>
 </div>
@@ -51,7 +57,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-31-211146.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-31</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/wetgenes/status/980174627954675713">https://twitter.com/wetgenes/status/980174627954675713</a> @icculus I&#39;m not doing anything complex, just some pretty basic playing of sounds and a bit of streaming. so I doubt there will be any problems. It looks good as a first test on Linux.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/wetgenes/status/980174627954675713">https://twitter.com/wetgenes/status/980174627954675713</a> @icculus I&#39;m not doing anything complex, just some pretty basic playing of sounds and a bit of streaming. so I doubt there will be any problems. It looks good as a first test on Linux.</p>
 <p>Now I just need to physically test it works OK on other platforms :)</p>
 </div>
 </div>
@@ -61,7 +67,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-31-210656.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-31</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/icculus/status/980135786950680576">https://twitter.com/icculus/status/980135786950680576</a> @icculus Already tried, slots in and compiles without any major issues. Just need to make sure SDL2 is a recent version.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/icculus/status/980135786950680576">https://twitter.com/icculus/status/980135786950680576</a> @icculus Already tried, slots in and compiles without any major issues. Just need to make sure SDL2 is a recent version.</p>
 <p>Also hit a minor mingw cross compile issue with FLT_MAX not being available, their fault but might be worth working around.</p>
 </div>
 </div>
@@ -71,7 +77,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-31-154734.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-31</div>
- <div class="bloglink-title"><p>I think I have 3 platform specific versions of OpenAL soft for #GameCake builds. It keeps breaking due to bitrot so I keep switching randomly until it works again.</p>
+ <div class="blogbody"><p>I think I have 3 platform specific versions of OpenAL soft for #GameCake builds. It keeps breaking due to bitrot so I keep switching randomly until it works again.</p>
 <p>I have high hopes that this might actually fix that :) <a href="https://twitter.com/icculus/status/979903835509575680">https://twitter.com/icculus/status/979903835509575680</a></p>
 </div>
 </div>
@@ -81,7 +87,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-31-144724.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-31</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/andrewcrawshaw/status/980004143111852032">https://twitter.com/andrewcrawshaw/status/980004143111852032</a> @andrewcrawshaw If you build them well enough then BOOOM there&#39;s your tutorial :)</p>
+ <div class="blogbody"><p><a href="https://twitter.com/andrewcrawshaw/status/980004143111852032">https://twitter.com/andrewcrawshaw/status/980004143111852032</a> @andrewcrawshaw If you build them well enough then BOOOM there&#39;s your tutorial :)</p>
 </div>
 </div>
 
@@ -90,7 +96,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-30-232724.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-30</div>
- <div class="bloglink-title"><p>This is great, obviously I would prefer a more cyclopean architecture but it manages the fearful almost dead but still surviving feel of dark souls very well.</p>
+ <div class="blogbody"><p>This is great, obviously I would prefer a more cyclopean architecture but it manages the fearful almost dead but still surviving feel of dark souls very well.</p>
 <p><a href="https://www.youtube.com/watch?v=24Cn7BAAD3s">https://www.youtube.com/watch?v=24Cn7BAAD3s</a></p>
 </div>
 </div>
@@ -100,7 +106,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-28-173319.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-28</div>
- <div class="bloglink-title"><p>I assume this is a reference to <a href="http://www.imdb.com/title/tt3118442/">http://www.imdb.com/title/tt3118442/</a> and look forward to discovering the science behind such a phenomenon. <a href="https://twitter.com/Ri_Science/status/979019326706667520">https://twitter.com/Ri_Science/status/979019326706667520</a></p>
+ <div class="blogbody"><p>I assume this is a reference to <a href="http://www.imdb.com/title/tt3118442/">http://www.imdb.com/title/tt3118442/</a> and look forward to discovering the science behind such a phenomenon. <a href="https://twitter.com/Ri_Science/status/979019326706667520">https://twitter.com/Ri_Science/status/979019326706667520</a></p>
 </div>
 </div>
 
@@ -109,7 +115,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-28-172253.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-28</div>
- <div class="bloglink-title"><p>Animated Constantine TV series you say?</p>
+ <div class="blogbody"><p>Animated Constantine TV series you say?</p>
 <p><a href="https://www.youtube.com/watch?v=l44e3Vd13o4">https://www.youtube.com/watch?v=l44e3Vd13o4</a></p>
 </div>
 </div>
@@ -119,7 +125,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-26-140228.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-26</div>
- <div class="bloglink-title"><p>Dust jackets are just screen savers for books.</p>
+ <div class="blogbody"><p>Dust jackets are just screen savers for books.</p>
 </div>
 </div>
 
@@ -128,7 +134,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-25-135736.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-25</div>
- <div class="bloglink-title"><p>@DickWThomas @shi @coderdojobd @curricinnov Yes far too young, the hacker age limits are must be able to type and carry own laptop at least 5 miles.</p>
+ <div class="blogbody"><p>@DickWThomas @shi @coderdojobd @curricinnov Yes far too young, the hacker age limits are must be able to type and carry own laptop at least 5 miles.</p>
 </div>
 </div>
 
@@ -137,7 +143,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-22-095640.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-22</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/nachimir/status/976756545018126336">https://twitter.com/nachimir/status/976756545018126336</a> @nachimir Supply is always there, problem is upping the quality.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/nachimir/status/976756545018126336">https://twitter.com/nachimir/status/976756545018126336</a> @nachimir Supply is always there, problem is upping the quality.</p>
 <p>From what I&#39;ve seen in places keen to pull people direct from education (long time ago) you are only going to want to keep about 50% and thats after cherry picking the best.</p>
 </div>
 </div>
@@ -147,7 +153,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-22-003957.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-22</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/nachimir/status/976560301490524163">https://twitter.com/nachimir/status/976560301490524163</a> @nachimir Kinda amusing to think that this is probably a result of wanting a cheaper supply of fresh meat from academia.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/nachimir/status/976560301490524163">https://twitter.com/nachimir/status/976560301490524163</a> @nachimir Kinda amusing to think that this is probably a result of wanting a cheaper supply of fresh meat from academia.</p>
 <p>Without realising that demanding schools pushed out human resources with appropriate games industry qualifications is only going to encourage the forming of unions.</p>
 </div>
 </div>
@@ -157,7 +163,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-21-140159.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-21</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/Tony_Gowland/status/976450451007852545">https://twitter.com/Tony_Gowland/status/976450451007852545</a> @FreakyZoid This is actually the improved version, original design spec has it as 466.5x181.3333333333333333333</p>
+ <div class="blogbody"><p><a href="https://twitter.com/Tony_Gowland/status/976450451007852545">https://twitter.com/Tony_Gowland/status/976450451007852545</a> @FreakyZoid This is actually the improved version, original design spec has it as 466.5x181.3333333333333333333</p>
 </div>
 </div>
 
@@ -166,7 +172,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-20-181138.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-20</div>
- <div class="bloglink-title"><p>QVC is Twitch but for old people.</p>
+ <div class="blogbody"><p>QVC is Twitch but for old people.</p>
 <p>Twitch is QVC but for kids.</p>
 </div>
 </div>
@@ -176,7 +182,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-20-123728.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-20</div>
- <div class="bloglink-title"><p>Remember:</p>
+ <div class="blogbody"><p>Remember:</p>
 <p>The only way to combat being secretly filmed and exposed on prime time TV is to swear constantly, maintain obscene hand gestures near your face and keep your genitals visible.</p>
 </div>
 </div>
@@ -186,7 +192,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-20-121000.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-20</div>
- <div class="bloglink-title"><p>@Malloid Well, hitting people is what cars do.</p>
+ <div class="blogbody"><p>@Malloid Well, hitting people is what cars do.</p>
 <p>The real Turing test is if they are more or less likely than humans to drive into rivers if the GPS map tells them there is an imaginary bridge ahead.</p>
 </div>
 </div>
@@ -196,7 +202,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-19-213540.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-19</div>
- <div class="bloglink-title"><p>@Malloid Technically it only has to kill less people that human drivers.</p>
+ <div class="blogbody"><p>@Malloid Technically it only has to kill less people that human drivers.</p>
 <p>The same way you don&#39;t have to run faster than the lion, just your friends.</p>
 </div>
 </div>
@@ -206,7 +212,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-19-211950.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-19</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/nachimir/status/975738864290721797">https://twitter.com/nachimir/status/975738864290721797</a> @nachimir @failnaut Apparently the crime is -- Taking data from facebook without paying facebook for the privilege.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/nachimir/status/975738864290721797">https://twitter.com/nachimir/status/975738864290721797</a> @nachimir @failnaut Apparently the crime is -- Taking data from facebook without paying facebook for the privilege.</p>
 </div>
 </div>
 
@@ -215,7 +221,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2018/2018-03-19-192212.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2018-03-19</div>
- <div class="bloglink-title"><p>Totes gonna have a VR XMAS this year fer sure. <a href="https://twitter.com/pcgamer/status/975779066396794880">https://twitter.com/pcgamer/status/975779066396794880</a></p>
+ <div class="blogbody"><p>Totes gonna have a VR XMAS this year fer sure. <a href="https://twitter.com/pcgamer/status/975779066396794880">https://twitter.com/pcgamer/status/975779066396794880</a></p>
 </div>
 </div>
 
@@ -223,10 +229,10 @@ BabylonViewer.InitTags('babylon');
 
 </div>
 <div class="oldnew-links"> 
-<a class="old-link" href="../blog/page75.html">&lt;olds&lt;</a>
+<a class="old-link" href="../blog/page75.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../blog/page73.html">&gt;news&gt;</a>
+<a class="new-link" href="../blog/page73.html">&gt;NEWS&gt;</a>
 
  </div>
 
@@ -236,7 +242,41 @@ BabylonViewer.InitTags('babylon');
 	</div>
 </div></body>
 <script>
-// run some js at foot of the page maybe
+// run at bottom so no need to wait
 
+console.log("upgrading links")
+
+let links = document.querySelectorAll('.blogbody a')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	console.log(ext,link)
+	
+	let ytpre="https://www.youtube.com/watch?v="
+	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
+	{
+		let VIDEO_ID=href.substr(ytpre.length,11)
+		let div=document.createElement("div")
+		div.innerHTML=`
+<iframe width="820" height="600" src="https://www.youtube.com/embed/${VIDEO_ID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		`
+
+		link.after(div)
+	}
+	else
+	{
+		switch(ext.toLowerCase())
+		{
+			case "png":
+				link.innerHTML=`<image src="${href}"></image>`
+			break;
+		}
+	}
+	
+}
 </script>
 </html>

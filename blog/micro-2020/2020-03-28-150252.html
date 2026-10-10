@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../styles.css" />
 <title>Welcome to blog!</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -21,27 +21,33 @@ BabylonViewer.InitTags('babylon');
 </script>
 <style>
 
+#xiximg {
+	background-image: url("../../art/xix.png");
+}
 
 </style></head>
 <body><div id="show">
 	<div id="head">
+		<a class="blog-link" href="../../blog">BLOG</a>
+		<a class="wiki-link" href="../../wiki">WIKI</a>
+		<a id="xiximg" href="../../" ></a>
 	</div>
 	<div id="body">
 		
 <div class="oldnew-links"> 
-<a class="old-link" href="../../blog/micro-2020/2020-03-28-134758.html">&lt;olds&lt;</a>
+<a class="old-link" href="../../blog/micro-2020/2020-03-28-134758.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../../blog/micro-2020/2020-03-28-192901.html">&gt;news&gt;</a>
+<a class="new-link" href="../../blog/micro-2020/2020-03-28-192901.html">&gt;NEWS&gt;</a>
 
  </div>
-<div class="blogpost"><p>NINE INCH NAILS GHOSTS V-VI AVAILABLE NOW <a href="https://www.nin.com/nine-inch-nails-ghosts-v-vi-available-now/">https://www.nin.com/nine-inch-nails-ghosts-v-vi-available-now/</a> Free MP3 download link in the middle of the page :)</p>
-</div>
+<div class="blogpost"><div class="blogbody"><p>NINE INCH NAILS GHOSTS V-VI AVAILABLE NOW <a href="https://www.nin.com/nine-inch-nails-ghosts-v-vi-available-now/">https://www.nin.com/nine-inch-nails-ghosts-v-vi-available-now/</a> Free MP3 download link in the middle of the page :)</p>
+</div></div>
 <div class="oldnew-links"> 
-<a class="old-link" href="../../blog/micro-2020/2020-03-28-134758.html">&lt;olds&lt;</a>
+<a class="old-link" href="../../blog/micro-2020/2020-03-28-134758.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../../blog/micro-2020/2020-03-28-192901.html">&gt;news&gt;</a>
+<a class="new-link" href="../../blog/micro-2020/2020-03-28-192901.html">&gt;NEWS&gt;</a>
 
  </div>
 <div class="utter_wrap">
@@ -59,7 +65,41 @@ BabylonViewer.InitTags('babylon');
 	</div>
 </div></body>
 <script>
-// run some js at foot of the page maybe
+// run at bottom so no need to wait
 
+console.log("upgrading links")
+
+let links = document.querySelectorAll('.blogbody a')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	console.log(ext,link)
+	
+	let ytpre="https://www.youtube.com/watch?v="
+	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
+	{
+		let VIDEO_ID=href.substr(ytpre.length,11)
+		let div=document.createElement("div")
+		div.innerHTML=`
+<iframe width="820" height="600" src="https://www.youtube.com/embed/${VIDEO_ID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		`
+
+		link.after(div)
+	}
+	else
+	{
+		switch(ext.toLowerCase())
+		{
+			case "png":
+				link.innerHTML=`<image src="${href}"></image>`
+			break;
+		}
+	}
+	
+}
 </script>
 </html>

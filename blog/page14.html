@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../styles.css" />
 <title>Welcome to blog!</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -21,18 +21,24 @@ BabylonViewer.InitTags('babylon');
 </script>
 <style>
 
+#xiximg {
+	background-image: url("../art/xix.png");
+}
 
 </style></head>
 <body><div id="show">
 	<div id="head">
+		<a class="blog-link" href="../blog">BLOG</a>
+		<a class="wiki-link" href="../wiki">WIKI</a>
+		<a id="xiximg" href="../" ></a>
 	</div>
 	<div id="body">
 		
 <div class="oldnew-links"> 
-<a class="old-link" href="../blog/page15.html">&lt;olds&lt;</a>
+<a class="old-link" href="../blog/page15.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../blog/page13.html">&gt;news&gt;</a>
+<a class="new-link" href="../blog/page13.html">&gt;NEWS&gt;</a>
 
  </div>
 <div class="blog_list_wrap">
@@ -40,7 +46,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-03-12-092326.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-03-12</div>
- <div class="bloglink-title"><p>Feck, emscripten build has decided its canvas shall be 0 by 0 size only.</p>
+ <div class="blogbody"><p>Feck, emscripten build has decided its canvas shall be 0 by 0 size only.</p>
 <p>I swear I didn&#39;t change nuffin. How the hell do I even debug this? :)</p>
 <p>Code still seems to be running presumably even drawing but this is worse than a GPU black screen WTF.</p>
 <p>Maybe a full rebuild and hope?</p>
@@ -52,7 +58,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-03-09-074942.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-03-09</div>
- <div class="bloglink-title"><p>This is a great little coop game in that you can hang around the base building/gardening/cooking or head out and hit things with sticks for more resources.</p>
+ <div class="blogbody"><p>This is a great little coop game in that you can hang around the base building/gardening/cooking or head out and hit things with sticks for more resources.</p>
 <p>(no random/night invasions, so very chill)</p>
 <p>We played the demo to death in the recent steam demo festival. <a href="https://twitter.com/WhatsOnSteam/status/1501119634375905281">https://twitter.com/WhatsOnSteam/status/1501119634375905281</a></p>
 </div>
@@ -63,7 +69,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-03-03-061245.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-03-03</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/DazAU78/status/1499216490490318849">https://twitter.com/DazAU78/status/1499216490490318849</a> @DazAU78 Is OK, but Symbol is the greatest.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/DazAU78/status/1499216490490318849">https://twitter.com/DazAU78/status/1499216490490318849</a> @DazAU78 Is OK, but Symbol is the greatest.</p>
 <p><a href="https://www.youtube.com/watch?v=noketRnWYfs">https://www.youtube.com/watch?v=noketRnWYfs</a></p>
 </div>
 </div>
@@ -73,7 +79,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-03-02-125239.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-03-02</div>
- <div class="bloglink-title"><p>Well this is unexpected.</p>
+ <div class="blogbody"><p>Well this is unexpected.</p>
 <p>A mere quarter of a century since the last one :) <a href="https://twitter.com/Skindredmusic/status/1498963767236902914">https://twitter.com/Skindredmusic/status/1498963767236902914</a></p>
 </div>
 </div>
@@ -83,7 +89,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-03-02-000436.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-03-02</div>
- <div class="bloglink-title"><p>But I haven&#39;t finished Elden Ring yet and that may take some time. <a href="https://twitter.com/WhatsOnSteam/status/1498723088283975687">https://twitter.com/WhatsOnSteam/status/1498723088283975687</a></p>
+ <div class="blogbody"><p>But I haven&#39;t finished Elden Ring yet and that may take some time. <a href="https://twitter.com/WhatsOnSteam/status/1498723088283975687">https://twitter.com/WhatsOnSteam/status/1498723088283975687</a></p>
 </div>
 </div>
 
@@ -92,7 +98,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-03-01-071202.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-03-01</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/mguest/status/1498498595053776898">https://twitter.com/mguest/status/1498498595053776898</a> @mguest Ahh yes the RLE compression that often increased the size of files when using 256 colors since it was only designed for 16.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/mguest/status/1498498595053776898">https://twitter.com/mguest/status/1498498595053776898</a> @mguest Ahh yes the RLE compression that often increased the size of files when using 256 colors since it was only designed for 16.</p>
 </div>
 </div>
 
@@ -101,7 +107,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-02-26-134144.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-02-26</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/DanFessler/status/1497443379956707334">https://twitter.com/DanFessler/status/1497443379956707334</a> @DanFessler Postmodern HTML.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/DanFessler/status/1497443379956707334">https://twitter.com/DanFessler/status/1497443379956707334</a> @DanFessler Postmodern HTML.</p>
 </div>
 </div>
 
@@ -110,7 +116,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-02-22-025633.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-02-22</div>
- <div class="bloglink-title"><p>That laptop-lapcat balance. 
+ <div class="blogbody"><p>That laptop-lapcat balance. 
 <img src="../blog/micro-2022/2022-02-22-025633.jpg"></img></p>
 </div>
 </div>
@@ -120,7 +126,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-30-161211.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-30</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/bbbradsmith/status/1487171192448557061">https://twitter.com/bbbradsmith/status/1487171192448557061</a> @bbbradsmith @MonstersGo Of course, but the idea of writing something in assembly when you don&#39;t actually care about speed is something that is totally against the modern narrative of what assembler is. :)</p>
+ <div class="blogbody"><p><a href="https://twitter.com/bbbradsmith/status/1487171192448557061">https://twitter.com/bbbradsmith/status/1487171192448557061</a> @bbbradsmith @MonstersGo Of course, but the idea of writing something in assembly when you don&#39;t actually care about speed is something that is totally against the modern narrative of what assembler is. :)</p>
 </div>
 </div>
 
@@ -129,7 +135,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-28-120408.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-28</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/bbbradsmith/status/1486818872066027521">https://twitter.com/bbbradsmith/status/1486818872066027521</a> @bbbradsmith @MonstersGo I remember writing a lot of what I considered &quot;Lazy&quot; Assembler as a halfway house between Asm and C.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/bbbradsmith/status/1486818872066027521">https://twitter.com/bbbradsmith/status/1486818872066027521</a> @bbbradsmith @MonstersGo I remember writing a lot of what I considered &quot;Lazy&quot; Assembler as a halfway house between Asm and C.</p>
 <p>By lazy I just meant that I did not care about speed and it was meant to be easy to write/read.</p>
 <p>So, you know, kinda readable. :)</p>
 </div>
@@ -140,7 +146,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-25-020305.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-25</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/DazAU78/status/1485752109853462528">https://twitter.com/DazAU78/status/1485752109853462528</a> @DazAU78 I remember going to some sort of he-man event at a local toy store in the 80s.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/DazAU78/status/1485752109853462528">https://twitter.com/DazAU78/status/1485752109853462528</a> @DazAU78 I remember going to some sort of he-man event at a local toy store in the 80s.</p>
 <p>All the mothers where visibly upset that two skinny guys turned up and then put on full bodysuits rather than the mostly naked body builders they where expecting.</p>
 <p>I assume this is exactly what I saw.</p>
 </div>
@@ -151,7 +157,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-24-115928.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-24</div>
- <div class="bloglink-title"><p>There are several ways, though, to observe the Sun without danger to your eyes and as all of these are simple and cost nothing you can easily try them. The most common way is to take a bit of window glass, say an inch square, and smoke one side of it over the flame of a candle <a href="https://twitter.com/gutenberg_new/status/1485407138235097091">https://twitter.com/gutenberg_new/status/1485407138235097091</a></p>
+ <div class="blogbody"><p>There are several ways, though, to observe the Sun without danger to your eyes and as all of these are simple and cost nothing you can easily try them. The most common way is to take a bit of window glass, say an inch square, and smoke one side of it over the flame of a candle <a href="https://twitter.com/gutenberg_new/status/1485407138235097091">https://twitter.com/gutenberg_new/status/1485407138235097091</a></p>
 </div>
 </div>
 
@@ -160,7 +166,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-20-121332.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-20</div>
- <div class="bloglink-title"><p>Choose brick.</p>
+ <div class="blogbody"><p>Choose brick.</p>
 <p><a href="https://www.gutenberg.org/files/67203/67203-h/67203-h.htm">https://www.gutenberg.org/files/67203/67203-h/67203-h.htm</a> 
 <img src="../blog/micro-2022/2022-01-20-121332.1.jpg"></img></p>
 <p><img src="../blog/micro-2022/2022-01-20-121332.2.jpg"></img></p>
@@ -174,7 +180,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-16-122641.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-16</div>
- <div class="bloglink-title"><p>Am I so out of touch?</p>
+ <div class="blogbody"><p>Am I so out of touch?</p>
 <p>No.</p>
 <p>It&#39;s the maps who are wrong. <a href="https://twitter.com/DrDavidBoyce/status/1482496367847264261">https://twitter.com/DrDavidBoyce/status/1482496367847264261</a></p>
 </div>
@@ -185,7 +191,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-12-133623.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-12</div>
- <div class="bloglink-title"><p>This privacy curtain can easily be pushed aside should you hear anything interesting. 
+ <div class="blogbody"><p>This privacy curtain can easily be pushed aside should you hear anything interesting. 
 <img src="../blog/micro-2022/2022-01-12-133623.jpg"></img></p>
 </div>
 </div>
@@ -195,7 +201,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-11-095247.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-11</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/bruces/status/1480785981758492672">https://twitter.com/bruces/status/1480785981758492672</a> @bruces Almost as if one of these groups knows what they are actually doing and the other has not a clue.</p>
+ <div class="blogbody"><p><a href="https://twitter.com/bruces/status/1480785981758492672">https://twitter.com/bruces/status/1480785981758492672</a> @bruces Almost as if one of these groups knows what they are actually doing and the other has not a clue.</p>
 </div>
 </div>
 
@@ -204,7 +210,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-07-044644.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-07</div>
- <div class="bloglink-title"><p><a href="https://twitter.com/IcepickInTheory/status/1479279085654360068">https://twitter.com/IcepickInTheory/status/1479279085654360068</a> @IcepickInTheory A simple tpyo what it meant to say was &quot;Space Malaria&quot;</p>
+ <div class="blogbody"><p><a href="https://twitter.com/IcepickInTheory/status/1479279085654360068">https://twitter.com/IcepickInTheory/status/1479279085654360068</a> @IcepickInTheory A simple tpyo what it meant to say was &quot;Space Malaria&quot;</p>
 </div>
 </div>
 
@@ -213,7 +219,7 @@ BabylonViewer.InitTags('babylon');
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-07-041154.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-07</div>
- <div class="bloglink-title"><p>The apparently unlikely appearance of treasure chests in dungeons is very easy to understand once you realize that they only come in two types.</p>
+ <div class="blogbody"><p>The apparently unlikely appearance of treasure chests in dungeons is very easy to understand once you realize that they only come in two types.</p>
 <p>Live mimics.
 Dead mimics.</p>
 </div>
@@ -224,8 +230,8 @@ Dead mimics.</p>
 
 <div class="bloglink" href="../blog/micro-2022/2022-01-05-103412.html" style="cursor: pointer;" onclick="window.location.href=this.getAttribute('href')">
  <div class="bloglink-date">2022-01-05</div>
- <div class="bloglink-title"><p>Is Yerf the opposite of Nerf? 
-<video controls autoplay muted><source src="../blog/micro-2022/2022-01-05-103412.mp4"/></video></p>
+ <div class="blogbody"><p>Is Yerf the opposite of Nerf? 
+<video controls autoplay loop muted><source src="../blog/micro-2022/2022-01-05-103412.mp4"/></video></p>
 </div>
 </div>
 
@@ -233,10 +239,10 @@ Dead mimics.</p>
 
 </div>
 <div class="oldnew-links"> 
-<a class="old-link" href="../blog/page15.html">&lt;olds&lt;</a>
+<a class="old-link" href="../blog/page15.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../blog/page13.html">&gt;news&gt;</a>
+<a class="new-link" href="../blog/page13.html">&gt;NEWS&gt;</a>
 
  </div>
 
@@ -246,7 +252,41 @@ Dead mimics.</p>
 	</div>
 </div></body>
 <script>
-// run some js at foot of the page maybe
+// run at bottom so no need to wait
 
+console.log("upgrading links")
+
+let links = document.querySelectorAll('.blogbody a')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	console.log(ext,link)
+	
+	let ytpre="https://www.youtube.com/watch?v="
+	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
+	{
+		let VIDEO_ID=href.substr(ytpre.length,11)
+		let div=document.createElement("div")
+		div.innerHTML=`
+<iframe width="820" height="600" src="https://www.youtube.com/embed/${VIDEO_ID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		`
+
+		link.after(div)
+	}
+	else
+	{
+		switch(ext.toLowerCase())
+		{
+			case "png":
+				link.innerHTML=`<image src="${href}"></image>`
+			break;
+		}
+	}
+	
+}
 </script>
 </html>

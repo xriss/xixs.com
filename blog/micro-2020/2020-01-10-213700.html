@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../styles.css" />
 <title>Welcome to blog!</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -21,29 +21,35 @@ BabylonViewer.InitTags('babylon');
 </script>
 <style>
 
+#xiximg {
+	background-image: url("../../art/xix.png");
+}
 
 </style></head>
 <body><div id="show">
 	<div id="head">
+		<a class="blog-link" href="../../blog">BLOG</a>
+		<a class="wiki-link" href="../../wiki">WIKI</a>
+		<a id="xiximg" href="../../" ></a>
 	</div>
 	<div id="body">
 		
 <div class="oldnew-links"> 
-<a class="old-link" href="../../blog/micro-2020/2020-01-10-213659.html">&lt;olds&lt;</a>
+<a class="old-link" href="../../blog/micro-2020/2020-01-10-213659.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../../blog/micro-2020/2020-01-10-225257.html">&gt;news&gt;</a>
+<a class="new-link" href="../../blog/micro-2020/2020-01-10-225257.html">&gt;NEWS&gt;</a>
 
  </div>
-<div class="blogpost"><p><a href="https://twitter.com/wetgenes/status/1215749402129829888">https://twitter.com/wetgenes/status/1215749402129829888</a> Probably all above board, I mean obviously the place I was working for exploded shortly after making it, as games companys tend to do. And its a licensed asset swap sort of thing. Anyway here are two versions for you to compare.</p>
+<div class="blogpost"><div class="blogbody"><p><a href="https://twitter.com/wetgenes/status/1215749402129829888">https://twitter.com/wetgenes/status/1215749402129829888</a> Probably all above board, I mean obviously the place I was working for exploded shortly after making it, as games companys tend to do. And its a licensed asset swap sort of thing. Anyway here are two versions for you to compare.</p>
 <p><a href="https://www.vizzed.com/emulators/online/retroarch/1.8.0/index.php?system=gba&core=vba_next&file=Eggo+Mania+%28Europe%29+%28En%2CFr%2CDe%2CEs%2CIt%2CNl%29.zip&playcode=4&bios=&libname=gba&corename=&touchoverlay=&videodriver=gl&audiodriver=rwebaudio&inputdriver=sdl2&scale=3&joypaddriver=&audioresampler=&cameradriver=&menudriver=&videocontextdriver=">https://www.vizzed.com/emulators/online/retroarch/1.8.0/index.php?system=gba&amp;core=vba_next&amp;file=Eggo+Mania+%28Europe%29+%28En%2CFr%2CDe%2CEs%2CIt%2CNl%29.zip&amp;playcode=4&amp;bios=&amp;libname=gba&amp;corename=&amp;touchoverlay=&amp;videodriver=gl&amp;audiodriver=rwebaudio&amp;inputdriver=sdl2&amp;scale=3&amp;joypaddriver=&amp;audioresampler=&amp;cameradriver=&amp;menudriver=&amp;videocontextdriver=</a></p>
 <p>I made this GBA one.</p>
-</div>
+</div></div>
 <div class="oldnew-links"> 
-<a class="old-link" href="../../blog/micro-2020/2020-01-10-213659.html">&lt;olds&lt;</a>
+<a class="old-link" href="../../blog/micro-2020/2020-01-10-213659.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../../blog/micro-2020/2020-01-10-225257.html">&gt;news&gt;</a>
+<a class="new-link" href="../../blog/micro-2020/2020-01-10-225257.html">&gt;NEWS&gt;</a>
 
  </div>
 <div class="utter_wrap">
@@ -61,7 +67,41 @@ BabylonViewer.InitTags('babylon');
 	</div>
 </div></body>
 <script>
-// run some js at foot of the page maybe
+// run at bottom so no need to wait
 
+console.log("upgrading links")
+
+let links = document.querySelectorAll('.blogbody a')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	console.log(ext,link)
+	
+	let ytpre="https://www.youtube.com/watch?v="
+	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
+	{
+		let VIDEO_ID=href.substr(ytpre.length,11)
+		let div=document.createElement("div")
+		div.innerHTML=`
+<iframe width="820" height="600" src="https://www.youtube.com/embed/${VIDEO_ID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		`
+
+		link.after(div)
+	}
+	else
+	{
+		switch(ext.toLowerCase())
+		{
+			case "png":
+				link.innerHTML=`<image src="${href}"></image>`
+			break;
+		}
+	}
+	
+}
 </script>
 </html>

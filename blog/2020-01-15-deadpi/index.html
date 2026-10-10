@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../styles.css" />
 <title>DeadPi</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -21,21 +21,27 @@ BabylonViewer.InitTags('babylon');
 </script>
 <style>
 
+#xiximg {
+	background-image: url("../../art/xix.png");
+}
 
 </style></head>
 <body><div id="show">
 	<div id="head">
+		<a class="blog-link" href="../../blog">BLOG</a>
+		<a class="wiki-link" href="../../wiki">WIKI</a>
+		<a id="xiximg" href="../../" ></a>
 	</div>
 	<div id="body">
 		
 <div class="oldnew-links"> 
-<a class="old-link" href="../../blog/micro-2020/2020-01-12-201530.html">&lt;olds&lt;</a>
+<a class="old-link" href="../../blog/micro-2020/2020-01-12-201530.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../../blog/micro-2020/2020-01-15-224335.html">&gt;news&gt;</a>
+<a class="new-link" href="../../blog/micro-2020/2020-01-15-224335.html">&gt;NEWS&gt;</a>
 
  </div>
-<div class="blogpost"><h2 id="title">DeadPi</h2>
+<div class="blogpost"><div class="blogbody"><h2 id="title">DeadPi</h2>
 <p>I have successfully killed my first PI. This brings the dead hardware 
 total of the <a href="https://github.com/xriss/timecake">timecake</a> project to 
 2, the other casualty is one of the watches.</p>
@@ -58,12 +64,12 @@ little break from this hardware for a while and come back with some
 fresh enthusiasm and maybe buy another spare watch just in case. Like 
 most people I have a box of old PI&#39;s under the bed so that is 
 not a problem.</p>
-</div>
+</div></div>
 <div class="oldnew-links"> 
-<a class="old-link" href="../../blog/micro-2020/2020-01-12-201530.html">&lt;olds&lt;</a>
+<a class="old-link" href="../../blog/micro-2020/2020-01-12-201530.html">&lt;OLDS&lt;</a>
 
  
-<a class="new-link" href="../../blog/micro-2020/2020-01-15-224335.html">&gt;news&gt;</a>
+<a class="new-link" href="../../blog/micro-2020/2020-01-15-224335.html">&gt;NEWS&gt;</a>
 
  </div>
 <div class="utter_wrap">
@@ -81,7 +87,41 @@ not a problem.</p>
 	</div>
 </div></body>
 <script>
-// run some js at foot of the page maybe
+// run at bottom so no need to wait
 
+console.log("upgrading links")
+
+let links = document.querySelectorAll('.blogbody a')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	console.log(ext,link)
+	
+	let ytpre="https://www.youtube.com/watch?v="
+	if( href.toLowerCase().substr(0,ytpre.length) == ytpre )
+	{
+		let VIDEO_ID=href.substr(ytpre.length,11)
+		let div=document.createElement("div")
+		div.innerHTML=`
+<iframe width="820" height="600" src="https://www.youtube.com/embed/${VIDEO_ID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		`
+
+		link.after(div)
+	}
+	else
+	{
+		switch(ext.toLowerCase())
+		{
+			case "png":
+				link.innerHTML=`<image src="${href}"></image>`
+			break;
+		}
+	}
+	
+}
 </script>
 </html>

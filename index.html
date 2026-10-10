@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="./styles.css" />
 <title>XIXs.com</title>
 <link rel="alternate" type="application/rss+xml" href="https://xixs.com/blog/feed.xml" />
@@ -17,6 +17,9 @@ return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
 </script>
 <style>
 
+#xiximg {
+	background-image: url("./art/xix.png");
+}
 
 @keyframes zx-slide {
 	0%		{background-position: 0 0; }
@@ -25,7 +28,7 @@ return}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);
 
 body{
 	background-size: 8px 400px;
-	background-color: #00c7c9;
+	background-color: #0cc;
 	animation: zx-slide 1s infinite linear;
 }
 	
@@ -35,26 +38,30 @@ body{
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background-color: #cacaca;
+	background-color: #ccc;
 }
 
 #right_image{
 	float: right;
 	width: 300px;
 	height: 600px;
-	background-color: #cacaca;
-	background-image: url(kriss_200x100.png);
+	background-color: #ccc;
+	background-image: url("art/kriss_200x100.png");
 	background-blend-mode: inherit;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
 	image-rendering: pixelated;
+	margin-left: 20px;
 }
 
 
 </style></head>
 <body><div id="show">
 	<div id="head">
+		<a class="blog-link" href="./blog">BLOG</a>
+		<a class="wiki-link" href="./wiki">WIKI</a>
+		<a id="xiximg" href="./" ></a>
 	</div>
 	<div id="body">
 		<div id="zx-cover"></div>
@@ -124,8 +131,8 @@ var zxprogress=function(percent)
 		return s
 	}
 	
-	var wheeeee=gradient("#00c7c9","#d62816",16,0.1)
-	var scritch=gradient("#fffc36","#002bfb",40,0.9)
+	var wheeeee=gradient("#0cc","#d32",16,0.1)
+	var scritch=gradient("#ff3","#03f",40,0.9)
 
 	cv.style.top="0"
 
@@ -156,9 +163,13 @@ var zxprogress=function(percent)
 		sc.style.filter="none"
 		sc.style.backgroundBlendMode="normal"
 		bd.style.backgroundImage="";
-		bd.style.backgroundColor="#bababa";
+		bd.style.backgroundColor="#bbb";
 		cv.style.top="100%"
 		bd.style.animation="none"
+
+		document.getElementById('head').style.animation="fadeIn 2s forwards"
+		document.getElementById('foot').style.animation="fadeIn 2s forwards"
+
 	}
 }
 
@@ -184,6 +195,11 @@ var start=function()
 	cb()
 }
 start()
+
+document.getElementById('head').style.opacity=0
+document.getElementById('foot').style.opacity=0
+
+// document.getElementById('right_image').scrollIntoView({ block: 'center' });
 
 </script>
 </html>
