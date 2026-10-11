@@ -29,11 +29,6 @@ ol, ul {
 	list-style: none;
 }
 
-img , video {
-	max-width: 100%;
-	height: auto;
-}
-
 body {
 	transform-origin: 0 0;
 	transform: scale(1);
@@ -42,6 +37,25 @@ body {
 
 a {
 	text-decoration: unset;
+}
+
+img , video {
+	max-width: 100%;
+	height: auto;
+}
+
+.pixel {
+	image-rendering: pixelated;
+}
+
+.shadow {
+	filter: drop-shadow(4px 4px 2px #000);
+}
+
+.contain {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 
 #show {
@@ -147,16 +161,16 @@ a {
 	}
 }
 
-.blog-link , .wiki-link {
+.blog-head , .wiki-head {
 	font-family: monospace;
 	font-weight: bold;
 	background: #bbb;
 	color: #ddd;
 	padding: 20px 20px 20px 20px;
 }
-.blog-link {
+.blog-head {
 	float: right;
 }
-.wiki-link {
+.wiki-head {
 	float: left;
 }
