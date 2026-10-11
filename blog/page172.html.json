@@ -11,8 +11,8 @@
  "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
  "_blog_page_newer": "{_root}blog/page171.html",
  "_blog_page_older": "{_root}blog/page173.html",
- "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
- "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+ "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+ "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
  "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
  "_dirname": "{_root}blog",
  "_filename": "{_root}blog/page172.html",
@@ -59,8 +59,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>lying cake by Crustolio in 32x32 #pixels using the GameBoy palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-08-05-225739.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-05",
@@ -90,7 +90,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-05-225746.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-05-225734.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-05-225739.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-05-225739.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-05</div>\n <div class=\"blogbody\"><p>lying cake by Crustolio in 32x32 #pixels using the GameBoy palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-08-05-225739.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-05-225739.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-05<div class=\"bloglink-time\">22:57:39</div></div>\n <div class=\"blogbody\"><p>lying cake by Crustolio in 32x32 #pixels using the GameBoy palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-08-05-225739.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-05-225739.html",
    "_flags": {
@@ -127,7 +127,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-05-225739.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -156,8 +156,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>regular roller skate by Crustolio in 32x32 #pixels using the EGA palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-05-225734.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-05",
@@ -187,7 +187,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-05-225739.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-04-041748.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-05-225734.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-05-225734.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-05</div>\n <div class=\"blogbody\"><p>regular roller skate by Crustolio in 32x32 #pixels using the EGA palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-05-225734.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-05-225734.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-05<div class=\"bloglink-time\">22:57:34</div></div>\n <div class=\"blogbody\"><p>regular roller skate by Crustolio in 32x32 #pixels using the EGA palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-05-225734.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-05-225734.html",
    "_flags": {
@@ -224,7 +224,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-05-225734.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -253,8 +253,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/CSR_Studios/status/496119739543195648\">https://twitter.com/CSR_Studios/status/496119739543195648</a> @CSR_Studios @McFunkypants you abandon the work shortly after getting paid ( TopTip: Never pay Leonardo in advance )</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-04",
@@ -281,7 +281,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-05-225734.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-03-142507.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-04-041748.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-04-041748.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-04</div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/CSR_Studios/status/496119739543195648\">https://twitter.com/CSR_Studios/status/496119739543195648</a> @CSR_Studios @McFunkypants you abandon the work shortly after getting paid ( TopTip: Never pay Leonardo in advance )</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-04-041748.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-04<div class=\"bloglink-time\">04:17:48</div></div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/CSR_Studios/status/496119739543195648\">https://twitter.com/CSR_Studios/status/496119739543195648</a> @CSR_Studios @McFunkypants you abandon the work shortly after getting paid ( TopTip: Never pay Leonardo in advance )</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-04-041748.html",
    "_flags": {
@@ -318,7 +318,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-04-041748.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -347,8 +347,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/ansimuz/status/495922299980115968\">https://twitter.com/ansimuz/status/495922299980115968</a> @ansimuz apparently  everyone is a game developer nowadays must be a fad</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-03",
@@ -375,7 +375,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-04-041748.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-03-141045.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-03-142507.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-03-142507.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-03</div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/ansimuz/status/495922299980115968\">https://twitter.com/ansimuz/status/495922299980115968</a> @ansimuz apparently  everyone is a game developer nowadays must be a fad</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-03-142507.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-03<div class=\"bloglink-time\">14:25:07</div></div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/ansimuz/status/495922299980115968\">https://twitter.com/ansimuz/status/495922299980115968</a> @ansimuz apparently  everyone is a game developer nowadays must be a fad</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-03-142507.html",
    "_flags": {
@@ -412,7 +412,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-03-142507.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -441,8 +441,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/ansimuz/status/495916209326411777\">https://twitter.com/ansimuz/status/495916209326411777</a> @ansimuz well yes one should learn to read before writing a novel.  But the writing bit is still the important bit.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-03",
@@ -469,7 +469,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-03-142507.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-01-041124.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-03-141045.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-03-141045.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-03</div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/ansimuz/status/495916209326411777\">https://twitter.com/ansimuz/status/495916209326411777</a> @ansimuz well yes one should learn to read before writing a novel.  But the writing bit is still the important bit.</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-03-141045.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-03<div class=\"bloglink-time\">14:10:45</div></div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/ansimuz/status/495916209326411777\">https://twitter.com/ansimuz/status/495916209326411777</a> @ansimuz well yes one should learn to read before writing a novel.  But the writing bit is still the important bit.</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-03-141045.html",
    "_flags": {
@@ -506,7 +506,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-03-141045.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -535,8 +535,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>obvious balloon by JetSet211 in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-041124.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-01",
@@ -566,7 +566,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-03-141045.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-01-041115.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-01-041124.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-01-041124.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-01</div>\n <div class=\"blogbody\"><p>obvious balloon by JetSet211 in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-041124.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-01-041124.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-01<div class=\"bloglink-time\">04:11:24</div></div>\n <div class=\"blogbody\"><p>obvious balloon by JetSet211 in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-041124.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-01-041124.html",
    "_flags": {
@@ -603,7 +603,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-01-041124.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -632,8 +632,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>obvious balloon by Crustolio in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-041115.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-01",
@@ -663,7 +663,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-01-041124.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-08-01-035516.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-01-041115.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-01-041115.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-01</div>\n <div class=\"blogbody\"><p>obvious balloon by Crustolio in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-041115.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-01-041115.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-01<div class=\"bloglink-time\">04:11:15</div></div>\n <div class=\"blogbody\"><p>obvious balloon by Crustolio in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-041115.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-01-041115.html",
    "_flags": {
@@ -700,7 +700,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-01-041115.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -729,8 +729,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>obvious balloon by yonderboy in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-035516.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-08-01",
@@ -760,7 +760,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-01-041115.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-172500.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-08-01-035516.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-01-035516.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-01</div>\n <div class=\"blogbody\"><p>obvious balloon by yonderboy in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-035516.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-08-01-035516.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-08-01<div class=\"bloglink-time\">03:55:16</div></div>\n <div class=\"blogbody\"><p>obvious balloon by yonderboy in 32x32 #pixels using the Spectrum palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw ... \n<img src=\"{_root}blog/micro-2014/2014-08-01-035516.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-08-01-035516.html",
    "_flags": {
@@ -797,7 +797,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-08-01-035516.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -826,8 +826,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>naked chainsaw by yonderboy in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw y... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172500.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -857,7 +857,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-08-01-035516.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-172459.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-172500.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172500.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>naked chainsaw by yonderboy in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw y... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172500.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172500.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">17:25:00</div></div>\n <div class=\"blogbody\"><p>naked chainsaw by yonderboy in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw y... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172500.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-172500.html",
    "_flags": {
@@ -894,7 +894,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-172500.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -923,8 +923,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>naked chainsaw by Big_Al in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-172459.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -954,7 +954,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-172500.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-172457.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-172459.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172459.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>naked chainsaw by Big_Al in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-172459.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172459.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">17:24:59</div></div>\n <div class=\"blogbody\"><p>naked chainsaw by Big_Al in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-172459.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-172459.html",
    "_flags": {
@@ -991,7 +991,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-172459.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1020,8 +1020,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>naked chainsaw by Crustolio in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw y... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172457.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1051,7 +1051,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-172459.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-172430.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-172457.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172457.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>naked chainsaw by Crustolio in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw y... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172457.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172457.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">17:24:57</div></div>\n <div class=\"blogbody\"><p>naked chainsaw by Crustolio in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw y... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172457.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-172457.html",
    "_flags": {
@@ -1088,7 +1088,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-172457.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1117,8 +1117,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>naked chainsaw by ABRAXAS in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw you... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172430.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1148,7 +1148,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-172457.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-172429.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-172430.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172430.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>naked chainsaw by ABRAXAS in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw you... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172430.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172430.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">17:24:30</div></div>\n <div class=\"blogbody\"><p>naked chainsaw by ABRAXAS in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw you... \n<img src=\"{_root}blog/micro-2014/2014-07-31-172430.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-172430.html",
    "_flags": {
@@ -1185,7 +1185,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-172430.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1214,8 +1214,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>naked chainsaw by DROSS in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-172429.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1245,7 +1245,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-172430.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-033448.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-172429.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172429.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>naked chainsaw by DROSS in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-172429.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-172429.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">17:24:29</div></div>\n <div class=\"blogbody\"><p>naked chainsaw by DROSS in 48x48 #pixels using the Swanky32 palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-172429.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-172429.html",
    "_flags": {
@@ -1282,7 +1282,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-172429.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1311,8 +1311,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>super fly by precum in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033448.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1342,7 +1342,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-172429.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-033447.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-033448.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033448.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>super fly by precum in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033448.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033448.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">03:34:48</div></div>\n <div class=\"blogbody\"><p>super fly by precum in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033448.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-033448.html",
    "_flags": {
@@ -1379,7 +1379,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-033448.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1408,8 +1408,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>super fly by audovoice in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033447.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1439,7 +1439,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-033448.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-033445.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-033447.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033447.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>super fly by audovoice in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033447.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033447.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">03:34:47</div></div>\n <div class=\"blogbody\"><p>super fly by audovoice in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033447.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-033447.html",
    "_flags": {
@@ -1476,7 +1476,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-033447.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1505,8 +1505,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>super fly by Big_Al in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033445.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1536,7 +1536,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-033447.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-033444.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-033445.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033445.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>super fly by Big_Al in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033445.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033445.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">03:34:45</div></div>\n <div class=\"blogbody\"><p>super fly by Big_Al in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033445.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-033445.html",
    "_flags": {
@@ -1573,7 +1573,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-033445.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1602,8 +1602,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>super fly by ABRAXAS in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033444.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1633,7 +1633,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-033445.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-033443.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-033444.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033444.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>super fly by ABRAXAS in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033444.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033444.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">03:34:44</div></div>\n <div class=\"blogbody\"><p>super fly by ABRAXAS in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033444.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-033444.html",
    "_flags": {
@@ -1670,7 +1670,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-033444.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1699,8 +1699,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>super fly by Crustolio in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033443.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1730,7 +1730,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-033444.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-033442.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-033443.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033443.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>super fly by Crustolio in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033443.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033443.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">03:34:43</div></div>\n <div class=\"blogbody\"><p>super fly by Crustolio in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033443.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-033443.html",
    "_flags": {
@@ -1767,7 +1767,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-033443.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1796,8 +1796,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>super fly by yonderboy in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033442.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2014-07-31",
@@ -1827,7 +1827,7 @@
    "_blog_post_newer": "{_root}blog/micro-2014/2014-07-31-033443.html",
    "_blog_post_older": "{_root}blog/micro-2014/2014-07-31-015149.html",
    "_blog_post_this": "{_root}blog/micro-2014/2014-07-31-033442.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033442.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31</div>\n <div class=\"blogbody\"><p>super fly by yonderboy in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033442.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2014/2014-07-31-033442.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2014-07-31<div class=\"bloglink-time\">03:34:42</div></div>\n <div class=\"blogbody\"><p>super fly by yonderboy in 32x32 #pixels using the AppleII palette. Visit <a href=\"http://paint.lo4d.net/\">http://paint.lo4d.net/</a> to draw your own! \n<img src=\"{_root}blog/micro-2014/2014-07-31-033442.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2014",
    "_filename": "{_root}blog/micro-2014/2014-07-31-033442.html",
    "_flags": {
@@ -1864,7 +1864,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2014/2014-07-31-033442.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1885,7 +1885,7 @@
  "_output_chunkname": "html",
  "_output_filename": "blog/page172.html",
  "_root": "../",
- "_site": "{_root}",
+ "_site": "https://XIXs.com/",
  "_sourcename": "blog/page172.html",
  "blog_list": "\n{_it._body}\n\n",
  "body": "{_blog_page_body}",

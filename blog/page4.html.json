@@ -11,8 +11,8 @@
  "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
  "_blog_page_newer": "{_root}blog/page3.html",
  "_blog_page_older": "{_root}blog/page5.html",
- "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
- "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+ "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+ "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
  "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
  "_dirname": "{_root}blog",
  "_filename": "{_root}blog/page4.html",
@@ -59,8 +59,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Sometimes you just need to switch your text editor to HEX mode. \n<img src=\"{_root}blog/micro-2023/2023-05-18-134516.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-05-18",
@@ -90,7 +90,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-19-144449.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-05-17-200916.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-05-18-134516.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-18-134516.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-18</div>\n <div class=\"blogbody\"><p>Sometimes you just need to switch your text editor to HEX mode. \n<img src=\"{_root}blog/micro-2023/2023-05-18-134516.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-18-134516.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-18<div class=\"bloglink-time\">13:45:16</div></div>\n <div class=\"blogbody\"><p>Sometimes you just need to switch your text editor to HEX mode. \n<img src=\"{_root}blog/micro-2023/2023-05-18-134516.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-05-18-134516.html",
    "_flags": {
@@ -127,7 +127,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-05-18-134516.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -156,8 +156,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>I would like to know more. <a href=\"https://twitter.com/WhatsOnSteam/status/1658883899684945928\">https://twitter.com/WhatsOnSteam/status/1658883899684945928</a></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-05-17",
@@ -184,7 +184,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-18-134516.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-05-12-212625.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-05-17-200916.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-17-200916.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-17</div>\n <div class=\"blogbody\"><p>I would like to know more. <a href=\"https://twitter.com/WhatsOnSteam/status/1658883899684945928\">https://twitter.com/WhatsOnSteam/status/1658883899684945928</a></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-17-200916.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-17<div class=\"bloglink-time\">20:09:16</div></div>\n <div class=\"blogbody\"><p>I would like to know more. <a href=\"https://twitter.com/WhatsOnSteam/status/1658883899684945928\">https://twitter.com/WhatsOnSteam/status/1658883899684945928</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-05-17-200916.html",
    "_flags": {
@@ -221,7 +221,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-05-17-200916.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -250,8 +250,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>When god opens a window.</p>\n<p><a href=\"https://variety.com/2023/music/news/sum-41-announce-split-1235606205/\">https://variety.com/2023/music/news/sum-41-announce-split-1235606205/</a></p>\n<p>Another god closes a door.</p>\n<p><a href=\"https://guitar.com/news/music-news/keanu-reeves-band-dogstar-has-reunited-after-23-years/\">https://guitar.com/news/music-news/keanu-reeves-band-dogstar-has-reunited-after-23-years/</a></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-05-12",
@@ -278,7 +278,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-17-200916.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-05-11-183152.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-05-12-212625.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-12-212625.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-12</div>\n <div class=\"blogbody\"><p>When god opens a window.</p>\n<p><a href=\"https://variety.com/2023/music/news/sum-41-announce-split-1235606205/\">https://variety.com/2023/music/news/sum-41-announce-split-1235606205/</a></p>\n<p>Another god closes a door.</p>\n<p><a href=\"https://guitar.com/news/music-news/keanu-reeves-band-dogstar-has-reunited-after-23-years/\">https://guitar.com/news/music-news/keanu-reeves-band-dogstar-has-reunited-after-23-years/</a></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-12-212625.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-12<div class=\"bloglink-time\">21:26:25</div></div>\n <div class=\"blogbody\"><p>When god opens a window.</p>\n<p><a href=\"https://variety.com/2023/music/news/sum-41-announce-split-1235606205/\">https://variety.com/2023/music/news/sum-41-announce-split-1235606205/</a></p>\n<p>Another god closes a door.</p>\n<p><a href=\"https://guitar.com/news/music-news/keanu-reeves-band-dogstar-has-reunited-after-23-years/\">https://guitar.com/news/music-news/keanu-reeves-band-dogstar-has-reunited-after-23-years/</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-05-12-212625.html",
    "_flags": {
@@ -315,7 +315,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-05-12-212625.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -344,8 +344,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/joe_dante/status/1656702262675398657\">https://twitter.com/joe_dante/status/1656702262675398657</a> @joe_dante Is it sunrise? \n<img src=\"{_root}blog/micro-2023/2023-05-11-183152.png\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-05-11",
@@ -375,7 +375,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-12-212625.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-05-06-103326.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-05-11-183152.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-11-183152.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-11</div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/joe_dante/status/1656702262675398657\">https://twitter.com/joe_dante/status/1656702262675398657</a> @joe_dante Is it sunrise? \n<img src=\"{_root}blog/micro-2023/2023-05-11-183152.png\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-11-183152.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-11<div class=\"bloglink-time\">18:31:52</div></div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/joe_dante/status/1656702262675398657\">https://twitter.com/joe_dante/status/1656702262675398657</a> @joe_dante Is it sunrise? \n<img src=\"{_root}blog/micro-2023/2023-05-11-183152.png\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-05-11-183152.html",
    "_flags": {
@@ -412,7 +412,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-05-11-183152.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -441,8 +441,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p><a href=\"https://twitter.com/derElbi/status/1654779208172797952\">https://twitter.com/derElbi/status/1654779208172797952</a> @derElbi Well the main advantage I see of taxidermy is they can still shake hands and wave.</p>\n<p>That&#39;s 99% of the job.</p>\n<p>Sure you get a little bit less general movement but they are already largely moved around by staff so no real change there.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-05-06",
@@ -469,7 +469,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-11-183152.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-05-06-102029.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-05-06-103326.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-06-103326.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-06</div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/derElbi/status/1654779208172797952\">https://twitter.com/derElbi/status/1654779208172797952</a> @derElbi Well the main advantage I see of taxidermy is they can still shake hands and wave.</p>\n<p>That&#39;s 99% of the job.</p>\n<p>Sure you get a little bit less general movement but they are already largely moved around by staff so no real change there.</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-06-103326.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-06<div class=\"bloglink-time\">10:33:26</div></div>\n <div class=\"blogbody\"><p><a href=\"https://twitter.com/derElbi/status/1654779208172797952\">https://twitter.com/derElbi/status/1654779208172797952</a> @derElbi Well the main advantage I see of taxidermy is they can still shake hands and wave.</p>\n<p>That&#39;s 99% of the job.</p>\n<p>Sure you get a little bit less general movement but they are already largely moved around by staff so no real change there.</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-05-06-103326.html",
    "_flags": {
@@ -506,7 +506,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-05-06-103326.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -535,8 +535,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Alternative idea.</p>\n<p>You know how many people wanted to see the queen in a box?</p>\n<p>Well, just imagine the amount of tourism that could be achieved with just a little bit of taxidermy.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-05-06",
@@ -563,7 +563,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-06-103326.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-24-151915.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-05-06-102029.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-06-102029.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-06</div>\n <div class=\"blogbody\"><p>Alternative idea.</p>\n<p>You know how many people wanted to see the queen in a box?</p>\n<p>Well, just imagine the amount of tourism that could be achieved with just a little bit of taxidermy.</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-05-06-102029.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-05-06<div class=\"bloglink-time\">10:20:29</div></div>\n <div class=\"blogbody\"><p>Alternative idea.</p>\n<p>You know how many people wanted to see the queen in a box?</p>\n<p>Well, just imagine the amount of tourism that could be achieved with just a little bit of taxidermy.</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-05-06-102029.html",
    "_flags": {
@@ -600,7 +600,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-05-06-102029.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -629,8 +629,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>We would like to remind all players that although the company policy is &quot;If you die in the game you die in real life&quot; our lawyers have informed us it would be illegal to enforce.</p>\n<p>Hence, &quot;If you die in the game you die in real life&quot; policy, is operated purely as an honour system. <a href=\"https://twitter.com/pcgamer/status/1650489380509822978\">https://twitter.com/pcgamer/status/1650489380509822978</a></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-24",
@@ -657,7 +657,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-05-06-102029.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-23-014900.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-24-151915.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-24-151915.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-24</div>\n <div class=\"blogbody\"><p>We would like to remind all players that although the company policy is &quot;If you die in the game you die in real life&quot; our lawyers have informed us it would be illegal to enforce.</p>\n<p>Hence, &quot;If you die in the game you die in real life&quot; policy, is operated purely as an honour system. <a href=\"https://twitter.com/pcgamer/status/1650489380509822978\">https://twitter.com/pcgamer/status/1650489380509822978</a></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-24-151915.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-24<div class=\"bloglink-time\">15:19:15</div></div>\n <div class=\"blogbody\"><p>We would like to remind all players that although the company policy is &quot;If you die in the game you die in real life&quot; our lawyers have informed us it would be illegal to enforce.</p>\n<p>Hence, &quot;If you die in the game you die in real life&quot; policy, is operated purely as an honour system. <a href=\"https://twitter.com/pcgamer/status/1650489380509822978\">https://twitter.com/pcgamer/status/1650489380509822978</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-24-151915.html",
    "_flags": {
@@ -694,7 +694,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-24-151915.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -723,8 +723,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>What you think of as treasure chests are just Mimics that starved to death waiting for you. <a href=\"https://twitter.com/pcgamer/status/1649641115878924290\">https://twitter.com/pcgamer/status/1649641115878924290</a></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-23",
@@ -751,7 +751,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-24-151915.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-07-121633.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-23-014900.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-23-014900.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-23</div>\n <div class=\"blogbody\"><p>What you think of as treasure chests are just Mimics that starved to death waiting for you. <a href=\"https://twitter.com/pcgamer/status/1649641115878924290\">https://twitter.com/pcgamer/status/1649641115878924290</a></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-23-014900.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-23<div class=\"bloglink-time\">01:49:00</div></div>\n <div class=\"blogbody\"><p>What you think of as treasure chests are just Mimics that starved to death waiting for you. <a href=\"https://twitter.com/pcgamer/status/1649641115878924290\">https://twitter.com/pcgamer/status/1649641115878924290</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-23-014900.html",
    "_flags": {
@@ -788,7 +788,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-23-014900.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -817,8 +817,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>but what if you bend it in the other direction you say?</p>\n<p>Things go a bit strange, obv. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-121633.mp4\"/></video></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-07",
@@ -848,7 +848,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-23-014900.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-07-120953.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-07-121633.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-07-121633.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-07</div>\n <div class=\"blogbody\"><p>but what if you bend it in the other direction you say?</p>\n<p>Things go a bit strange, obv. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-121633.mp4\"/></video></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-07-121633.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-07<div class=\"bloglink-time\">12:16:33</div></div>\n <div class=\"blogbody\"><p>but what if you bend it in the other direction you say?</p>\n<p>Things go a bit strange, obv. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-121633.mp4\"/></video></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-07-121633.html",
    "_flags": {
@@ -885,7 +885,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-07-121633.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -914,8 +914,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>rolling rolling rolling \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-120953.mp4\"/></video></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-07",
@@ -945,7 +945,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-07-121633.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-07-001457.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-07-120953.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-07-120953.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-07</div>\n <div class=\"blogbody\"><p>rolling rolling rolling \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-120953.mp4\"/></video></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-07-120953.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-07<div class=\"bloglink-time\">12:09:53</div></div>\n <div class=\"blogbody\"><p>rolling rolling rolling \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-120953.mp4\"/></video></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-07-120953.html",
    "_flags": {
@@ -982,7 +982,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-07-120953.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1011,8 +1011,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>That is a fake horizon that is. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-001457.mp4\"/></video></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-07",
@@ -1042,7 +1042,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-07-120953.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-05-195609.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-07-001457.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-07-001457.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-07</div>\n <div class=\"blogbody\"><p>That is a fake horizon that is. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-001457.mp4\"/></video></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-07-001457.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-07<div class=\"bloglink-time\">00:14:57</div></div>\n <div class=\"blogbody\"><p>That is a fake horizon that is. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-04-07-001457.mp4\"/></video></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-07-001457.html",
    "_flags": {
@@ -1079,7 +1079,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-07-001457.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1108,8 +1108,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Turns out you can do a &quot;animal crossing style camera&quot; where things pop up over the horizon as you get closer with a very simple final camera hack like this in a vertex shader.</p>\n<p>gl_Position.y-=pow(length(gl_Position.xz)*0.02,2.0);</p>\n<p>Assuming your camera has no roll, y is vertical.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-05",
@@ -1136,7 +1136,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-07-001457.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-04-01-132756.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-05-195609.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-05-195609.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-05</div>\n <div class=\"blogbody\"><p>Turns out you can do a &quot;animal crossing style camera&quot; where things pop up over the horizon as you get closer with a very simple final camera hack like this in a vertex shader.</p>\n<p>gl_Position.y-=pow(length(gl_Position.xz)*0.02,2.0);</p>\n<p>Assuming your camera has no roll, y is vertical.</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-05-195609.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-05<div class=\"bloglink-time\">19:56:09</div></div>\n <div class=\"blogbody\"><p>Turns out you can do a &quot;animal crossing style camera&quot; where things pop up over the horizon as you get closer with a very simple final camera hack like this in a vertex shader.</p>\n<p>gl_Position.y-=pow(length(gl_Position.xz)*0.02,2.0);</p>\n<p>Assuming your camera has no roll, y is vertical.</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-05-195609.html",
    "_flags": {
@@ -1173,7 +1173,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-05-195609.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1202,8 +1202,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Is this an April Fool? \n<img src=\"{_root}blog/micro-2023/2023-04-01-132756.jpg\"></img></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-04-01",
@@ -1233,7 +1233,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-05-195609.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-03-22-140709.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-04-01-132756.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-01-132756.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-01</div>\n <div class=\"blogbody\"><p>Is this an April Fool? \n<img src=\"{_root}blog/micro-2023/2023-04-01-132756.jpg\"></img></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-04-01-132756.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-04-01<div class=\"bloglink-time\">13:27:56</div></div>\n <div class=\"blogbody\"><p>Is this an April Fool? \n<img src=\"{_root}blog/micro-2023/2023-04-01-132756.jpg\"></img></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-04-01-132756.html",
    "_flags": {
@@ -1270,7 +1270,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-04-01-132756.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1299,8 +1299,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Testing stuff and I kinda like having objects freeze as they leave an active simulation zone waiting for you to cross the border and see what happens next.</p>\n<p>It feels gamy (sic). \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-03-22-140709.mp4\"/></video></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-03-22",
@@ -1330,7 +1330,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-04-01-132756.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-03-17-143134.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-03-22-140709.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-22-140709.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-22</div>\n <div class=\"blogbody\"><p>Testing stuff and I kinda like having objects freeze as they leave an active simulation zone waiting for you to cross the border and see what happens next.</p>\n<p>It feels gamy (sic). \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-03-22-140709.mp4\"/></video></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-22-140709.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-22<div class=\"bloglink-time\">14:07:09</div></div>\n <div class=\"blogbody\"><p>Testing stuff and I kinda like having objects freeze as they leave an active simulation zone waiting for you to cross the border and see what happens next.</p>\n<p>It feels gamy (sic). \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-03-22-140709.mp4\"/></video></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-03-22-140709.html",
    "_flags": {
@@ -1367,7 +1367,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-03-22-140709.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1396,8 +1396,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Nearly all the historical work worth doing at the present moment in the English language is the work of shovelling off heaps of rubbish inherited from the immediate past. <a href=\"https://twitter.com/gutenberg_new/status/1636522818832846848\">https://twitter.com/gutenberg_new/status/1636522818832846848</a></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-03-17",
@@ -1424,7 +1424,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-03-22-140709.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-03-14-000338.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-03-17-143134.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-17-143134.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-17</div>\n <div class=\"blogbody\"><p>Nearly all the historical work worth doing at the present moment in the English language is the work of shovelling off heaps of rubbish inherited from the immediate past. <a href=\"https://twitter.com/gutenberg_new/status/1636522818832846848\">https://twitter.com/gutenberg_new/status/1636522818832846848</a></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-17-143134.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-17<div class=\"bloglink-time\">14:31:34</div></div>\n <div class=\"blogbody\"><p>Nearly all the historical work worth doing at the present moment in the English language is the work of shovelling off heaps of rubbish inherited from the immediate past. <a href=\"https://twitter.com/gutenberg_new/status/1636522818832846848\">https://twitter.com/gutenberg_new/status/1636522818832846848</a></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-03-17-143134.html",
    "_flags": {
@@ -1461,7 +1461,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-03-17-143134.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1490,8 +1490,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>Here&#39;s A (fun) RSS reader link.</p>\n<p><a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a></p>\n<p>All the itchy game news fit to print.</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-03-14",
@@ -1518,7 +1518,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-03-17-143134.html",
    "_blog_post_older": "{_root}blog/2023-03-14-i-made-a-rss-for-myself/",
    "_blog_post_this": "{_root}blog/micro-2023/2023-03-14-000338.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-14-000338.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-14</div>\n <div class=\"blogbody\"><p>Here&#39;s A (fun) RSS reader link.</p>\n<p><a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a></p>\n<p>All the itchy game news fit to print.</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-14-000338.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-14<div class=\"bloglink-time\">00:03:38</div></div>\n <div class=\"blogbody\"><p>Here&#39;s A (fun) RSS reader link.</p>\n<p><a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a></p>\n<p>All the itchy game news fit to print.</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-03-14-000338.html",
    "_flags": {
@@ -1555,7 +1555,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-03-14-000338.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1584,8 +1584,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<h2 id=\"title\">{title}</h2>\n<img src=\"{_dirname}/arss_shot.jpg\" width=\"100%\" />\n\n<p>Before RSS I used to read Live Journal, before that it was CIX and before that\nit was FidoNet with maybe a little bit of Usenet thrown in around the edges. I\nhave been reading the Internets for a very long time.</p>\n<p>It has now been ten years since google announced they where shutting down\ngoogle reader signalling the end of RSS as a thing you could rely on and I\nnever really found a replacement apart from being annoyed at twitter.</p>\n<p>I mean obviously RSS didn&#39;t just stop working overnight but it no longer felt\nlike it stood a chance of getting better. From here on in it was only going to\nget worse, no one big was pushing it and it would suffer a slow painful death.</p>\n<p>Which is exactly what happened, it is pretty easy to find big sites now that do\nnot provide any RSS feeds of their content and I forget when I last saw a site\nproudly displaying an RSS icon.</p>\n<p>Now google reader wasn&#39;t the best but it was less terrible than anything else.\nMany readers are more book mark managers or email clients that have had some\nRSS tacked on. I&#39;m not interested in any of these things, I want that endless\ndoom scroll that I have been used to for decades.</p>\n<p>So, I figure I&#39;m gonna have to build it myself.</p>\n<p>I present for you, my A RSS reader and invite you to join me. Go back into the\nwater, live there, die there.</p>\n<p><a href=\"https://github.com/xriss/arss\">https://github.com/xriss/arss</a></p>\n<p>ARSS Provides a column of endless scrolling and a quick site preview in an\niframe right next to it, you never have to click anything just doomscroll and\ndoomread like baby jebus intended.</p>\n<p>You got problems, open up an issue on github, you don&#39;t got problems then jump\nright in at <a href=\"https://xriss.github.io/arss/\">https://xriss.github.io/arss/</a> and import an OPML</p>\n<p>Also because we are just a web page we can hot link direct to RSS feeds for a\nquick view like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a>\nor like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=http://feeds.bbci.co.uk/news/rss.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=http://feeds.bbci.co.uk/news/rss.xml#READ</a></p>\n<p>This is a client side application, running dynamical in a web page with no real\nserver backend.</p>\n<p>Except, well security theatre is a bitch and we are currently using a CORS\nbouncer to get around web browser issues.</p>\n<p>Note that these are not technical issues, everything we are doing is pretty\nsimple, these are self induced security restrictions implemented by browsers to\nstop &quot;bad guys&quot; from doing &quot;bad things&quot; unfortunately &quot;bad guy&quot; just means &quot;not\ngoogle&quot; or &quot;not facebook&quot; who get to do all the evil they want.</p>\n<p>Think cookie popups, well meaning but ultimately bullshit and with no way to\nopt out of the &quot;solution&quot;.</p>\n<p>I think we can hack around this some more to remove the CORS bouncer and use a\nbrowser extension instead but this will obviously be even less user friendly\nthan the current solution.</p>\n<p>Until then I am happy with the current state, it uses client side databases for\ncaching and even lets you keep your feeds in a gist as a simple persistent\nlogin system. Yeah its a bit technical to do that but if you want to read A RSS\nFeed then you are already in the top tech 1%ers :)\n<br/>\n<br/>\n<br/>\n<br/></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "author": "kriss",
@@ -1608,7 +1608,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-03-14-000338.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-03-13-235343.html",
    "_blog_post_this": "{_root}blog/2023-03-14-i-made-a-rss-for-myself/",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/2023-03-14-i-made-a-rss-for-myself/\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-14</div>\n <div class=\"blogbody\"><h2 id=\"title\">I made A RSS for myself.</h2>\n<img src=\"{_root}blog/2023-03-14-i-made-a-rss-for-myself/arss_shot.jpg\" width=\"100%\" />\n\n<p>Before RSS I used to read Live Journal, before that it was CIX and before that\nit was FidoNet with maybe a little bit of Usenet thrown in around the edges. I\nhave been reading the Internets for a very long time.</p>\n<p>It has now been ten years since google announced they where shutting down\ngoogle reader signalling the end of RSS as a thing you could rely on and I\nnever really found a replacement apart from being annoyed at twitter.</p>\n<p>I mean obviously RSS didn&#39;t just stop working overnight but it no longer felt\nlike it stood a chance of getting better. From here on in it was only going to\nget worse, no one big was pushing it and it would suffer a slow painful death.</p>\n<p>Which is exactly what happened, it is pretty easy to find big sites now that do\nnot provide any RSS feeds of their content and I forget when I last saw a site\nproudly displaying an RSS icon.</p>\n<p>Now google reader wasn&#39;t the best but it was less terrible than anything else.\nMany readers are more book mark managers or email clients that have had some\nRSS tacked on. I&#39;m not interested in any of these things, I want that endless\ndoom scroll that I have been used to for decades.</p>\n<p>So, I figure I&#39;m gonna have to build it myself.</p>\n<p>I present for you, my A RSS reader and invite you to join me. Go back into the\nwater, live there, die there.</p>\n<p><a href=\"https://github.com/xriss/arss\">https://github.com/xriss/arss</a></p>\n<p>ARSS Provides a column of endless scrolling and a quick site preview in an\niframe right next to it, you never have to click anything just doomscroll and\ndoomread like baby jebus intended.</p>\n<p>You got problems, open up an issue on github, you don&#39;t got problems then jump\nright in at <a href=\"https://xriss.github.io/arss/\">https://xriss.github.io/arss/</a> and import an OPML</p>\n<p>Also because we are just a web page we can hot link direct to RSS feeds for a\nquick view like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a>\nor like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=http://feeds.bbci.co.uk/news/rss.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=http://feeds.bbci.co.uk/news/rss.xml#READ</a></p>\n<p>This is a client side application, running dynamical in a web page with no real\nserver backend.</p>\n<p>Except, well security theatre is a bitch and we are currently using a CORS\nbouncer to get around web browser issues.</p>\n<p>Note that these are not technical issues, everything we are doing is pretty\nsimple, these are self induced security restrictions implemented by browsers to\nstop &quot;bad guys&quot; from doing &quot;bad things&quot; unfortunately &quot;bad guy&quot; just means &quot;not\ngoogle&quot; or &quot;not facebook&quot; who get to do all the evil they want.</p>\n<p>Think cookie popups, well meaning but ultimately bullshit and with no way to\nopt out of the &quot;solution&quot;.</p>\n<p>I think we can hack around this some more to remove the CORS bouncer and use a\nbrowser extension instead but this will obviously be even less user friendly\nthan the current solution.</p>\n<p>Until then I am happy with the current state, it uses client side databases for\ncaching and even lets you keep your feeds in a gist as a simple persistent\nlogin system. Yeah its a bit technical to do that but if you want to read A RSS\nFeed then you are already in the top tech 1%ers :)\n<br/>\n<br/>\n<br/>\n<br/></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/2023-03-14-i-made-a-rss-for-myself/\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-14<div class=\"bloglink-time\">00:00:00</div></div>\n <div class=\"blogbody\"><h2 id=\"title\">I made A RSS for myself.</h2>\n<img src=\"{_root}blog/2023-03-14-i-made-a-rss-for-myself/arss_shot.jpg\" width=\"100%\" />\n\n<p>Before RSS I used to read Live Journal, before that it was CIX and before that\nit was FidoNet with maybe a little bit of Usenet thrown in around the edges. I\nhave been reading the Internets for a very long time.</p>\n<p>It has now been ten years since google announced they where shutting down\ngoogle reader signalling the end of RSS as a thing you could rely on and I\nnever really found a replacement apart from being annoyed at twitter.</p>\n<p>I mean obviously RSS didn&#39;t just stop working overnight but it no longer felt\nlike it stood a chance of getting better. From here on in it was only going to\nget worse, no one big was pushing it and it would suffer a slow painful death.</p>\n<p>Which is exactly what happened, it is pretty easy to find big sites now that do\nnot provide any RSS feeds of their content and I forget when I last saw a site\nproudly displaying an RSS icon.</p>\n<p>Now google reader wasn&#39;t the best but it was less terrible than anything else.\nMany readers are more book mark managers or email clients that have had some\nRSS tacked on. I&#39;m not interested in any of these things, I want that endless\ndoom scroll that I have been used to for decades.</p>\n<p>So, I figure I&#39;m gonna have to build it myself.</p>\n<p>I present for you, my A RSS reader and invite you to join me. Go back into the\nwater, live there, die there.</p>\n<p><a href=\"https://github.com/xriss/arss\">https://github.com/xriss/arss</a></p>\n<p>ARSS Provides a column of endless scrolling and a quick site preview in an\niframe right next to it, you never have to click anything just doomscroll and\ndoomread like baby jebus intended.</p>\n<p>You got problems, open up an issue on github, you don&#39;t got problems then jump\nright in at <a href=\"https://xriss.github.io/arss/\">https://xriss.github.io/arss/</a> and import an OPML</p>\n<p>Also because we are just a web page we can hot link direct to RSS feeds for a\nquick view like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=https://itch.io/devlogs.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=https://itch.io/devlogs.xml#READ</a>\nor like\n<a href=\"https://xriss.github.io/arss/?idb=delete&opml=http://feeds.bbci.co.uk/news/rss.xml#READ\">https://xriss.github.io/arss/?idb=delete&amp;opml=http://feeds.bbci.co.uk/news/rss.xml#READ</a></p>\n<p>This is a client side application, running dynamical in a web page with no real\nserver backend.</p>\n<p>Except, well security theatre is a bitch and we are currently using a CORS\nbouncer to get around web browser issues.</p>\n<p>Note that these are not technical issues, everything we are doing is pretty\nsimple, these are self induced security restrictions implemented by browsers to\nstop &quot;bad guys&quot; from doing &quot;bad things&quot; unfortunately &quot;bad guy&quot; just means &quot;not\ngoogle&quot; or &quot;not facebook&quot; who get to do all the evil they want.</p>\n<p>Think cookie popups, well meaning but ultimately bullshit and with no way to\nopt out of the &quot;solution&quot;.</p>\n<p>I think we can hack around this some more to remove the CORS bouncer and use a\nbrowser extension instead but this will obviously be even less user friendly\nthan the current solution.</p>\n<p>Until then I am happy with the current state, it uses client side databases for\ncaching and even lets you keep your feeds in a gist as a simple persistent\nlogin system. Yeah its a bit technical to do that but if you want to read A RSS\nFeed then you are already in the top tech 1%ers :)\n<br/>\n<br/>\n<br/>\n<br/></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/2023-03-14-i-made-a-rss-for-myself",
    "_filename": "{_root}blog/2023-03-14-i-made-a-rss-for-myself/index.html",
    "_flags": {
@@ -1645,7 +1645,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/2023-03-14-i-made-a-rss-for-myself/index.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1674,8 +1674,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>An angry bee smells like banana.</p>\n<p>A sexy bee smells like lemon grass. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-03-13-235343.mp4\"/></video></p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-03-13",
@@ -1705,7 +1705,7 @@
    "_blog_post_newer": "{_root}blog/2023-03-14-i-made-a-rss-for-myself/",
    "_blog_post_older": "{_root}blog/micro-2023/2023-03-13-233500.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-03-13-235343.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-13-235343.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-13</div>\n <div class=\"blogbody\"><p>An angry bee smells like banana.</p>\n<p>A sexy bee smells like lemon grass. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-03-13-235343.mp4\"/></video></p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-13-235343.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-13<div class=\"bloglink-time\">23:53:43</div></div>\n <div class=\"blogbody\"><p>An angry bee smells like banana.</p>\n<p>A sexy bee smells like lemon grass. \n<video controls autoplay loop muted><source src=\"{_root}blog/micro-2023/2023-03-13-235343.mp4\"/></video></p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-03-13-235343.html",
    "_flags": {
@@ -1742,7 +1742,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-03-13-235343.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1771,8 +1771,8 @@
    },
    "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
    "_blog_post_body": "<p>The year is 2525 and AI generated images still have an unacceptable number of fingers.</p>\n<p>Who knew that the last 1% of the solution was going to be so hard?</p>\n",
-   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}</div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
-   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\"><div class=\"blogbody\">{_blog_post_body}</div></div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+   "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
+   "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
    "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
    "_blog_post_json": {
     "datedash": "2023-03-13",
@@ -1799,7 +1799,7 @@
    "_blog_post_newer": "{_root}blog/micro-2023/2023-03-13-235343.html",
    "_blog_post_older": "{_root}blog/micro-2023/2023-03-13-150351.html",
    "_blog_post_this": "{_root}blog/micro-2023/2023-03-13-233500.html",
-   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-13-233500.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-13</div>\n <div class=\"blogbody\"><p>The year is 2525 and AI generated images still have an unacceptable number of fingers.</p>\n<p>Who knew that the last 1% of the solution was going to be so hard?</p>\n</div>\n</div>\n",
+   "_body": "\n<div class=\"bloglink\" href=\"{_root}blog/micro-2023/2023-03-13-233500.html\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">2023-03-13<div class=\"bloglink-time\">23:35:00</div></div>\n <div class=\"blogbody\"><p>The year is 2525 and AI generated images still have an unacceptable number of fingers.</p>\n<p>Who knew that the last 1% of the solution was going to be so hard?</p>\n</div>\n</div>\n",
    "_dirname": "{_root}blog/micro-2023",
    "_filename": "{_root}blog/micro-2023/2023-03-13-233500.html",
    "_flags": {
@@ -1836,7 +1836,7 @@
     }
    },
    "_root": "../../",
-   "_site": "{_root}",
+   "_site": "https://XIXs.com/",
    "_sourcename": "blog/micro-2023/2023-03-13-233500.html",
    "blog_list": "\n{_it._body}\n\n",
    "body": "{_blog_post_body_one}",
@@ -1857,7 +1857,7 @@
  "_output_chunkname": "html",
  "_output_filename": "blog/page4.html",
  "_root": "../",
- "_site": "{_root}",
+ "_site": "https://XIXs.com/",
  "_sourcename": "blog/page4.html",
  "blog_list": "\n{_it._body}\n\n",
  "body": "{_blog_page_body}",
