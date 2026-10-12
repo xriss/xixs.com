@@ -75,10 +75,12 @@ I should warn you that I look at only the first five letters of each
 word and will often misunderstand them, on porpoise.
 <br/>
 <br/></p>
-<p>Info at <a href="./wiki/">Wiki</a><br>Posts at <a href="./blog/">Blog</a><br>Twats at <a href="https://mastodon.social/@xriss">Mastodon</a> / <a href="https://bsky.app/profile/xixs.com">Bsky</a><br>Codes at <a href="https://github.com/xriss/">GitHub</a><br>Games at <a href="https://store.steampowered.com/developer/wetgenes/">Steam</a> / <a href="https://wetgenes.itch.io/">Itch</a><br>Comics at <a href="https://4lfa.com/">4lfa</a></p>
+<p>Info at <a href="./wiki/">Wiki</a><br>Lies at <a href="./blog/">Blog</a><br>Twats at <a href="https://mastodon.social/@xriss">Mastodon</a> / <a href="https://bsky.app/profile/xixs.com">Bsky</a><br>Codes at <a href="https://github.com/xriss/">GitHub</a><br>Games at <a href="https://store.steampowered.com/developer/wetgenes/">Steam</a> / <a href="https://wetgenes.itch.io/">Itch</a><br>Comics at <a href="https://4lfa.com/">4lfa</a></p>
 
 	</div>
 	<div id="foot">
+		<a class="blog-foot" href="./blog">BLOG</a>
+		<a class="wiki-foot" href="./wiki">WIKI</a>
 	</div>
 </div></body>
 <script>
@@ -90,6 +92,8 @@ var zxprogress=function(percent)
 	var bd=document.body
 	var sc=document.getElementById("body")
 	var cv=document.getElementById("zx-cover")
+
+	sc.style.filter="grayscale(1)"
 
 	var gradient=function(c1,c2,count,rnd)
 	{
@@ -161,7 +165,6 @@ var zxprogress=function(percent)
 	else
 	{
 		sc.style.filter="none"
-		sc.style.backgroundBlendMode="normal"
 		bd.style.backgroundImage="";
 		bd.style.backgroundColor="#bbb";
 		cv.style.top="100%"

@@ -73,12 +73,12 @@ img , video {
 	min-height: 640px;
 	position: relative;
 	background: #ccc;
-	border: 20px solid #ccc;
+	padding: 20px;
 	overflow-wrap: break-word;
 }
 
 #foot {
-	height: 200px;
+	min-height: 200px;
 }
 
 #body img , #body video {
@@ -86,9 +86,7 @@ img , video {
 }
 
 #body p {
-	border-width: 10px 0px 10px 0px;
-	border-style: solid;
-	border-color: transparent;
+	padding: 10px 0px 10px 0px;
 }
 
 .oldnew-links {
@@ -99,8 +97,7 @@ img , video {
 .old-link , .new-link {
 	background: #bbb;
 	color: #aaa;
-	border: 10px solid #aaa;
-	padding: 0px 10px 0px 10px;
+	padding: 10px 20px 10px 20px;
 }
 .new-link {
 	float: right;
@@ -161,16 +158,24 @@ img , video {
 	}
 }
 
-.blog-head , .wiki-head {
+.blog-head , .wiki-head , .blog-foot , .wiki-foot {
 	font-family: monospace;
 	font-weight: bold;
-	background: #bbb;
 	color: #ddd;
 	padding: 20px 20px 20px 20px;
 }
-.blog-head {
+.blog-head , .blog-foot {
 	float: right;
 }
-.wiki-head {
+.wiki-head ,.wiki-foot {
 	float: left;
+}
+.blog-head , .wiki-head {
+	display: none;
+}
+.blog-foot , .wiki-foot {
+	font-size: 96px;
+	color: #aaa;
+	border: 20px solid #aaa;
+	margin: 20px;
 }
