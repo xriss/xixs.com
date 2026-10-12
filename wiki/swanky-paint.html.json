@@ -1,0 +1,44 @@
+{
+ "_dirname": "{_root}wiki",
+ "_filename": "{_root}wiki/swanky-paint.html",
+ "_flags": {
+  "body": {
+   "form": "wiki",
+   "trim": "ends"
+  },
+  "bodywrap": {
+   "trim": "ends"
+  },
+  "css": {
+   "same": "append"
+  },
+  "footjs": {
+   "same": "append"
+  },
+  "head": {
+   "trim": "ends"
+  },
+  "headjs": {
+   "same": "append"
+  },
+  "html": {
+   "trim": "ends"
+  },
+  "title": {
+   "trim": "ends"
+  }
+ },
+ "_output_chunkname": "html",
+ "_output_filename": "wiki/swanky-paint.html",
+ "_root": "../",
+ "_site": "https://XIXs.com/",
+ "_sourcename": "wiki/swanky-paint.^.html",
+ "body": "<h1 id=\"swanky-paint\">Swanky Paint</h1>\n<p><a href=\"https://store.steampowered.com/app/432030/Swanky_Paint/\">Swanky Paint is on Steam.</a></p>\n<p>Swanky Paint is very much a tribute to Deluxe Paint. </p>\n<p>Deluxe Paint was the definitive pixel art tool used throughout the late \n80s and early 90s to produce art for games and birthed multiple clones \nproviding the same workflow for artists.</p>\n<p>It should be understood that DP did not want to be a pixel art tool. \nChonky pixels and low colors where just all we had at the time. DP \nwanted to be an image editing and painting tool and the whole pixel \nartists thing was more of an accident.</p>\n<p>With that in mind please see <a class=\"wiki-link\" href=\"lowism.html\">Lowism</a> for my attempt at explaining \nexactly why I still need a DP clone some 40 years into the future.</p>\n<p><a class=\"wiki-link\" href=\"swanky-paint.dp.jpg\">swanky-paint.dp.jpg</a></p>\n<p>I personally used Deluxe Paint on the Amiga until switching to \nBrilliance around 94. As I migrated to PC I had a brief back track to \nDOS Deluxe Paint before windows and Cosmigo ProMotion became available \nin the late 90s. I continued to use ProMotion well into the 2000s and \nonly stoped when I finally jumped ship to Linux.</p>\n<p><a class=\"wiki-link\" href=\"swanky-paint.bril.jpg\">swanky-paint.bril.jpg</a></p>\n<p>Unfortunately there was no Art Package on Linux that scratched my \ndeluxe itch so I gave up waiting and just wrote my own damn paint \npackage, with blackjack and hookers and a text editor.</p>\n<p><a class=\"wiki-link\" href=\"swanky-paint.logo.jpg\">swanky-paint.logo.jpg</a></p>\n<p>I should mention that in the early 90s I also worked on Photogenics, a \n24bit painting package. Photogenics was bundled with the Amiga in the \nMagic Pack.</p>\n<p>At this point I suspect I may be overly committed to the bit.</p>\n",
+ "bodywrap": "<div id=\"show\">\n\t<div id=\"head\">\n\t\t<a class=\"blog-head\" href=\"{_root}blog\">BLOG</a>\n\t\t<a class=\"wiki-head\" href=\"{_root}wiki\">WIKI</a>\n\t\t<a id=\"xiximg\" href=\"{_root}\" ></a>\n\t</div>\n\t<div id=\"body\">\n\t\t{body}\n\t</div>\n\t<div id=\"foot\">\n\t\t<a class=\"blog-foot\" href=\"{_root}blog\">BLOG</a>\n\t\t<a class=\"wiki-foot\" href=\"{_root}wiki\">WIKI</a>\n\t</div>\n</div>",
+ "css": "\n#xiximg {\n\tbackground-image: url(\"{_root}art/xix.png\");\n}\n",
+ "footjs": "\nlet links = document.querySelectorAll('.wiki-link')\nfor( let idx=0 ; idx<links.length ; idx++ )\n{\n\tlet link=links[idx]\n\tlet href=link.href\n\tlet ext=href.match(/\\.([^\\./]+)+$/)\n\text=ext && ext[1] || \"\"\n\n\tswitch(ext.toLowerCase())\n\t{\n\t\tcase \"png\":\n\t\tcase \"jpg\":\n\t\t\tlink.innerHTML=`<image src=\"${href}\"></image>`\n\t\tbreak;\n\t}\n\t\n}\n\n",
+ "head": "<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width\">\n<link rel=\"stylesheet\" href=\"{_root}styles.css\" />\n<title>{title}</title>\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://xixs.com/blog/feed.xml\" />\n<script>{headjs}</script>\n<style>\n{css}\n</style>",
+ "headjs": "\n(function(f,w){function m(){}function g(a,b){if(a){\"object\"===typeof a&&(a=[].slice.call(a));for(var c=0,d=a.length;c<d;c++)b.call(a,a[c],c)}}function v(a,b){var c=Object.prototype.toString.call(b).slice(8,-1);return b!==w&&null!==b&&c===a}function k(a){return v(\"Function\",a)}function h(a){a=a||m;a._done||(a(),a._done=1)}function n(a){var b={};if(\"object\"===typeof a)for(var c in a)a[c]&&(b={name:c,url:a[c]});else b=a.split(\"/\"),b=b[b.length-1],c=b.indexOf(\"?\"),b={name:-1!==c?b.substring(0,c):b,url:a};\nreturn(a=p[b.name])&&a.url===b.url?a:p[b.name]=b}function q(a){var a=a||p,b;for(b in a)if(a.hasOwnProperty(b)&&a[b].state!==r)return!1;return!0}function s(a,b){b=b||m;a.state===r?b():a.state===x?d.ready(a.name,b):a.state===y?a.onpreload.push(function(){s(a,b)}):(a.state=x,z(a,function(){a.state=r;b();g(l[a.name],function(a){h(a)});j&&q()&&g(l.ALL,function(a){h(a)})}))}function z(a,b){var b=b||m,c;/\\.css[^\\.]*$/.test(a.url)?(c=e.createElement(\"link\"),c.type=\"text/\"+(a.type||\"css\"),c.rel=\"stylesheet\",\nc.href=a.url):(c=e.createElement(\"script\"),c.type=\"text/\"+(a.type||\"javascript\"),c.src=a.url);c.onload=c.onreadystatechange=function(a){a=a||f.event;if(\"load\"===a.type||/loaded|complete/.test(c.readyState)&&(!e.documentMode||9>e.documentMode))c.onload=c.onreadystatechange=c.onerror=null,b()};c.onerror=function(){c.onload=c.onreadystatechange=c.onerror=null;b()};c.async=!1;c.defer=!1;var d=e.head||e.getElementsByTagName(\"head\")[0];d.insertBefore(c,d.lastChild)}function i(){e.body?j||(j=!0,g(A,function(a){h(a)})):\n(f.clearTimeout(d.readyTimeout),d.readyTimeout=f.setTimeout(i,50))}function t(){e.addEventListener?(e.removeEventListener(\"DOMContentLoaded\",t,!1),i()):\"complete\"===e.readyState&&(e.detachEvent(\"onreadystatechange\",t),i())}var e=f.document,A=[],B=[],l={},p={},E=\"async\"in e.createElement(\"script\")||\"MozAppearance\"in e.documentElement.style||f.opera,C,j,D=f.head_conf&&f.head_conf.head||\"head\",d=f[D]=f[D]||function(){d.ready.apply(null,arguments)},y=1,x=3,r=4;d.load=E?function(){var a=arguments,b=a[a.length-\n1],c={};k(b)||(b=null);g(a,function(d,e){d!==b&&(d=n(d),c[d.name]=d,s(d,b&&e===a.length-2?function(){q(c)&&h(b)}:null))});return d}:function(){var a=arguments,b=[].slice.call(a,1),c=b[0];if(!C)return B.push(function(){d.load.apply(null,a)}),d;c?(g(b,function(a){if(!k(a)){var b=n(a);b.state===w&&(b.state=y,b.onpreload=[],z({url:b.url,type:\"cache\"},function(){b.state=2;g(b.onpreload,function(a){a.call()})}))}}),s(n(a[0]),k(c)?c:function(){d.load.apply(null,b)})):s(n(a[0]));return d};d.js=d.load;d.test=\nfunction(a,b,c,e){a=\"object\"===typeof a?a:{test:a,success:b?v(\"Array\",b)?b:[b]:!1,failure:c?v(\"Array\",c)?c:[c]:!1,callback:e||m};(b=!!a.test)&&a.success?(a.success.push(a.callback),d.load.apply(null,a.success)):!b&&a.failure?(a.failure.push(a.callback),d.load.apply(null,a.failure)):e();return d};d.ready=function(a,b){if(a===e)return j?h(b):A.push(b),d;k(a)&&(b=a,a=\"ALL\");if(\"string\"!==typeof a||!k(b))return d;var c=p[a];if(c&&c.state===r||\"ALL\"===a&&q()&&j)return h(b),d;(c=l[a])?c.push(b):l[a]=[b];\nreturn d};d.ready(e,function(){q()&&g(l.ALL,function(a){h(a)});d.feature&&d.feature(\"domloaded\",!0)});if(\"complete\"===e.readyState)i();else if(e.addEventListener)e.addEventListener(\"DOMContentLoaded\",t,!1),f.addEventListener(\"load\",i,!1);else{e.attachEvent(\"onreadystatechange\",t);f.attachEvent(\"onload\",i);var u=!1;try{u=null==f.frameElement&&e.documentElement}catch(F){}u&&u.doScroll&&function b(){if(!j){try{u.doScroll(\"left\")}catch(c){f.clearTimeout(d.readyTimeout);d.readyTimeout=f.setTimeout(b,50);\nreturn}i()}}()}setTimeout(function(){C=!0;g(B,function(b){b()})},300)})(window);\n",
+ "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>{head}</head>\n<body>{bodywrap}</body>\n<script>{footjs}</script>\n</html>",
+ "title": "Swanky Paint"
+}

@@ -73,7 +73,23 @@ of the text all of the time, making tomorrow seem more like yesterday.</p>
 	</div>
 </div></body>
 <script>
-// run some js at foot of the page maybe
+let links = document.querySelectorAll('.wiki-link')
+for( let idx=0 ; idx<links.length ; idx++ )
+{
+	let link=links[idx]
+	let href=link.href
+	let ext=href.match(/\.([^\./]+)+$/)
+	ext=ext && ext[1] || ""
+
+	switch(ext.toLowerCase())
+	{
+		case "png":
+		case "jpg":
+			link.innerHTML=`<image src="${href}"></image>`
+		break;
+	}
+	
+}
 
 </script>
 </html>
