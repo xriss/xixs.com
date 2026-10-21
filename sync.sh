@@ -1,9 +1,7 @@
 cd `dirname $0`
 
-rsync -avh ../../gamecake/exe     plated/source/wasm/ --delete --human-readable
-rsync -avh ../../gamecake/html/js plated/source/wasm/ --delete --human-readable
+cp ../../gamecake/exe/gamecake.wasm plated/source/wasm/exe/
+cp ../../gamecake/exe/gamecake.js   plated/source/wasm/exe/
+cp ../../gamecake/exe/gamecake.html plated/source/wasm/exe/
 
-rm plated/source/wasm/exe/.git
-
-
-
+cp ../../gamecake/html/js/* plated/source/wasm/js/
