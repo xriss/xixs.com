@@ -11,7 +11,7 @@
  "_blog_page_body": "\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n<div class=\"blog_list_wrap\">\n\t{_list:blog_list}\n</div>\n<div class=\"oldnew-links\"> {_blog_page_older:link_older_page||} {_blog_page_newer:link_newer_page||} </div>\n\n",
  "_blog_post_body": "<p>Fun fact.</p>\n<p>We now have all the technology to fully create a working talkie toaster.</p>\n<p><a href=\"https://www.youtube.com/watch?v=6HqGSioLCOQ\">https://www.youtube.com/watch?v=6HqGSioLCOQ</a></p>\n<p>Not a fake prop, a 1:1 working toaster with a bread obsession that can \nconverse with you and will always steer the conversation towards toast.</p>\n<p>No buttons obviously, just the death trap that is speech to toast \nactivation.</p>\n<p>In this case hallucinations and misunderstanding the context is not \nonly acceptable but also part of the design spec.</p>\n<p>Some attempts exist but it is all a bit half arsed script kiddie. Not \neven a proper voice clone.</p>\n<p>All I need is some funding.</p>\n",
  "_blog_post_body_many": "\n<div class=\"bloglink\" href=\"{_blog_post_this}\" style=\"cursor: pointer;\" onclick=\"window.location.href=this.getAttribute('href')\">\n <div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n <div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n",
- "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"utter_wrap\">\n<script src=\"https://utteranc.es/client.js\"\n        repo=\"xriss/xixs.com\"\n        issue-term=\"pathname\"\n        theme=\"github-light\"\n        crossorigin=\"anonymous\"\n        async>\n</script>\n</div>\n",
+ "_blog_post_body_one": "\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n<div class=\"blogpost\">\n\t<div class=\"bloglink-date\">{_blog_post_json.datedash}<div class=\"bloglink-time\">{_blog_post_json.timecolon||}</div></div>\n\t<div class=\"blogbody\">{_blog_post_body}</div>\n</div>\n<div class=\"oldnew-links\"> {_blog_post_older:link_older_post||} {_blog_post_newer:link_newer_post||} </div>\n\n\n",
  "_blog_post_icon_wrap": "<img class=\"bloglink-icon\" src=\"{_it}\"/> Click to read more...\n",
  "_blog_post_json": {
   "datedash": "2026-10-21",
@@ -35,6 +35,7 @@
   "timecolon": "13:13:33",
   "unixtime": 1792588413
  },
+ "_blog_post_newer": "{_root}blog/micro-2026/2026-10-28-145440.html",
  "_blog_post_older": "{_root}blog/micro-2026/2026-10-20-215224.html",
  "_blog_post_this": "{_root}blog/micro-2026/2026-10-21-131333.html",
  "_dirname": "{_root}blog/micro-2026",
